@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0.0-*",
+
+  "dependencies": {
+    "Abp.EntityFramework": "1.0.0",
+    "Abp.Zero.EntityFramework": "1.0.0",
+    "Migrator.EF6.Tools": {
+      "version": "1.0.0",
+      "type": "build"
+    },
+    "Pgpg.Core": "1.0.0.0-*"
+  },
+
+  "tools": {
+    "Migrator.EF6.Tools": {
+      "version": "1.0.0",
+      "imports": "portable-net45+win8+dnxcore50"
+    }
+  },
+
+  "buildOptions": {
+    "emitEntryPoint": true
+  },
+
+  "frameworks": {
+    "net461": {
+      "Microsoft.NETCore.App": "1.0.0-rc2-3002702"
+    }
+  }
+}
