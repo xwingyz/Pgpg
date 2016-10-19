@@ -32,6 +32,6 @@
     "commit": "5aeac62e288b494728a699c37fd30a012cf2082a"
   },
   "_source": "https://github.com/aspnetboilerplate/bower-abp-resources.git",
-  "_target": "^0.11.3",
+  "_target": "^0.11.2",
   "_originalSource": "abp-web-resources"
 }

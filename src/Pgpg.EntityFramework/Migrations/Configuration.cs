@@ -1,12 +1,16 @@
 using System.Data.Entity.Migrations;
+using Abp.Events.Bus;
+using Abp.Events.Bus.Entities;
 using Abp.MultiTenancy;
 using Abp.Zero.EntityFramework;
-using Pgpg.Migrations.SeedData;
 using EntityFramework.DynamicFilters;
+using Pgpg.EntityFramework;
+using Pgpg.Migrations.Seed.Host;
+using Pgpg.Migrations.Seed.Tenants;
 
 namespace Pgpg.Migrations
 {
-    public sealed class Configuration : DbMigrationsConfiguration<Pgpg.EntityFramework.PgpgDbContext>, IMultiTenantSeed
+    public sealed class Configuration : DbMigrationsConfiguration<PgpgDbContext>, IMultiTenantSeed
     {
         public AbpTenantBase Tenant { get; set; }
 
@@ -16,9 +20,12 @@ namespace Pgpg.Migrations
             ContextKey = "Pgpg";
         }
 
-        protected override void Seed(Pgpg.EntityFramework.PgpgDbContext context)
+        protected override void Seed(PgpgDbContext context)
         {
             context.DisableAllFilters();
+
+            context.EntityChangeEventHelper = NullEntityChangeEventHelper.Instance;
+            context.EventBus = NullEventBus.Instance;
 
             if (Tenant == null)
             {
@@ -26,7 +33,7 @@ namespace Pgpg.Migrations
                 new InitialHostDbBuilder(context).Create();
 
                 //Default tenant seed (in host database).
-                new DefaultTenantCreator(context).Create();
+                new DefaultTenantBuilder(context).Create();
                 new TenantRoleAndUserBuilder(context, 1).Create();
             }
             else

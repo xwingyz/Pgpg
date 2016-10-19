@@ -27,5 +27,6 @@
   },
   "_source": "https://github.com/SignalR/bower-signalr.git",
   "_target": "^2.2.1",
-  "_originalSource": "signalr"
+  "_originalSource": "signalr",
+  "_direct": true
 }

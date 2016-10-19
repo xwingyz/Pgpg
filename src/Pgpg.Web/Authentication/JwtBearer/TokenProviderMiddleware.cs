@@ -12,7 +12,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Pgpg.Authorization;
 using Pgpg.Net.MimeTypes;
-using Pgpg.Users;
 
 namespace Pgpg.Web.Authentication.JwtBearer
 {
@@ -54,8 +53,8 @@ namespace Pgpg.Web.Authentication.JwtBearer
             var userNameOrEmailAddress = context.Request.Form["usernameOrEmailAddress"];
             var password = context.Request.Form["password"];
 
-            var userManager = context.RequestServices.GetRequiredService<LogInManager>();
-            var loginResult = await userManager.LoginAsync(userNameOrEmailAddress, password, tenancyName);
+            var logInManager = context.RequestServices.GetRequiredService<LogInManager>();
+            var loginResult = await logInManager.LoginAsync(userNameOrEmailAddress, password, tenancyName);
 
             if (loginResult.Result != AbpLoginResultType.Success)
             {

@@ -1,4 +1,4 @@
-namespace Pgpg.Authorization.Roles
+﻿namespace Pgpg.Authorization.Roles
 {
     public static class StaticRoleNames
     {
@@ -10,6 +10,8 @@ namespace Pgpg.Authorization.Roles
         public static class Tenants
         {
             public const string Admin = "Admin";
+
+            public const string User = "User";
         }
     }
 }

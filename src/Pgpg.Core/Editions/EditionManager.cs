@@ -10,12 +10,13 @@ namespace Pgpg.Editions
 
         public EditionManager(
             IRepository<Edition> editionRepository, 
-            IAbpZeroFeatureValueStore featureValueStore)
+            IAbpZeroFeatureValueStore featureValueStore) 
             : base(
                 editionRepository,
                 featureValueStore
             )
         {
+
         }
     }
 }

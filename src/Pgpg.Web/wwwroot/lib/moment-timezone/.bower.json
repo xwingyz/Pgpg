@@ -25,5 +25,6 @@
   },
   "_source": "https://github.com/moment/moment-timezone.git",
   "_target": "^0.5.5",
-  "_originalSource": "moment-timezone"
+  "_originalSource": "moment-timezone",
+  "_direct": true
 }

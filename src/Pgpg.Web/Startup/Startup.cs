@@ -1,17 +1,22 @@
 ﻿using System;
 using Abp.AspNetCore;
 using Abp.Castle.Logging.Log4Net;
+using Abp.Hangfire;
 using Abp.Owin;
 using Castle.Facilities.Logging;
+using Hangfire;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Pgpg.Authorization;
 using Pgpg.Web.Configuration;
+using Pgpg.Web.MultiTenancy;
 using Pgpg.Web.Startup.Owin;
 using Owin;
+using PaulMiami.AspNetCore.Mvc.Recaptcha;
 
 namespace Pgpg.Web.Startup
 {
@@ -30,6 +35,16 @@ namespace Pgpg.Web.Startup
             services.AddMvc(options =>
             {
                 options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+            });
+
+            //Swagger - Enable this line and the related lines in Configure method to enable swagger UI
+            //services.AddSwaggerGen();
+
+            //Recaptcha
+            services.AddRecaptcha(new RecaptchaOptions
+            {
+                SiteKey = _appConfiguration["Recaptcha:SiteKey"],
+                SecretKey = _appConfiguration["Recaptcha:SecretKey"]
             });
 
             //Configure Abp and Dependency Injection
@@ -52,12 +67,15 @@ namespace Pgpg.Web.Startup
             }
             else
             {
+                app.UseStatusCodePagesWithRedirects("~/Error?statusCode={0}");
                 app.UseExceptionHandler("/Error");
             }
 
             AuthConfigurer.Configure(app, _appConfiguration);
 
             app.UseStaticFiles();
+
+            app.UseTenantIdAccessorInitialization();
 
             //Integrate to OWIN
             app.UseAppBuilder(ConfigureOwinServices);
@@ -72,6 +90,11 @@ namespace Pgpg.Web.Startup
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint
+            //app.UseSwagger();
+            // Enable middleware to serve swagger-ui assets (HTML, JS, CSS etc.)
+            //app.UseSwaggerUi(); //URL: /swagger/ui
         }
 
         private static void ConfigureOwinServices(IAppBuilder app)
@@ -81,6 +104,12 @@ namespace Pgpg.Web.Startup
             app.UseAbp();
 
             app.MapSignalR();
+
+            //Enable it to use HangFire dashboard (uncomment only if it's enabled in PgpgWebModule)
+            //app.UseHangfireDashboard("/hangfire", new DashboardOptions
+            //{
+            //    Authorization = new[] { new AbpHangfireAuthorizationFilter(AppPermissions.Pages_Administration_HangfireDashboard) }
+            //});
         }
     }
 }

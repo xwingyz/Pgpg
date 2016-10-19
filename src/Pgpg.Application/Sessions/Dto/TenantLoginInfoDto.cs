@@ -10,5 +10,7 @@ namespace Pgpg.Sessions.Dto
         public string TenancyName { get; set; }
 
         public string Name { get; set; }
+
+        public string EditionDisplayName { get; set; }
     }
 }

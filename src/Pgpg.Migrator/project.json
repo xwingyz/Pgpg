@@ -1,4 +1,6 @@
 {
+  "userSecretsId": "Pgpg-894FDFC1-6482-4A56-926A-3C46C9FE0329",
+
   "version": "1.0.0-*",
 
   "buildOptions": {
@@ -6,7 +8,7 @@
     "copyToOutput": [
       "appsettings.json",
       "log4net.config"
-    ]
+    ] 
   },
 
   "dependencies": {

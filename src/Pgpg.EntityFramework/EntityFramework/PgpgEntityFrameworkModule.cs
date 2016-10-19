@@ -5,9 +5,10 @@ using Abp.Zero.EntityFramework;
 
 namespace Pgpg.EntityFramework
 {
-    [DependsOn(
-        typeof(PgpgCoreModule), 
-        typeof(AbpZeroEntityFrameworkModule))]
+    /// <summary>
+    /// Entity framework module of the application.
+    /// </summary>
+    [DependsOn(typeof(AbpZeroEntityFrameworkModule), typeof(PgpgCoreModule))]
     public class PgpgEntityFrameworkModule : AbpModule
     {
         public override void PreInitialize()

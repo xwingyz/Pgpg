@@ -1,17 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Pgpg.Web.Models.Account
+﻿namespace Pgpg.Web.Models.Account
 {
-    public class LoginViewModel
+    public class LoginViewModel : LoginModel
     {
-        public string TenancyName { get; set; }
-
-        [Required]
-        public string UsernameOrEmailAddress { get; set; }
-
-        [Required]
-        public string Password { get; set; }
-
         public bool RememberMe { get; set; }
     }
 }

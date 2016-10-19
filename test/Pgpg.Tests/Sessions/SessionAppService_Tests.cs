@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Pgpg.Tests.Sessions
 {
-    public class SessionAppService_Tests : PgpgTestBase
+    public class SessionAppService_Tests : AppTestBase
     {
         private readonly ISessionAppService _sessionAppService;
 
@@ -22,7 +22,7 @@ namespace Pgpg.Tests.Sessions
 
             //Act
             var output = await _sessionAppService.GetCurrentLoginInformations();
-
+            
             //Assert
             var currentUser = await GetCurrentUserAsync();
             output.User.ShouldNotBe(null);

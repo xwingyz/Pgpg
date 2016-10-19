@@ -10,10 +10,11 @@ namespace Pgpg.Localization
         public static void Configure(ILocalizationConfiguration localizationConfiguration)
         {
             localizationConfiguration.Sources.Add(
-                new DictionaryBasedLocalizationSource(PgpgConsts.LocalizationSourceName,
+                new DictionaryBasedLocalizationSource(
+                    PgpgConsts.LocalizationSourceName,
                     new XmlEmbeddedFileLocalizationDictionaryProvider(
                         Assembly.GetExecutingAssembly(),
-                        "Pgpg.Core.Localization.SourceFiles"
+                        "Pgpg.Core.Localization.Pgpg"
                     )
                 )
             );

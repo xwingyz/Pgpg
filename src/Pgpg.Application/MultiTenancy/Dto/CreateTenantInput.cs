@@ -1,11 +1,9 @@
 using System.ComponentModel.DataAnnotations;
-using Abp.AutoMapper;
 using Abp.MultiTenancy;
-using Pgpg.Users;
+using Pgpg.Authorization.Users;
 
 namespace Pgpg.MultiTenancy.Dto
 {
-    [AutoMapTo(typeof(Tenant))]
     public class CreateTenantInput
     {
         [Required]
@@ -18,10 +16,22 @@ namespace Pgpg.MultiTenancy.Dto
         public string Name { get; set; }
 
         [Required]
+        [EmailAddress]
         [StringLength(User.MaxEmailAddressLength)]
         public string AdminEmailAddress { get; set; }
 
+        [StringLength(User.MaxPasswordLength)]
+        public string AdminPassword { get; set; }
+
         [MaxLength(AbpTenantBase.MaxConnectionStringLength)]
         public string ConnectionString { get; set; }
+
+        public bool ShouldChangePasswordOnNextLogin { get; set; }
+        
+        public bool SendActivationEmail { get; set; }
+
+        public int? EditionId { get; set; }
+
+        public bool IsActive { get; set; }
     }
 }

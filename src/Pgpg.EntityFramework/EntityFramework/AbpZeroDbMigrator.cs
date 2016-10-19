@@ -10,7 +10,7 @@ namespace Pgpg.EntityFramework
         public AbpZeroDbMigrator(
             IUnitOfWorkManager unitOfWorkManager,
             IDbPerTenantConnectionStringResolver connectionStringResolver,
-            IIocResolver iocResolver)
+            IIocResolver iocResolver) 
             : base(
                 unitOfWorkManager,
                 connectionStringResolver,

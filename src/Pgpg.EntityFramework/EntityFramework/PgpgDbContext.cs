@@ -1,11 +1,14 @@
-﻿using System.Data.Common;
+using System.Data.Common;
 using System.Data.Entity;
 using Abp.Zero.EntityFramework;
 using Microsoft.Extensions.Configuration;
 using Pgpg.Authorization.Roles;
+using Pgpg.Authorization.Users;
+using Pgpg.Chat;
 using Pgpg.Configuration;
+using Pgpg.Friendships;
 using Pgpg.MultiTenancy;
-using Pgpg.Users;
+using Pgpg.Storage;
 using Pgpg.Web;
 
 namespace Pgpg.EntityFramework
@@ -15,11 +18,17 @@ namespace Pgpg.EntityFramework
     {
         /* Define an IDbSet for each entity of the application */
 
+        public virtual IDbSet<BinaryObject> BinaryObjects { get; set; }
+
+        public virtual IDbSet<Friendship> Friendships { get; set; }
+
+        public virtual IDbSet<ChatMessage> ChatMessages { get; set; }
+
         /* Default constructor is needed for EF command line tool. */
         public PgpgDbContext()
             : base(GetConnectionString())
         {
-
+            
         }
 
         private static string GetConnectionString()
@@ -33,7 +42,7 @@ namespace Pgpg.EntityFramework
                 );
         }
 
-        /* This constructor is used by ABP to pass connection string.
+        /* This constructor is used by ABP to pass connection string defined in PgpgDataModule.PreInitialize.
          * Notice that, actually you will not directly create an instance of PgpgDbContext since ABP automatically handles it.
          */
         public PgpgDbContext(string nameOrConnectionString)
@@ -47,17 +56,6 @@ namespace Pgpg.EntityFramework
             : base(dbConnection, true)
         {
 
-        }
-    }
-
-    public class PgpgDbConfiguration : DbConfiguration
-    {
-        public PgpgDbConfiguration()
-        {
-            SetProviderServices(
-                "System.Data.SqlClient",
-                System.Data.Entity.SqlServer.SqlProviderServices.Instance
-            );
         }
     }
 }

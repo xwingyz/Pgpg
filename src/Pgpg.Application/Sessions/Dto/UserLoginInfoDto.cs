@@ -1,6 +1,6 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
-using Pgpg.Users;
+using Pgpg.Authorization.Users;
 
 namespace Pgpg.Sessions.Dto
 {
@@ -14,5 +14,7 @@ namespace Pgpg.Sessions.Dto
         public string UserName { get; set; }
 
         public string EmailAddress { get; set; }
+
+        public string ProfilePictureId { get; set; }
     }
 }

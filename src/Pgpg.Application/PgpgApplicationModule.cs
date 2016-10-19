@@ -5,6 +5,9 @@ using Pgpg.Authorization;
 
 namespace Pgpg
 {
+    /// <summary>
+    /// Application layer module of the application.
+    /// </summary>
     [DependsOn(
         typeof(PgpgCoreModule), 
         typeof(AbpAutoMapperModule))]
@@ -12,7 +15,11 @@ namespace Pgpg
     {
         public override void PreInitialize()
         {
-            Configuration.Authorization.Providers.Add<PgpgAuthorizationProvider>();
+            //Adding authorization providers
+            Configuration.Authorization.Providers.Add<AppAuthorizationProvider>();
+
+            //Adding custom AutoMapper configuration
+            Configuration.Modules.AbpAutoMapper().Configurators.Add(CustomDtoMapper.CreateMappings);
         }
 
         public override void Initialize()

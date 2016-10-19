@@ -1,7 +1,7 @@
-using Abp.Authorization.Roles;
+﻿using Abp.Authorization.Roles;
 using Abp.Authorization.Users;
 using Abp.Domain.Repositories;
-using Pgpg.Users;
+using Pgpg.Authorization.Users;
 
 namespace Pgpg.Authorization.Roles
 {
@@ -16,6 +16,7 @@ namespace Pgpg.Authorization.Roles
                 userRoleRepository,
                 rolePermissionSettingRepository)
         {
+
         }
     }
 }

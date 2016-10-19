@@ -11,5 +11,7 @@ namespace Pgpg.Web.Models.Account
         public string NameAndSurname { get; set; }
 
         public bool IsActive { get; set; }
+
+        public bool IsEmailConfirmationRequired { get; set; }
     }
 }

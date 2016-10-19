@@ -1,9 +1,12 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
-using Pgpg.MultiTenancy;
-using Pgpg.Users;
+using Abp.Auditing;
 using Abp.Extensions;
+using Pgpg.Authorization.Users;
+using Pgpg.MultiTenancy;
+using Pgpg.Security;
+using Pgpg.Validation;
 
 namespace Pgpg.Web.Models.Account
 {
@@ -32,18 +35,20 @@ namespace Pgpg.Web.Models.Account
         public string EmailAddress { get; set; }
 
         [StringLength(User.MaxPlainPasswordLength)]
+        [DisableAuditing]
         public string Password { get; set; }
 
         public bool IsExternalLogin { get; set; }
 
         public string ExternalLoginAuthSchema { get; set; }
 
+        public PasswordComplexitySetting PasswordComplexitySetting { get; set; }
+
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             if (!UserName.IsNullOrEmpty())
             {
-                var emailRegex = new Regex(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");
-                if (!UserName.Equals(EmailAddress) && emailRegex.IsMatch(UserName))
+                if (!UserName.Equals(EmailAddress) && new ValidationHelper().IsEmail(UserName))
                 {
                     yield return new ValidationResult("Username cannot be an email address unless it's same with your email address !");
                 }

@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Text;
-using Pgpg.Web.Authentication.JwtBearer;
+using Microsoft.AspNet.Identity;
+using Abp.Configuration;
+using Abp.Dependency;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Microsoft.IdentityModel.Tokens;
+using Pgpg.Configuration;
+using Pgpg.Web.Authentication.JwtBearer;
+using Abp.Extensions;
 
 namespace Pgpg.Web.Startup
 {
@@ -20,7 +26,7 @@ namespace Pgpg.Web.Startup
         /// <param name="configuration">The configuration.</param>
         public static void Configure(IApplicationBuilder app, IConfiguration configuration)
         {
-            app.UseCookieAuthentication(new CookieAuthenticationOptions()
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationScheme = AuthenticationScheme,
                 LoginPath = new PathString("/Account/Login/"),
@@ -28,7 +34,27 @@ namespace Pgpg.Web.Startup
                 AutomaticAuthenticate = true,
                 AutomaticChallenge = true
             });
-            
+
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
+            {
+                AutomaticAuthenticate = false,
+                AuthenticationScheme = DefaultAuthenticationTypes.TwoFactorCookie,
+                ExpireTimeSpan = TimeSpan.FromMinutes(5),
+                CookieName = DefaultAuthenticationTypes.TwoFactorCookie
+            });
+
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
+            {
+                AutomaticAuthenticate = false,
+                AuthenticationScheme = DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie,
+                CookieName = DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie
+            });
+
+            if (bool.Parse(configuration["Authentication:OpenId:IsEnabled"]))
+            {
+                app.UseOpenIdConnectAuthentication(CreateOpenIdConnectAuthOptions(configuration));
+            }
+
             if (bool.Parse(configuration["Authentication:Microsoft:IsEnabled"]))
             {
                 app.UseMicrosoftAccountAuthentication(CreateMicrosoftAuthOptions(configuration));
@@ -53,6 +79,29 @@ namespace Pgpg.Web.Startup
             {
                 ConfigureJwtBearerAuthentication(app, configuration);
             }
+        }
+
+        private static OpenIdConnectOptions CreateOpenIdConnectAuthOptions(IConfiguration configuration)
+        {
+            var settingManager = IocManager.Instance.Resolve<ISettingManager>();
+            var websiteAddress = settingManager.GetSettingValue(AppSettings.General.WebSiteRootAddress);
+
+            var options = new OpenIdConnectOptions
+            {
+                ClientId = configuration["Authentication:OpenId:ClientId"],
+                Authority = configuration["Authentication:OpenId:Authority"],
+                PostLogoutRedirectUri = websiteAddress + "Account/Logout",
+                ResponseType = OpenIdConnectResponseType.IdToken,
+                SignInScheme = AuthenticationScheme
+            };
+
+            var clientSecret = configuration["Authentication:OpenId:ClientSecret"];
+            if (!clientSecret.IsNullOrEmpty())
+            {
+                options.ClientSecret = clientSecret;
+            }
+
+            return options;
         }
 
         private static MicrosoftAccountOptions CreateMicrosoftAuthOptions(IConfiguration configuration)

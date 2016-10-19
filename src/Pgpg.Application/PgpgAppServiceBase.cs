@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Abp.Application.Services;
-using Pgpg.MultiTenancy;
-using Pgpg.Users;
-using Microsoft.AspNet.Identity;
-using Abp.Runtime.Session;
 using Abp.IdentityFramework;
+using Abp.MultiTenancy;
+using Abp.Runtime.Session;
+using Microsoft.AspNet.Identity;
+using Pgpg.Authorization.Users;
+using Pgpg.MultiTenancy;
 
 namespace Pgpg
 {
@@ -34,9 +35,31 @@ namespace Pgpg
             return user;
         }
 
+        protected virtual User GetCurrentUser()
+        {
+            var user = UserManager.FindById(AbpSession.GetUserId());
+            if (user == null)
+            {
+                throw new ApplicationException("There is no current user!");
+            }
+
+            return user;
+        }
+
         protected virtual Task<Tenant> GetCurrentTenantAsync()
         {
-            return TenantManager.GetByIdAsync(AbpSession.GetTenantId());
+            using (CurrentUnitOfWork.SetTenantId(null))
+            {
+                return TenantManager.GetByIdAsync(AbpSession.GetTenantId());
+            }
+        }
+
+        protected virtual Tenant GetCurrentTenant()
+        {
+            using (CurrentUnitOfWork.SetTenantId(null))
+            {
+                return TenantManager.GetById(AbpSession.GetTenantId());
+            }
         }
 
         protected virtual void CheckErrors(IdentityResult identityResult)
