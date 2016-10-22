@@ -38,7 +38,7 @@ namespace Pgpg.Web.Startup
             });
 
             //Swagger - Enable this line and the related lines in Configure method to enable swagger UI
-            //services.AddSwaggerGen();
+            services.AddSwaggerGen();
 
             //Recaptcha
             services.AddRecaptcha(new RecaptchaOptions
@@ -92,9 +92,9 @@ namespace Pgpg.Web.Startup
             });
 
             // Enable middleware to serve generated Swagger as a JSON endpoint
-            //app.UseSwagger();
+            app.UseSwagger();
             // Enable middleware to serve swagger-ui assets (HTML, JS, CSS etc.)
-            //app.UseSwaggerUi(); //URL: /swagger/ui
+            app.UseSwaggerUi(); //URL: /swagger/ui
         }
 
         private static void ConfigureOwinServices(IAppBuilder app)

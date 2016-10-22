@@ -280,5 +280,24 @@
     <text name="LookingForMpaVersion" value="查找多页面应用版本号" />
     <text name="LookingForSpaVersion" value="查找单页面应用版本号" />
     <text name="ThisLanguageAlreadyExists" value="这种语言已经存在!" />
+    
+    <text name="SubmallSms" value="短信(Submall)" />
+    <text name="SmsAppId" value="AppId" />
+    <text name="SmsAppKey" value="AppKey" />
+    <text name="SmsTitle" value="短信签名" />
+    <text name="TestSmsSettingsHeader" value="测试短信设置" />
+    <text name="SendTestSms" value="发送测试短信" />
+    <text name="TestSms_Body" value="验证码：9527，5分钟内输入有效。" />
+    <text name="TestSmsSentSuccessfully" value="测试短信发送成功。" />
+    <text name="Friends" value="好友"/>
+    
+    <text name="Countries" value="国家" />
+    <text name="CountriesHeaderInfo" value="管理国家" />
+    <text name="CreateNewCountry" value="添加国家" />
+    <text name="EditCountry" value="修改国家" />
+    <text name="CountryName" value="国家名称" />
+    <text name="CountryCode" value="代码" />
+    <text name="CountryDeleteWarningMessage" value="国家 {0} 将被删除." />
+    <text name="CountryAlreadyExists" value="该国家已经存在。" />
   </texts>
 </localizationDictionary>

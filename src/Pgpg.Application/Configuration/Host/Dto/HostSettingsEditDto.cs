@@ -19,5 +19,8 @@ namespace Pgpg.Configuration.Host.Dto
         [Required]
         public SecuritySettingsEditDto Security { get; set; }
 
+        [Required]
+        public SmsSettingsEditDto Sms { get; set; }
+
     }
 }

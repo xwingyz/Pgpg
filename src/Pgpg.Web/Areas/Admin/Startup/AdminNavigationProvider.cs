@@ -60,7 +60,31 @@ namespace Pgpg.Web.Areas.Admin.Startup
                         icon: "icon-people",
                         requiredPermissionName: AppPermissions.Pages_Administration_Users
                         )
-                    ).AddItem(new MenuItemDefinition(
+                    ).
+                    AddItem(new MenuItemDefinition(
+                        AdminPageNames.Common.Country,
+                        L("Countries"),
+                        url: "Admin/Country",
+                        icon: "icon-flag",
+                        requiredPermissionName: AppPermissions.Pages_Countries
+                        )
+                    ).
+                    //AddItem(new MenuItemDefinition(
+                    //    AdminPageNames.Common.StateProvince,
+                    //    L("StateProvinces"),
+                    //    url: "Admin/StateProvinces",
+                    //    icon: "icon-flag",
+                    //    requiredPermissionName: AppPermissions.Pages_StateProvinces
+                    //    )
+                    //).AddItem(new MenuItemDefinition(
+                    //    AdminPageNames.Common.City,
+                    //    L("Cities"),
+                    //    url: "Admin/Cities",
+                    //    icon: "icon-flag",
+                    //    requiredPermissionName: AppPermissions.Pages_Cities
+                    //    )
+                    //).
+                    AddItem(new MenuItemDefinition(
                         AdminPageNames.Common.Languages,
                         L("Languages"),
                         url: "Admin/Languages",

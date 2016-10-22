@@ -14,6 +14,8 @@ using Pgpg.Editions;
 using Pgpg.Security;
 using Pgpg.Timing;
 using Newtonsoft.Json;
+using Pgpg.Smsing;
+using Pgpg.Submall;
 
 namespace Pgpg.Configuration.Host
 {
@@ -21,20 +23,22 @@ namespace Pgpg.Configuration.Host
     public class HostSettingsAppService : PgpgAppServiceBase, IHostSettingsAppService
     {
         private readonly IEmailSender _emailSender;
+        private readonly ISmsSender _smsSender;
         private readonly EditionManager _editionManager;
         private readonly ITimeZoneService _timeZoneService;
-        readonly ISettingDefinitionManager _settingDefinitionManager;
+        private readonly ISettingDefinitionManager _settingDefinitionManager;
 
         public HostSettingsAppService(
             IEmailSender emailSender,
             EditionManager editionManager,
             ITimeZoneService timeZoneService,
-            ISettingDefinitionManager settingDefinitionManager)
+            ISettingDefinitionManager settingDefinitionManager, ISmsSender smsSender)
         {
             _emailSender = emailSender;
             _editionManager = editionManager;
             _timeZoneService = timeZoneService;
             _settingDefinitionManager = settingDefinitionManager;
+            _smsSender = smsSender;
         }
 
         #region Get Settings
@@ -47,7 +51,8 @@ namespace Pgpg.Configuration.Host
                 TenantManagement = await GetTenantManagementSettingsAsync(),
                 UserManagement = await GetUserManagementAsync(),
                 Email = await GetEmailSettingsAsync(),
-                Security = await GetSecuritySettingsAsync()
+                Security = await GetSecuritySettingsAsync(),
+                Sms = await GetSmsSettingsAsync()
             };
         }
 
@@ -61,7 +66,8 @@ namespace Pgpg.Configuration.Host
                 TimezoneForComparison = timezone
             };
 
-            var defaultTimeZoneId = await _timeZoneService.GetDefaultTimezoneAsync(SettingScopes.Application, AbpSession.TenantId);
+            var defaultTimeZoneId =
+                await _timeZoneService.GetDefaultTimezoneAsync(SettingScopes.Application, AbpSession.TenantId);
             if (settings.Timezone == defaultTimeZoneId)
             {
                 settings.Timezone = string.Empty;
@@ -74,13 +80,21 @@ namespace Pgpg.Configuration.Host
         {
             var settings = new TenantManagementSettingsEditDto
             {
-                AllowSelfRegistration = await SettingManager.GetSettingValueAsync<bool>(AppSettings.TenantManagement.AllowSelfRegistration),
-                IsNewRegisteredTenantActiveByDefault = await SettingManager.GetSettingValueAsync<bool>(AppSettings.TenantManagement.IsNewRegisteredTenantActiveByDefault),
-                UseCaptchaOnRegistration = await SettingManager.GetSettingValueAsync<bool>(AppSettings.TenantManagement.UseCaptchaOnRegistration)
+                AllowSelfRegistration =
+                    await SettingManager.GetSettingValueAsync<bool>(AppSettings.TenantManagement.AllowSelfRegistration),
+                IsNewRegisteredTenantActiveByDefault =
+                    await
+                        SettingManager.GetSettingValueAsync<bool>(
+                            AppSettings.TenantManagement.IsNewRegisteredTenantActiveByDefault),
+                UseCaptchaOnRegistration =
+                    await
+                        SettingManager.GetSettingValueAsync<bool>(AppSettings.TenantManagement.UseCaptchaOnRegistration)
             };
 
-            var defaultEditionId = await SettingManager.GetSettingValueAsync(AppSettings.TenantManagement.DefaultEdition);
-            if (!string.IsNullOrEmpty(defaultEditionId) && (await _editionManager.FindByIdAsync(Convert.ToInt32(defaultEditionId)) != null))
+            var defaultEditionId =
+                await SettingManager.GetSettingValueAsync(AppSettings.TenantManagement.DefaultEdition);
+            if (!string.IsNullOrEmpty(defaultEditionId) &&
+                (await _editionManager.FindByIdAsync(Convert.ToInt32(defaultEditionId)) != null))
             {
                 settings.DefaultEditionId = Convert.ToInt32(defaultEditionId);
             }
@@ -92,7 +106,10 @@ namespace Pgpg.Configuration.Host
         {
             return new HostUserManagementSettingsEditDto
             {
-                IsEmailConfirmationRequiredForLogin = await SettingManager.GetSettingValueAsync<bool>(AbpZeroSettingNames.UserManagement.IsEmailConfirmationRequiredForLogin)
+                IsEmailConfirmationRequiredForLogin =
+                    await
+                        SettingManager.GetSettingValueAsync<bool>(
+                            AbpZeroSettingNames.UserManagement.IsEmailConfirmationRequiredForLogin)
             };
         }
 
@@ -101,27 +118,42 @@ namespace Pgpg.Configuration.Host
             return new EmailSettingsEditDto
             {
                 DefaultFromAddress = await SettingManager.GetSettingValueAsync(EmailSettingNames.DefaultFromAddress),
-                DefaultFromDisplayName = await SettingManager.GetSettingValueAsync(EmailSettingNames.DefaultFromDisplayName),
+                DefaultFromDisplayName =
+                    await SettingManager.GetSettingValueAsync(EmailSettingNames.DefaultFromDisplayName),
                 SmtpHost = await SettingManager.GetSettingValueAsync(EmailSettingNames.Smtp.Host),
                 SmtpPort = await SettingManager.GetSettingValueAsync<int>(EmailSettingNames.Smtp.Port),
                 SmtpUserName = await SettingManager.GetSettingValueAsync(EmailSettingNames.Smtp.UserName),
                 SmtpPassword = await SettingManager.GetSettingValueAsync(EmailSettingNames.Smtp.Password),
                 SmtpDomain = await SettingManager.GetSettingValueAsync(EmailSettingNames.Smtp.Domain),
                 SmtpEnableSsl = await SettingManager.GetSettingValueAsync<bool>(EmailSettingNames.Smtp.EnableSsl),
-                SmtpUseDefaultCredentials = await SettingManager.GetSettingValueAsync<bool>(EmailSettingNames.Smtp.UseDefaultCredentials)
+                SmtpUseDefaultCredentials =
+                    await SettingManager.GetSettingValueAsync<bool>(EmailSettingNames.Smtp.UseDefaultCredentials)
+            };
+        }
+
+        private async Task<SmsSettingsEditDto> GetSmsSettingsAsync()
+        {
+            return new SmsSettingsEditDto
+            {
+                AppId = await SettingManager.GetSettingValueAsync(SubmallSettingNames.AppId),
+                AppKey = await SettingManager.GetSettingValueAsync(SubmallSettingNames.AppKey),
+                Title = await SettingManager.GetSettingValueAsync(SubmallSettingNames.Title)
             };
         }
 
         private async Task<SecuritySettingsEditDto> GetSecuritySettingsAsync()
         {
-            var passwordComplexitySetting = await SettingManager.GetSettingValueAsync(AppSettings.Security.PasswordComplexity);
-            var defaultPasswordComplexitySetting = _settingDefinitionManager.GetSettingDefinition(AppSettings.Security.PasswordComplexity).DefaultValue;
+            var passwordComplexitySetting =
+                await SettingManager.GetSettingValueAsync(AppSettings.Security.PasswordComplexity);
+            var defaultPasswordComplexitySetting =
+                _settingDefinitionManager.GetSettingDefinition(AppSettings.Security.PasswordComplexity).DefaultValue;
 
             return new SecuritySettingsEditDto
             {
                 UseDefaultPasswordComplexitySettings = passwordComplexitySetting == defaultPasswordComplexitySetting,
                 PasswordComplexity = JsonConvert.DeserializeObject<PasswordComplexitySetting>(passwordComplexitySetting),
-                DefaultPasswordComplexity = JsonConvert.DeserializeObject<PasswordComplexitySetting>(defaultPasswordComplexitySetting),
+                DefaultPasswordComplexity =
+                    JsonConvert.DeserializeObject<PasswordComplexitySetting>(defaultPasswordComplexitySetting),
                 UserLockOut = await GetUserLockOutSettingsAsync(),
                 TwoFactorLogin = await GetTwoFactorLoginSettingsAsync()
             };
@@ -131,9 +163,18 @@ namespace Pgpg.Configuration.Host
         {
             return new UserLockOutSettingsEditDto
             {
-                IsEnabled = await SettingManager.GetSettingValueAsync<bool>(AbpZeroSettingNames.UserManagement.UserLockOut.IsEnabled),
-                MaxFailedAccessAttemptsBeforeLockout = await SettingManager.GetSettingValueAsync<int>(AbpZeroSettingNames.UserManagement.UserLockOut.MaxFailedAccessAttemptsBeforeLockout),
-                DefaultAccountLockoutSeconds = await SettingManager.GetSettingValueAsync<int>(AbpZeroSettingNames.UserManagement.UserLockOut.DefaultAccountLockoutSeconds)
+                IsEnabled =
+                    await
+                        SettingManager.GetSettingValueAsync<bool>(
+                            AbpZeroSettingNames.UserManagement.UserLockOut.IsEnabled),
+                MaxFailedAccessAttemptsBeforeLockout =
+                    await
+                        SettingManager.GetSettingValueAsync<int>(
+                            AbpZeroSettingNames.UserManagement.UserLockOut.MaxFailedAccessAttemptsBeforeLockout),
+                DefaultAccountLockoutSeconds =
+                    await
+                        SettingManager.GetSettingValueAsync<int>(
+                            AbpZeroSettingNames.UserManagement.UserLockOut.DefaultAccountLockoutSeconds)
             };
         }
 
@@ -141,10 +182,22 @@ namespace Pgpg.Configuration.Host
         {
             return new TwoFactorLoginSettingsEditDto
             {
-                IsEnabled = await SettingManager.GetSettingValueAsync<bool>(AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsEnabled),
-                IsEmailProviderEnabled = await SettingManager.GetSettingValueAsync<bool>(AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsEmailProviderEnabled),
-                IsSmsProviderEnabled = await SettingManager.GetSettingValueAsync<bool>(AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsSmsProviderEnabled),
-                IsRememberBrowserEnabled = await SettingManager.GetSettingValueAsync<bool>(AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsRememberBrowserEnabled),
+                IsEnabled =
+                    await
+                        SettingManager.GetSettingValueAsync<bool>(
+                            AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsEnabled),
+                IsEmailProviderEnabled =
+                    await
+                        SettingManager.GetSettingValueAsync<bool>(
+                            AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsEmailProviderEnabled),
+                IsSmsProviderEnabled =
+                    await
+                        SettingManager.GetSettingValueAsync<bool>(
+                            AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsSmsProviderEnabled),
+                IsRememberBrowserEnabled =
+                    await
+                        SettingManager.GetSettingValueAsync<bool>(
+                            AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsRememberBrowserEnabled),
             };
         }
 
@@ -159,6 +212,7 @@ namespace Pgpg.Configuration.Host
             await UpdateUserManagementSettingsAsync(input.UserManagement);
             await UpdateSecuritySettingsAsync(input.Security);
             await UpdateEmailSettingsAsync(input.Email);
+            await UpdateSmsSettingsAsync(input.Sms);
         }
 
         private async Task UpdateGeneralSettingsAsync(GeneralSettingsEditDto settings)
@@ -166,18 +220,20 @@ namespace Pgpg.Configuration.Host
             await SettingManager.ChangeSettingForApplicationAsync(
                 AppSettings.General.WebSiteRootAddress,
                 settings.WebSiteRootAddress.EnsureEndsWith('/')
-            );
+                );
 
             if (Clock.SupportsMultipleTimezone)
             {
                 if (settings.Timezone.IsNullOrEmpty())
                 {
-                    var defaultValue = await _timeZoneService.GetDefaultTimezoneAsync(SettingScopes.Application, AbpSession.TenantId);
+                    var defaultValue =
+                        await _timeZoneService.GetDefaultTimezoneAsync(SettingScopes.Application, AbpSession.TenantId);
                     await SettingManager.ChangeSettingForApplicationAsync(TimingSettingNames.TimeZone, defaultValue);
                 }
                 else
                 {
-                    await SettingManager.ChangeSettingForApplicationAsync(TimingSettingNames.TimeZone, settings.Timezone);
+                    await
+                        SettingManager.ChangeSettingForApplicationAsync(TimingSettingNames.TimeZone, settings.Timezone);
                 }
             }
         }
@@ -186,30 +242,34 @@ namespace Pgpg.Configuration.Host
         {
             await SettingManager.ChangeSettingForApplicationAsync(
                 AppSettings.TenantManagement.AllowSelfRegistration,
-                settings.AllowSelfRegistration.ToString(CultureInfo.InvariantCulture).ToLower(CultureInfo.InvariantCulture)
-            );
+                settings.AllowSelfRegistration.ToString(CultureInfo.InvariantCulture)
+                    .ToLower(CultureInfo.InvariantCulture)
+                );
             await SettingManager.ChangeSettingForApplicationAsync(
                 AppSettings.TenantManagement.IsNewRegisteredTenantActiveByDefault,
-                settings.IsNewRegisteredTenantActiveByDefault.ToString(CultureInfo.InvariantCulture).ToLower(CultureInfo.InvariantCulture)
-            );
+                settings.IsNewRegisteredTenantActiveByDefault.ToString(CultureInfo.InvariantCulture)
+                    .ToLower(CultureInfo.InvariantCulture)
+                );
 
             await SettingManager.ChangeSettingForApplicationAsync(
                 AppSettings.TenantManagement.UseCaptchaOnRegistration,
-                settings.UseCaptchaOnRegistration.ToString(CultureInfo.InvariantCulture).ToLower(CultureInfo.InvariantCulture)
-            );
+                settings.UseCaptchaOnRegistration.ToString(CultureInfo.InvariantCulture)
+                    .ToLower(CultureInfo.InvariantCulture)
+                );
 
             await SettingManager.ChangeSettingForApplicationAsync(
                 AppSettings.TenantManagement.DefaultEdition,
                 settings.DefaultEditionId?.ToString() ?? ""
-            );
+                );
         }
 
         private async Task UpdateUserManagementSettingsAsync(HostUserManagementSettingsEditDto settings)
         {
             await SettingManager.ChangeSettingForApplicationAsync(
                 AbpZeroSettingNames.UserManagement.IsEmailConfirmationRequiredForLogin,
-                settings.IsEmailConfirmationRequiredForLogin.ToString(CultureInfo.InvariantCulture).ToLower(CultureInfo.InvariantCulture)
-            );
+                settings.IsEmailConfirmationRequiredForLogin.ToString(CultureInfo.InvariantCulture)
+                    .ToLower(CultureInfo.InvariantCulture)
+                );
         }
 
         private async Task UpdateSecuritySettingsAsync(SecuritySettingsEditDto settings)
@@ -219,14 +279,14 @@ namespace Pgpg.Configuration.Host
                 await SettingManager.ChangeSettingForApplicationAsync(
                     AppSettings.Security.PasswordComplexity,
                     settings.DefaultPasswordComplexity.ToJsonString()
-                );
+                    );
             }
             else
             {
                 await SettingManager.ChangeSettingForApplicationAsync(
                     AppSettings.Security.PasswordComplexity,
                     settings.PasswordComplexity.ToJsonString()
-                );
+                    );
             }
 
             await UpdateUserLockOutSettingsAsync(settings.UserLockOut);
@@ -235,30 +295,71 @@ namespace Pgpg.Configuration.Host
 
         private async Task UpdateUserLockOutSettingsAsync(UserLockOutSettingsEditDto settings)
         {
-            await SettingManager.ChangeSettingForApplicationAsync(AbpZeroSettingNames.UserManagement.UserLockOut.IsEnabled, settings.IsEnabled.ToString(CultureInfo.InvariantCulture).ToLower());
-            await SettingManager.ChangeSettingForApplicationAsync(AbpZeroSettingNames.UserManagement.UserLockOut.DefaultAccountLockoutSeconds, settings.DefaultAccountLockoutSeconds.ToString());
-            await SettingManager.ChangeSettingForApplicationAsync(AbpZeroSettingNames.UserManagement.UserLockOut.MaxFailedAccessAttemptsBeforeLockout, settings.MaxFailedAccessAttemptsBeforeLockout.ToString());
+            await
+                SettingManager.ChangeSettingForApplicationAsync(
+                    AbpZeroSettingNames.UserManagement.UserLockOut.IsEnabled,
+                    settings.IsEnabled.ToString(CultureInfo.InvariantCulture).ToLower());
+            await
+                SettingManager.ChangeSettingForApplicationAsync(
+                    AbpZeroSettingNames.UserManagement.UserLockOut.DefaultAccountLockoutSeconds,
+                    settings.DefaultAccountLockoutSeconds.ToString());
+            await
+                SettingManager.ChangeSettingForApplicationAsync(
+                    AbpZeroSettingNames.UserManagement.UserLockOut.MaxFailedAccessAttemptsBeforeLockout,
+                    settings.MaxFailedAccessAttemptsBeforeLockout.ToString());
         }
 
         private async Task UpdateTwoFactorLoginSettingsAsync(TwoFactorLoginSettingsEditDto settings)
         {
-            await SettingManager.ChangeSettingForApplicationAsync(AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsEnabled, settings.IsEnabled.ToString(CultureInfo.InvariantCulture).ToLower());
-            await SettingManager.ChangeSettingForApplicationAsync(AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsEmailProviderEnabled, settings.IsEmailProviderEnabled.ToString(CultureInfo.InvariantCulture).ToLower());
-            await SettingManager.ChangeSettingForApplicationAsync(AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsSmsProviderEnabled, settings.IsSmsProviderEnabled.ToString(CultureInfo.InvariantCulture).ToLower());
-            await SettingManager.ChangeSettingForApplicationAsync(AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsRememberBrowserEnabled, settings.IsRememberBrowserEnabled.ToString(CultureInfo.InvariantCulture).ToLower());
+            await
+                SettingManager.ChangeSettingForApplicationAsync(
+                    AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsEnabled,
+                    settings.IsEnabled.ToString(CultureInfo.InvariantCulture).ToLower());
+            await
+                SettingManager.ChangeSettingForApplicationAsync(
+                    AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsEmailProviderEnabled,
+                    settings.IsEmailProviderEnabled.ToString(CultureInfo.InvariantCulture).ToLower());
+            await
+                SettingManager.ChangeSettingForApplicationAsync(
+                    AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsSmsProviderEnabled,
+                    settings.IsSmsProviderEnabled.ToString(CultureInfo.InvariantCulture).ToLower());
+            await
+                SettingManager.ChangeSettingForApplicationAsync(
+                    AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsRememberBrowserEnabled,
+                    settings.IsRememberBrowserEnabled.ToString(CultureInfo.InvariantCulture).ToLower());
         }
 
         private async Task UpdateEmailSettingsAsync(EmailSettingsEditDto settings)
         {
-            await SettingManager.ChangeSettingForApplicationAsync(EmailSettingNames.DefaultFromAddress, settings.DefaultFromAddress);
-            await SettingManager.ChangeSettingForApplicationAsync(EmailSettingNames.DefaultFromDisplayName, settings.DefaultFromDisplayName);
+            await
+                SettingManager.ChangeSettingForApplicationAsync(EmailSettingNames.DefaultFromAddress,
+                    settings.DefaultFromAddress);
+            await
+                SettingManager.ChangeSettingForApplicationAsync(EmailSettingNames.DefaultFromDisplayName,
+                    settings.DefaultFromDisplayName);
             await SettingManager.ChangeSettingForApplicationAsync(EmailSettingNames.Smtp.Host, settings.SmtpHost);
-            await SettingManager.ChangeSettingForApplicationAsync(EmailSettingNames.Smtp.Port, settings.SmtpPort.ToString(CultureInfo.InvariantCulture));
-            await SettingManager.ChangeSettingForApplicationAsync(EmailSettingNames.Smtp.UserName, settings.SmtpUserName);
-            await SettingManager.ChangeSettingForApplicationAsync(EmailSettingNames.Smtp.Password, settings.SmtpPassword);
+            await
+                SettingManager.ChangeSettingForApplicationAsync(EmailSettingNames.Smtp.Port,
+                    settings.SmtpPort.ToString(CultureInfo.InvariantCulture));
+            await
+                SettingManager.ChangeSettingForApplicationAsync(EmailSettingNames.Smtp.UserName, settings.SmtpUserName);
+            await
+                SettingManager.ChangeSettingForApplicationAsync(EmailSettingNames.Smtp.Password, settings.SmtpPassword);
             await SettingManager.ChangeSettingForApplicationAsync(EmailSettingNames.Smtp.Domain, settings.SmtpDomain);
-            await SettingManager.ChangeSettingForApplicationAsync(EmailSettingNames.Smtp.EnableSsl, settings.SmtpEnableSsl.ToString(CultureInfo.InvariantCulture).ToLower(CultureInfo.InvariantCulture));
-            await SettingManager.ChangeSettingForApplicationAsync(EmailSettingNames.Smtp.UseDefaultCredentials, settings.SmtpUseDefaultCredentials.ToString(CultureInfo.InvariantCulture).ToLower(CultureInfo.InvariantCulture));
+            await
+                SettingManager.ChangeSettingForApplicationAsync(EmailSettingNames.Smtp.EnableSsl,
+                    settings.SmtpEnableSsl.ToString(CultureInfo.InvariantCulture).ToLower(CultureInfo.InvariantCulture));
+            await
+                SettingManager.ChangeSettingForApplicationAsync(EmailSettingNames.Smtp.UseDefaultCredentials,
+                    settings.SmtpUseDefaultCredentials.ToString(CultureInfo.InvariantCulture)
+                        .ToLower(CultureInfo.InvariantCulture));
+        }
+
+        private async Task UpdateSmsSettingsAsync(SmsSettingsEditDto settings)
+        {
+            await SettingManager.ChangeSettingForApplicationAsync(SubmallSettingNames.AppId, settings.AppId);
+            await SettingManager.ChangeSettingForApplicationAsync(SubmallSettingNames.AppKey, settings.AppKey);
+            await SettingManager.ChangeSettingForApplicationAsync(SubmallSettingNames.Title, settings.Title);
         }
 
         #endregion
@@ -271,9 +372,19 @@ namespace Pgpg.Configuration.Host
                 input.EmailAddress,
                 L("TestEmail_Subject"),
                 L("TestEmail_Body")
-            );
+                );
         }
 
         #endregion
+
+        #region Send Test Sms
+
+        public async Task SendTestSms(SendTestSmsInput input)
+        {
+            await _smsSender.SendAsync(new SmsMessage(input.Phone, L("TestSms_Body")));
+        }
+
+        #endregion
+
     }
 }

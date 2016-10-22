@@ -580,5 +580,17 @@
     "inputFiles": [
       "wwwroot/view-resources/Views/Account/VerifySecurityCode.js"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Areas/Admin/Views/Countries/Index.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Areas/Admin/Views/Countries/Index.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Areas/Admin/Views/Countries/_CreateOrEditModal.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Areas/Admin/Views/Countries/_CreateOrEditModal.js"
+    ]
   }
 ]

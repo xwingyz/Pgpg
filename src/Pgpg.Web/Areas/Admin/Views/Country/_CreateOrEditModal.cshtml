@@ -1,0 +1,33 @@
+﻿@using Abp.Extensions
+@using Pgpg.Web.Areas.Admin.Models.Common.Modals
+@using Pgpg.Web.Areas.Admin.Models.Country
+@model CreateOrEditCountryModalViewModel
+
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(Model.IsEditMode ? (L("EditCountry") + ": " + Model.Country.Name) : L("CreateNewCountry")))
+<div class="modal-body">
+    <form name="CountryInformationsForm" role="form" novalidate class="form-validation">
+        @if (Model.IsEditMode)
+        {
+            <input type="hidden" name="Id" value="@Model.Country.Id" />
+        }
+        <div class="form-group">
+            <input class="form-control@(Model.Country.Name.IsNullOrEmpty() ? "" : " edited")" value="@Model.Country.Name" type="text" name="Name" required maxlength="128">
+            <label>@L("CountryName")</label>
+
+        </div>
+        <div class="form-group">
+            <input class="form-control@(Model.Country.Code.IsNullOrEmpty() ? "" : " edited")" value="@Model.Country.Code" type="text" name="Code" required maxlength="128">
+            <label>@L("CountryCode")</label>
+        </div>
+        <div class="form-group">
+            <input id="EditCountry_IsActive" class="md-check" type="checkbox" name="IsActive" value="true" @Html.Raw(Model.Country.IsActive ? "checked=\"checked\"" : "")>
+            <label for="EditCountry_IsActive">
+                <span class="inc"></span>
+                <span class="check"></span>
+                <span class="box"></span>
+                @L("Active")
+            </label>
+        </div>
+    </form>
+</div>
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")

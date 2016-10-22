@@ -1,0 +1,47 @@
+﻿@using Abp.Extensions
+@using Pgpg.Web.Areas.Admin.Startup
+@model Pgpg.Web.Areas.Admin.Models.PhoneBusiness.PhoneBusinessViewModel
+@{
+    ViewBag.CurrentPageName = AdminPageNames.Host.PhoneBusiness;
+}
+@section Scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Areas/Admin/Views/PhoneBusiness/Index.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Areas/Admin/Views/PhoneBusiness/Index.min.js" asp-append-version="true"></script>
+    </environment>
+}
+<div class="row margin-bottom-5">
+    <div class="col-xs-6">
+        <div class="page-head">
+            <div class="page-title">
+                <h1>
+                    <span>@L("PhoneBusiness")</span> <small>@L("PhoneBusinessHeaderInfo")</small>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 text-right">
+    </div>
+</div>
+<div class="portlet light margin-bottom-0">
+    <div class="portlet-body">
+        <div class="tab-content">
+            <div class="tab-pane" id="SettingsSmsTab">
+                <form id="SmsSettingsForm">
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control@(Model.PhoneNumber.IsNullOrEmpty() ? "" : " edited")" type="tel" name="PhoneNumber" value="@Model.PhoneNumber" required maxlength="11">
+                        <label>@L("PhoneNumber")</label>
+                        <span class="help-block">@L("PhoneNumber_Hint")</span>
+                    </div>
+                 
+                    <div class="form-group form-md-line-input col-md-2">
+                        <button id="BuyPhonePackageButton" class="btn green-haze" type="button">购买</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

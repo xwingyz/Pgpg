@@ -102,6 +102,7 @@
                 tenantManagement: $('#TenantManagementSettingsForm').serializeFormToObject(),
                 userManagement: $('#UserManagementSettingsForm').serializeFormToObject(),
                 email: $('#EmailSmtpSettingsForm').serializeFormToObject(),
+                sms: $('#SmsSettingsForm').serializeFormToObject(),
                 chat: $('#ChatSettingsForm').serializeFormToObject(),
                 security: {
                     useDefaultPasswordComplexitySettings: $('#Setting_PasswordComplexity_UseDefaultSettings').is(":checked"),
@@ -129,6 +130,14 @@
                 emailAddress: $('#TestEmailAddressInput').val()
             }).done(function () {
                 abp.notify.info(app.localize('TestEmailSentSuccessfully'));
+            });
+        });
+
+        $('#SendTestSmsButton').click(function () {
+            _hostSettingsService.sendTestSms({
+                phone: $('#TestSmsPhoneInput').val()
+            }).done(function () {
+                abp.notify.info(app.localize('TestSmsSentSuccessfully'));
             });
         });
     });

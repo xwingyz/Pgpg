@@ -6,6 +6,7 @@ using Pgpg.Authorization.Roles;
 using Pgpg.Authorization.Users;
 using Pgpg.Chat;
 using Pgpg.Configuration;
+using Pgpg.Domain.Address;
 using Pgpg.Friendships;
 using Pgpg.MultiTenancy;
 using Pgpg.Storage;
@@ -23,6 +24,12 @@ namespace Pgpg.EntityFramework
         public virtual IDbSet<Friendship> Friendships { get; set; }
 
         public virtual IDbSet<ChatMessage> ChatMessages { get; set; }
+
+        public virtual IDbSet<Country> Countries { get; set; }
+
+        public virtual IDbSet<StateProvince> StateProvinces { get; set; }
+
+        public virtual IDbSet<City> Cities { get; set; }
 
         /* Default constructor is needed for EF command line tool. */
         public PgpgDbContext()

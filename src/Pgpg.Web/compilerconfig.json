@@ -54,5 +54,9 @@
   {
     "outputFile": "wwwroot/Common/Styles/core.css",
     "inputFile": "wwwroot/Common/Styles/core.less"
+  },
+  {
+    "outputFile": "wwwroot/view-resources/Areas/Admin/Views/Country/index.css",
+    "inputFile": "wwwroot/view-resources/Areas/Admin/Views/Country/index.less"
   }
 ]

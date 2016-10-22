@@ -67,11 +67,6 @@ button i {
 .social-icons li .microsoft {
   background: url(../Images/Social/microsoft.png) no-repeat;
 }
-
-.social-icons li .openidconnect {
-  background: url(../Images/Social/open-id-connect.png) no-repeat;
-}
-
 .margin-bottom-0 {
   margin-bottom: 0 !important;
 }

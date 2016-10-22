@@ -1,3 +1,6 @@
 # ASP.NET ZERO - ASP.NET Core Version
-* Start from here: https://www.aspnetzero.com/Documents/Development-Guide-Core
-* Want to port your existing MVC 5.x application? See this post: http://volosoft.com/migrating-from-asp-net-mvc-5x-to-asp-net-core/
+* ASP.NET boilerplate文档：http://www.aspnetboilerplate.com/Pages/Documents
+* Abp Zero开发文档: https://www.aspnetzero.com/Documents/Development-Guide-Core
+* 要安装两个VS插件：Bundler&Minifier;Web Compiler;
+# 新增功能：
+* 发送短信

@@ -60,5 +60,20 @@
 
         public const string Pages_Administration_Host_Maintenance = "Pages.Administration.Host.Maintenance";
         public const string Pages_Administration_Host_Settings = "Pages.Administration.Host.Settings";
+
+        public const string Pages_Countries = "Pages.Countries";
+        public const string Pages_Countries_Create = "Pages.Countries.Create";
+        public const string Pages_Countries_Edit = "Pages.Countries.Edit";
+        public const string Pages_Countries_Delete = "Pages.Countries.Delete";
+
+        //public const string Pages_StateProvinces = "Pages.StateProvinces";
+        //public const string Pages_StateProvinces_Create = "Pages.StateProvinces.Create";
+        //public const string Pages_StateProvinces_Edit = "Pages.StateProvinces.Edit";
+        //public const string Pages_StateProvinces_Delete = "Pages.StateProvinces.Delete";
+
+        //public const string Pages_Cities = "Pages.Cities";
+        //public const string Pages_Cities_Create = "Pages.Cities.Create";
+        //public const string Pages_Cities_Edit = "Pages.Cities.Edit";
+        //public const string Pages_Cities_Delete = "Pages.Cities.Delete";
     }
 }

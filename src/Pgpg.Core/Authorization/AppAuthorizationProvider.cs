@@ -81,6 +81,11 @@ namespace Pgpg.Authorization
             administration.CreateChildPermission(AppPermissions.Pages_Administration_Host_Maintenance, L("Maintenance"), multiTenancySides: _isMultiTenancyEnabled ? MultiTenancySides.Host : MultiTenancySides.Tenant);
 
             administration.CreateChildPermission(AppPermissions.Pages_Administration_HangfireDashboard, L("HangfireDashboard"), multiTenancySides: _isMultiTenancyEnabled ? MultiTenancySides.Host : MultiTenancySides.Tenant);
+
+            var countries = administration.CreateChildPermission(AppPermissions.Pages_Countries, L("Countries"));
+            countries.CreateChildPermission(AppPermissions.Pages_Countries_Create, L("CreatingNewCountry"));
+            countries.CreateChildPermission(AppPermissions.Pages_Countries_Edit, L("EditingCountry"));
+            countries.CreateChildPermission(AppPermissions.Pages_Countries_Delete, L("DeletingCountry"));
         }
 
         private static ILocalizableString L(string name)

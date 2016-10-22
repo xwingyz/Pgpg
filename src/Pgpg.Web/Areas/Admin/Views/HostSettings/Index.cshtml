@@ -62,6 +62,11 @@
                         @L("EmailSmtp")
                     </a>
                 </li>
+                <li class="">
+                    <a href="#SettingsSmsTab" data-toggle="tab" aria-expanded="false">
+                        @L("SubmallSms")
+                    </a>
+                </li>
             </ul>
 
             <div class="tab-content">
@@ -399,6 +404,35 @@
                     </form>
                 </div>
 
+                <div class="tab-pane" id="SettingsSmsTab">
+                    <form id="SmsSettingsForm">
+                        <div class="form-group form-md-line-input form-md-floating-label">
+                            <input class="form-control@(Model.Settings.Sms.AppId.IsNullOrEmpty() ? "" : " edited")" type="text" name="AppId" value="@Model.Settings.Sms.AppId" required maxlength="128">
+                            <label>@L("SmsAppId")</label>
+                            <span class="help-block">@L("SmsAppId_Hint")</span>
+                        </div>
+                        <div class="form-group form-md-line-input form-md-floating-label">
+                            <input class="form-control@(Model.Settings.Sms.AppKey.IsNullOrEmpty() ? "" : " edited")" type="text" name="AppKey" value="@Model.Settings.Sms.AppKey" required maxlength="128">
+                            <label>@L("SmsAppKey")</label>
+                            <span class="help-block">@L("SmsAppKey_Hint")</span>
+                        </div>
+                        <div class="form-group form-md-line-input form-md-floating-label">
+                            <input class="form-control@(Model.Settings.Sms.Title.IsNullOrEmpty() ? "" : " edited")" type="text" name="Title" value="@Model.Settings.Sms.Title" required maxlength="128">
+                            <label>@L("SmsTitle")</label>
+                            <span class="help-block">@L("SmsTitle_Hint")</span>
+                        </div>
+                        <hr />
+                        <h4>@L("TestSmsSettingsHeader")</h4>
+                        <div class="row">
+                            <div class="form-group form-md-line-input has-info form-md-floating-label col-md-4">
+                                <input id="TestSmsPhoneInput" type="text" class="form-control input-sm" value="">
+                            </div>
+                            <div class="form-group form-md-line-input col-md-2">
+                                <button id="SendTestSmsButton" class="btn green-haze" type="button">@L("SendTestSms")</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 

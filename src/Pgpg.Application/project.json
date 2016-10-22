@@ -7,7 +7,8 @@
     "EPPlus": "4.1.0",
     "Pgpg.Core": "1.0.0.0-*",
     "SharpZipLib": "0.86.0",
-    "System.Linq.Dynamic": "1.0.6"
+    "System.Linq.Dynamic": "1.0.6",
+    "System.Net.Http": "4.1.0"
   },
 
   "frameworks": {

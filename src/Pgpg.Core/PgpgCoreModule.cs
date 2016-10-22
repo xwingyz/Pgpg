@@ -64,7 +64,7 @@ namespace Pgpg
             if (DebugHelper.IsDebug)
             {
                 //Disabling email sending in debug mode
-                IocManager.Register<IEmailSender, NullEmailSender>(DependencyLifeStyle.Transient);
+                //IocManager.Register<IEmailSender, NullEmailSender>(DependencyLifeStyle.Transient);
             }
 
             Configuration.ReplaceService<IAbpSession, AspNetZeroAbpSession>();

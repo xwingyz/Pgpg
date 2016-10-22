@@ -15,6 +15,10 @@ namespace Pgpg.Web.Areas.Admin.Startup
             public const string AuditLogs = "Administration.AuditLogs";
             public const string OrganizationUnits = "Administration.OrganizationUnits";
             public const string Languages = "Administration.Languages";
+
+            public const string Country = "Country";
+            public const string City = "City";
+            public const string StateProvince = "StateProvince";
         }
 
         public static class Host
@@ -23,6 +27,11 @@ namespace Pgpg.Web.Areas.Admin.Startup
             public const string Editions = "Editions";
             public const string Maintenance = "Administration.Maintenance";
             public const string Settings = "Administration.Settings.Host";
+
+            public const string PhoneBusiness = "PhoneBusiness";
+
+            
+
         }
 
         public static class Tenant

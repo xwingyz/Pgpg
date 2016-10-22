@@ -411,7 +411,7 @@
     <text name="UnblockUser">Unblock</text>
     <text name="FriendshipRequestAccepted">Friendship request accepted</text>
     <text name="UserSendYouAFriendshipRequest">{0} added you as a friend.</text>
-    <text name="Friends">Friends</text>
+    <text name="Friends" value="Friends"/>
     <text name="Others">Others</text>
     <text name="BlockedUsers">Blocked Users</text>
     <text name="YouDontHaveAnyFriend">You don't have any friends. Write a username to above input box and click "Add Friend" button.</text>
@@ -471,5 +471,23 @@
     <text name="IsEmailVerificationEnabled">Enable email verification.</text>
     <text name="IsSmsVerificationEnabled">Enable SMS verification.</text>
     <text name="AllowToRememberBrowserForTwoFactorLogin">Allow to remember browser. If you allows this, users can select to remember browser to skip second time two factor login for the same browser.</text>
+    
+    <text name="SubmallSms" value="SMS(Submall)" />
+    <text name="SmsAppId" value="AppId" />
+    <text name="SmsAppKey" value="AppKey" />
+    <text name="SmsTitle" value="SMS signature" />
+    <text name="TestSmsSettingsHeader" value="Test SMS settings" />
+    <text name="SendTestSms" value="Send test message" />
+    <text name="TestSms_Body" value="验证码：9527，5分钟内输入有效。" />
+    <text name="TestSmsSentSuccessfully" value="Test SMS sent successfully." />
+    
+    <text name="Countries" value="Countries" />
+    <text name="CountriesHeaderInfo" value="Manage all countries" />
+    <text name="CreateNewCountry" value="Add country" />
+    <text name="EditCountry" value="Edit country" />
+    <text name="CountryName" value="Country Name" />
+    <text name="CountryCode" value="Country Code" />
+    <text name="CountryDeleteWarningMessage" value="Country {0} will be deleted." />
+    <text name="CountryAlreadyExists" value="The country already exists." />
   </texts>
 </localizationDictionary>

@@ -11,5 +11,7 @@ namespace Pgpg.Configuration.Host
         Task UpdateAllSettings(HostSettingsEditDto input);
 
         Task SendTestEmail(SendTestEmailInput input);
+
+        Task SendTestSms(SendTestSmsInput input);
     }
 }
