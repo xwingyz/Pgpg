@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 namespace Pgpg
 {
@@ -9,9 +8,10 @@ namespace Pgpg
         /// <summary>
         /// 集合列表类型映射
         /// </summary>
-        public static ListResultDto<TDestination> MapTo<TSource, TDestination>(this IEnumerable<TSource> source)
+        public static IReadOnlyList<TDestination> MapTo<TSource, TDestination>(this IEnumerable<TSource> source)
         {
-            return new ListResultDto<TDestination>() { Items = source.Select(s => s.MapTo<TDestination>()).ToList() };
+            return source.Select(s => s.MapTo<TDestination>()).ToList();
         }
+
     }
 }

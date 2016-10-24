@@ -21,7 +21,7 @@ namespace Pgpg.Address.Country
         public async Task<ListResultDto<CountryListDto>> GetCountries(GetCountriesInput input)
         {
             var countries = await _countryRepository.GetAll().ToListAsync();
-            return countries.MapTo<Domain.Address.Country, CountryListDto>();
+            return new ListResultDto<CountryListDto>(countries.MapTo<Domain.Address.Country, CountryListDto>());
         }
 
         public async Task<GetCountryForEditOutput> GetCountryForEdit(NullableIdDto input)
