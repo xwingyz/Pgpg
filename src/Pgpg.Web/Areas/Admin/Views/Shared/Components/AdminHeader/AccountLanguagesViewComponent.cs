@@ -3,7 +3,7 @@ using Abp.Configuration.Startup;
 using Abp.Localization;
 using Abp.Runtime.Session;
 using Microsoft.AspNetCore.Mvc;
-using Pgpg.Sessions;
+using Pgpg.Application.Sessions;
 using Pgpg.Web.Areas.Admin.Models.Layout;
 
 namespace Pgpg.Web.Areas.Admin.Views.Shared.Components.AdminHeader

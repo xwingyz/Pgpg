@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Pgpg.Authorization.Permissions.Dto;
+using Pgpg.Application.Authorization.Permissions.Dto;
 
-namespace Pgpg.Authorization.Users.Dto
+namespace Pgpg.Application.Authorization.Users.Dto
 {
     public class GetUserPermissionsForEditOutput
     {

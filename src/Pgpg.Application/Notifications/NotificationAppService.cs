@@ -9,9 +9,9 @@ using Abp.AutoMapper;
 using Abp.Configuration;
 using Abp.Notifications;
 using Abp.Runtime.Session;
-using Pgpg.Notifications.Dto;
+using Pgpg.Application.Notifications.Dto;
 
-namespace Pgpg.Notifications
+namespace Pgpg.Application.Notifications
 {
     [AbpAuthorize]
     public class NotificationAppService : PgpgAppServiceBase, INotificationAppService

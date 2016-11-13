@@ -1,4 +1,4 @@
-namespace Pgpg.Notifications
+namespace Pgpg.Core.Notifications
 {
     /// <summary>
     /// Constants for notification names used in this application.

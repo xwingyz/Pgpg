@@ -1,7 +1,7 @@
 using Abp.Configuration;
-using Pgpg.Submall.Lib;
+using Pgpg.Application.Submall.Lib;
 
-namespace Pgpg.Submall
+namespace Pgpg.Application.Submall
 {
     public class PhoneBusinessAppService : PgpgAppServiceBase, IPhoneBusinessAppService
     {

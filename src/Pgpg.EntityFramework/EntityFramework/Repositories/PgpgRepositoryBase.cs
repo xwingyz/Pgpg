@@ -2,7 +2,7 @@
 using Abp.EntityFramework;
 using Abp.EntityFramework.Repositories;
 
-namespace Pgpg.EntityFramework.Repositories
+namespace Pgpg.EntityFramework.EntityFramework.Repositories
 {
     /// <summary>
     /// Base class for custom repositories of the application.

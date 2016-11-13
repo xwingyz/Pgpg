@@ -2,8 +2,8 @@
 using Abp.Application.Services.Dto;
 using Abp.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Pgpg.Authorization;
-using Pgpg.Editions;
+using Pgpg.Application.Editions;
+using Pgpg.Core.Authorization;
 using Pgpg.Web.Areas.Admin.Models.Editions;
 using Pgpg.Web.Controllers;
 

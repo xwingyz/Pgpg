@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using Abp.Extensions;
 
-namespace Pgpg.Validation
+namespace Pgpg.Core.Validation
 {
     public class ValidationHelper
     {

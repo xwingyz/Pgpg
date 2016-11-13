@@ -1,9 +1,9 @@
 using Abp.Configuration;
 using Abp.Dependency;
 using Abp.Extensions;
-using Pgpg.Configuration;
+using Pgpg.Core.Configuration;
 
-namespace Pgpg.Web
+namespace Pgpg.Core.Web
 {
     public class WebUrlService : IWebUrlService, ITransientDependency
     {

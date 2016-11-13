@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Abp.Localization;
 
-namespace Pgpg.Localization.Dto
+namespace Pgpg.Application.Localization.Dto
 {
     public class SetDefaultLanguageInput
     {

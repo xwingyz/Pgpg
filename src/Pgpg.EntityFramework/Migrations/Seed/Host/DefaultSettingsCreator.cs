@@ -2,9 +2,9 @@
 using Abp.Configuration;
 using Abp.Localization;
 using Abp.Net.Mail;
-using Pgpg.EntityFramework;
+using Pgpg.EntityFramework.EntityFramework;
 
-namespace Pgpg.Migrations.Seed.Host
+namespace Pgpg.EntityFramework.Migrations.Seed.Host
 {
     public class DefaultSettingsCreator
     {

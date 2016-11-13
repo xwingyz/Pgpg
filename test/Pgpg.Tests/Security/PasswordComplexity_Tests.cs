@@ -1,4 +1,4 @@
-﻿using Pgpg.Security;
+﻿using Pgpg.Core.Security;
 using Shouldly;
 using Xunit;
 

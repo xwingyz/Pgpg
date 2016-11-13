@@ -1,5 +1,6 @@
 ﻿using Abp.Application.Navigation;
 using Abp.Localization;
+using Pgpg.Core;
 
 namespace Pgpg.Web.Startup
 {

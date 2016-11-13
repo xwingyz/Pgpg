@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Abp.Localization;
+using Pgpg.Core;
 
 namespace Pgpg.Web.Models.Account
 {

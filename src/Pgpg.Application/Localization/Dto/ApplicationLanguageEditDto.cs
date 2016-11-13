@@ -2,7 +2,7 @@
 using Abp.AutoMapper;
 using Abp.Localization;
 
-namespace Pgpg.Localization.Dto
+namespace Pgpg.Application.Localization.Dto
 {
     [AutoMapFrom(typeof(ApplicationLanguage))]
     public class ApplicationLanguageEditDto

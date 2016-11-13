@@ -1,8 +1,8 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
-using Pgpg.MultiTenancy;
+using Pgpg.Core.MultiTenancy;
 
-namespace Pgpg.Sessions.Dto
+namespace Pgpg.Application.Sessions.Dto
 {
     [AutoMapFrom(typeof(Tenant))]
     public class TenantLoginInfoDto : EntityDto

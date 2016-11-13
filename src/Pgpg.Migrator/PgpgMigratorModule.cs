@@ -5,8 +5,10 @@ using Abp.Modules;
 using Abp.Reflection.Extensions;
 using Castle.MicroKernel.Registration;
 using Microsoft.Extensions.Configuration;
-using Pgpg.Configuration;
+using Pgpg.Core;
+using Pgpg.Core.Configuration;
 using Pgpg.EntityFramework;
+using Pgpg.EntityFramework.EntityFramework;
 
 namespace Pgpg.Migrator
 {

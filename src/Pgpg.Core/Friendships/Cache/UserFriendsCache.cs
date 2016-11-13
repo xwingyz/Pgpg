@@ -1,15 +1,15 @@
-using Abp;
-using Abp.Domain.Repositories;
-using Abp.Runtime.Caching;
-using Pgpg.Chat;
 using System.Linq;
+using Abp;
 using Abp.Dependency;
+using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using Abp.MultiTenancy;
+using Abp.Runtime.Caching;
 using Microsoft.AspNet.Identity;
-using Pgpg.Authorization.Users;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.Chat;
 
-namespace Pgpg.Friendships.Cache
+namespace Pgpg.Core.Friendships.Cache
 {
     public class UserFriendsCache : IUserFriendsCache, ISingletonDependency
     {

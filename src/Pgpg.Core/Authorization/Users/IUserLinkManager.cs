@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using Abp;
 using Abp.Authorization.Users;
 
-namespace Pgpg.Authorization.Users
+namespace Pgpg.Core.Authorization.Users
 {
     public interface IUserLinkManager
     {

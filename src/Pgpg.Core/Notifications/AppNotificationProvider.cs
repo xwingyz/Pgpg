@@ -1,9 +1,9 @@
 ﻿using Abp.Authorization;
 using Abp.Localization;
 using Abp.Notifications;
-using Pgpg.Authorization;
+using Pgpg.Core.Authorization;
 
-namespace Pgpg.Notifications
+namespace Pgpg.Core.Notifications
 {
     public class AppNotificationProvider : NotificationProvider
     {

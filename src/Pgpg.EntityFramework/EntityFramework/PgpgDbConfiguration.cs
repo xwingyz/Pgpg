@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 
-namespace Pgpg.EntityFramework
+namespace Pgpg.EntityFramework.EntityFramework
 {
     public class PgpgDbConfiguration : DbConfiguration
     {

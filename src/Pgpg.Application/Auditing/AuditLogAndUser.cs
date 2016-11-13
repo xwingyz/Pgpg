@@ -1,7 +1,7 @@
 using Abp.Auditing;
-using Pgpg.Authorization.Users;
+using Pgpg.Core.Authorization.Users;
 
-namespace Pgpg.Auditing
+namespace Pgpg.Application.Auditing
 {
     /// <summary>
     /// A helper class to store an <see cref="AuditLog"/> and a <see cref="User"/> object.

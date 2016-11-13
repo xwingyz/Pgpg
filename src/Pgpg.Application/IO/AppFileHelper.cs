@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Abp.IO;
 
-namespace Pgpg.IO
+namespace Pgpg.Application.IO
 {
     public static class AppFileHelper
     {

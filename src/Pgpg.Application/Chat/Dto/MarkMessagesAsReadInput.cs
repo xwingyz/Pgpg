@@ -1,6 +1,6 @@
 using Abp;
 
-namespace Pgpg.Chat.Dto
+namespace Pgpg.Application.Chat.Dto
 {
     public class MarkAllUnreadMessagesOfUserAsReadInput
     {

@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Pgpg.Chat;
+using Pgpg.Core.Chat;
 
-namespace Pgpg.Authorization.Users
+namespace Pgpg.Core.Authorization.Users
 {
     public interface IUserEmailer
     {

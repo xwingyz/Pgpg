@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Pgpg.Sessions;
+using Pgpg.Application.Sessions;
 using Pgpg.Web.Areas.Admin.Models.Layout;
 
 namespace Pgpg.Web.Areas.Admin.Views.Shared.Components.AdminFooter

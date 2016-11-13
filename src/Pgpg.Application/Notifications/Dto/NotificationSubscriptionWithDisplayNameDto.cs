@@ -1,7 +1,7 @@
 using Abp.AutoMapper;
 using Abp.Notifications;
 
-namespace Pgpg.Notifications.Dto
+namespace Pgpg.Application.Notifications.Dto
 {
     [AutoMapFrom(typeof(NotificationDefinition))]
     public class NotificationSubscriptionWithDisplayNameDto : NotificationSubscriptionDto

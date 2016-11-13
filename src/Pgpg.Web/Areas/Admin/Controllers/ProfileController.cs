@@ -2,9 +2,9 @@
 using Abp.AspNetCore.Mvc.Authorization;
 using Abp.Configuration;
 using Microsoft.AspNetCore.Mvc;
-using Pgpg.Authorization.Users.Profile;
-using Pgpg.Timing;
-using Pgpg.Timing.Dto;
+using Pgpg.Application.Authorization.Users.Profile;
+using Pgpg.Application.Timing;
+using Pgpg.Application.Timing.Dto;
 using Pgpg.Web.Areas.Admin.Models.Profile;
 using Pgpg.Web.Controllers;
 

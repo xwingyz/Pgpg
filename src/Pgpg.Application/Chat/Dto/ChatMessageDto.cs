@@ -1,8 +1,9 @@
 using System;
 using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
+using Pgpg.Core.Chat;
 
-namespace Pgpg.Chat.Dto
+namespace Pgpg.Application.Chat.Dto
 {
     [AutoMapFrom(typeof(ChatMessage))]
     public class ChatMessageDto : EntityDto

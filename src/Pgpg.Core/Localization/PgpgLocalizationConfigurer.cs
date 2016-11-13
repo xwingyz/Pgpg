@@ -3,7 +3,7 @@ using Abp.Configuration.Startup;
 using Abp.Localization.Dictionaries;
 using Abp.Localization.Dictionaries.Xml;
 
-namespace Pgpg.Localization
+namespace Pgpg.Core.Localization
 {
     public static class PgpgLocalizationConfigurer
     {

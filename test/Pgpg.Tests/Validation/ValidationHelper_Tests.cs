@@ -1,4 +1,4 @@
-﻿using Pgpg.Validation;
+﻿using Pgpg.Core.Validation;
 using Shouldly;
 using Xunit;
 

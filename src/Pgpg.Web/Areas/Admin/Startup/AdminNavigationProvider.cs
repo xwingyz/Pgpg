@@ -1,6 +1,7 @@
 ﻿using Abp.Application.Navigation;
 using Abp.Localization;
-using Pgpg.Authorization;
+using Pgpg.Core;
+using Pgpg.Core.Authorization;
 using Pgpg.Web.Startup;
 
 namespace Pgpg.Web.Areas.Admin.Startup

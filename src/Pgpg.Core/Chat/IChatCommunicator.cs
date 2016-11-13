@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Abp;
 using Abp.RealTime;
-using Pgpg.Friendships;
+using Pgpg.Core.Friendships;
 
-namespace Pgpg.Chat
+namespace Pgpg.Core.Chat
 {
     public interface IChatCommunicator
     {

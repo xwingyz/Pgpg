@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
-using Pgpg.MultiTenancy.Dto;
+using Pgpg.Application.MultiTenancy.Dto;
 
-namespace Pgpg.MultiTenancy
+namespace Pgpg.Application.MultiTenancy
 {
     public interface ITenantAppService : IApplicationService
     {

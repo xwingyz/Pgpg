@@ -1,4 +1,4 @@
-﻿namespace Pgpg.Smsing
+﻿namespace Pgpg.Core.Smsing
 {
     public class SmsMessage
     {

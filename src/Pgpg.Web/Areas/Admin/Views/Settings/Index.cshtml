@@ -377,7 +377,7 @@
                     <div class="tab-pane" id="SettingsEmailSmtpTab">
                         <form id="EmailSmtpSettingsForm">
                             <div class="form-group form-md-line-input form-md-floating-label no-hint">
-                                <input type="email" name="DefaultFromAddress" class="form-control@(Model.Settings.Email.DefaultFromAddress.IsNullOrEmpty() ? "" : " edited")" value="@Model.Settings.Email.DefaultFromAddress" maxlength="@Pgpg.Authorization.Users.User.MaxEmailAddressLength">
+                                <input type="email" name="DefaultFromAddress" class="form-control@(Model.Settings.Email.DefaultFromAddress.IsNullOrEmpty() ? "" : " edited")" value="@Model.Settings.Email.DefaultFromAddress" maxlength="@Pgpg.Core.Authorization.Users.User.MaxEmailAddressLength">
                                 <label>@L("DefaultFromAddress")</label>
                             </div>
 

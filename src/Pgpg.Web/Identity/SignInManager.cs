@@ -2,9 +2,9 @@
 using Abp.Domain.Uow;
 using Abp.Zero.AspNetCore;
 using Microsoft.AspNetCore.Http;
-using Pgpg.Authorization.Roles;
-using Pgpg.Authorization.Users;
-using Pgpg.MultiTenancy;
+using Pgpg.Core.Authorization.Roles;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.MultiTenancy;
 
 namespace Pgpg.Web.Identity
 {

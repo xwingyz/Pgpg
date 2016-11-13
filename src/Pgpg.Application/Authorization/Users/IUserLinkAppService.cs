@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
-using Pgpg.Authorization.Users.Dto;
+using Pgpg.Application.Authorization.Users.Dto;
 
-namespace Pgpg.Authorization.Users
+namespace Pgpg.Application.Authorization.Users
 {
     public interface IUserLinkAppService : IApplicationService
     {

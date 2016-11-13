@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Abp.Localization;
-using Pgpg.EntityFramework;
+using Pgpg.EntityFramework.EntityFramework;
 
-namespace Pgpg.Migrations.Seed.Host
+namespace Pgpg.EntityFramework.Migrations.Seed.Host
 {
     public class DefaultLanguagesCreator
     {

@@ -3,9 +3,9 @@ using System.Configuration;
 using Abp.Configuration;
 using Abp.Json;
 using Abp.Zero.Configuration;
-using Pgpg.Security;
+using Pgpg.Core.Security;
 
-namespace Pgpg.Configuration
+namespace Pgpg.Core.Configuration
 {
     /// <summary>
     /// Defines settings for the application.

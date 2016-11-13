@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
-using Pgpg.Chat.Dto;
+using Pgpg.Application.Chat.Dto;
 
-namespace Pgpg.Chat
+namespace Pgpg.Application.Chat
 {
     public interface IChatAppService : IApplicationService
     {

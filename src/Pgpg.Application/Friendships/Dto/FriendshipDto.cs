@@ -1,8 +1,9 @@
 ﻿using System;
 using Abp.AutoMapper;
-using Pgpg.Friendships.Cache;
+using Pgpg.Core.Friendships;
+using Pgpg.Core.Friendships.Cache;
 
-namespace Pgpg.Friendships.Dto
+namespace Pgpg.Application.Friendships.Dto
 {
     [AutoMapFrom(typeof(FriendCacheItem), typeof(Friendship))]
     public class FriendDto

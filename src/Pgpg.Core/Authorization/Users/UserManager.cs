@@ -11,10 +11,10 @@ using Abp.Localization;
 using Abp.Organizations;
 using Abp.Runtime.Caching;
 using Abp.Threading;
-using Pgpg.Authorization.Roles;
-using Pgpg.Identity;
+using Pgpg.Core.Authorization.Roles;
+using Pgpg.Core.Identity;
 
-namespace Pgpg.Authorization.Users
+namespace Pgpg.Core.Authorization.Users
 {
     /// <summary>
     /// User manager.

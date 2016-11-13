@@ -1,6 +1,6 @@
 using Abp.AutoMapper;
 
-namespace Pgpg.Authorization.Permissions.Dto
+namespace Pgpg.Application.Authorization.Permissions.Dto
 {
     [AutoMapFrom(typeof(Abp.Authorization.Permission))]
     public class FlatPermissionDto

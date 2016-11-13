@@ -1,6 +1,6 @@
 ﻿using Abp.Application.Services;
 
-namespace Pgpg.Submall
+namespace Pgpg.Application.Submall
 {
     /// <summary>
     /// 手机业务

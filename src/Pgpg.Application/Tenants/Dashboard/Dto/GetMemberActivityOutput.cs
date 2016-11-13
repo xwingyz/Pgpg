@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Pgpg.Tenants.Dashboard.Dto
+namespace Pgpg.Application.Tenants.Dashboard.Dto
 {
     public class GetMemberActivityOutput
     {

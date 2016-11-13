@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Abp.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Pgpg.Notifications;
+using Pgpg.Application.Notifications;
 using Pgpg.Web.Controllers;
 
 namespace Pgpg.Web.Areas.Admin.Controllers

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
-using Pgpg.Authorization.Users;
-using Pgpg.Authorization.Users.Profile.Dto;
+using Pgpg.Application.Authorization.Users.Profile.Dto;
+using Pgpg.Core.Authorization.Users;
 
 namespace Pgpg.Web.Areas.Admin.Models.Profile
 {

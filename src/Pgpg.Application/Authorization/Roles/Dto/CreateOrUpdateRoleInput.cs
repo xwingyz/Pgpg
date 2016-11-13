@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Pgpg.Authorization.Roles.Dto
+namespace Pgpg.Application.Authorization.Roles.Dto
 {
     public class CreateOrUpdateRoleInput
     {

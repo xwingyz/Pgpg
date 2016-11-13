@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Abp.Application.Services.Dto;
 
-namespace Pgpg.Localization.Dto
+namespace Pgpg.Application.Localization.Dto
 {
     public class GetLanguagesOutput : ListResultDto<ApplicationLanguageListDto>
     {

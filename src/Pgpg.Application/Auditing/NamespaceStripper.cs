@@ -1,8 +1,8 @@
-﻿using Abp.Dependency;
+﻿using System.Linq;
+using Abp.Dependency;
 using Abp.Extensions;
-using System.Linq;
 
-namespace Pgpg.Auditing
+namespace Pgpg.Application.Auditing
 {
     public class NamespaceStripper : INamespaceStripper, ITransientDependency
     {

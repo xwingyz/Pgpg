@@ -1,6 +1,6 @@
 using Abp;
 
-namespace Pgpg
+namespace Pgpg.Core
 {
     /// <summary>
     /// This class can be used as a base class for services in this application.

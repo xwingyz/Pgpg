@@ -3,9 +3,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Abp.UI;
 using Microsoft.AspNet.Identity;
-using Pgpg.Authorization.Roles;
-using Pgpg.Authorization.Users;
-using Pgpg.Authorization.Users.Dto;
+using Pgpg.Application.Authorization.Users.Dto;
+using Pgpg.Core.Authorization.Roles;
+using Pgpg.Core.Authorization.Users;
 using Shouldly;
 using Xunit;
 

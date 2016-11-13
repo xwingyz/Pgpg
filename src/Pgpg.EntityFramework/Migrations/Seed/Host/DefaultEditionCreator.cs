@@ -1,11 +1,11 @@
 using System.Linq;
 using Abp.Application.Editions;
 using Abp.Application.Features;
-using Pgpg.Editions;
-using Pgpg.EntityFramework;
-using Pgpg.Features;
+using Pgpg.Core.Editions;
+using Pgpg.Core.Features;
+using Pgpg.EntityFramework.EntityFramework;
 
-namespace Pgpg.Migrations.Seed.Host
+namespace Pgpg.EntityFramework.Migrations.Seed.Host
 {
     public class DefaultEditionCreator
     {

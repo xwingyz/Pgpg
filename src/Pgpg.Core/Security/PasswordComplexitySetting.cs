@@ -1,4 +1,4 @@
-﻿namespace Pgpg.Security
+﻿namespace Pgpg.Core.Security
 {
     public class PasswordComplexitySetting
     {

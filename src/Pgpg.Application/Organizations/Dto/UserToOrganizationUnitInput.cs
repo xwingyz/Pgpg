@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Pgpg.Organizations.Dto
+namespace Pgpg.Application.Organizations.Dto
 {
     public class UserToOrganizationUnitInput
     {

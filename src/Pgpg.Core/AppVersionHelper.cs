@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Pgpg
+namespace Pgpg.Core
 {
     /// <summary>
     /// Central point for application version.

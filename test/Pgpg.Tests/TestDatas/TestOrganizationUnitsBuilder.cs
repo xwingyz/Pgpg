@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Abp.Organizations;
 using Pgpg.EntityFramework;
-using Pgpg.MultiTenancy;
+using Pgpg.EntityFramework.EntityFramework;
 
 namespace Pgpg.Tests.TestDatas
 {

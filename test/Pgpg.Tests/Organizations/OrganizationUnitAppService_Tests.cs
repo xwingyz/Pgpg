@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.Authorization.Users;
 using Abp.Organizations;
-using Pgpg.Authorization.Users;
-using Pgpg.Organizations;
-using Pgpg.Organizations.Dto;
+using Pgpg.Application.Organizations;
+using Pgpg.Application.Organizations.Dto;
+using Pgpg.Core.Authorization.Users;
 using Shouldly;
 using Xunit;
 

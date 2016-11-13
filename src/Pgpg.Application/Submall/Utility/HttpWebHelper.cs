@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Reflection.Emit;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using Pgpg.Submall.Lib;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Pgpg.Application.Submall.Lib;
 
-namespace Pgpg.Submall.Utility
+namespace Pgpg.Application.Submall.Utility
 {
     public class HttpWebHelper
     {

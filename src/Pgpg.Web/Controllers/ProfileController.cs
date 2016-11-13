@@ -15,11 +15,12 @@ using Abp.Runtime.Session;
 using Abp.UI;
 using Abp.Web.Models;
 using Microsoft.AspNetCore.Mvc;
-using Pgpg.Authorization.Users;
-using Pgpg.Friendships;
-using Pgpg.IO;
-using Pgpg.Net.MimeTypes;
-using Pgpg.Storage;
+using Pgpg.Application.IO;
+using Pgpg.Application.Net.MimeTypes;
+using Pgpg.Core;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.Friendships;
+using Pgpg.Core.Storage;
 
 namespace Pgpg.Web.Controllers
 {

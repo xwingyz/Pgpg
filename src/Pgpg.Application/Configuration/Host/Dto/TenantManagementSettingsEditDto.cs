@@ -1,4 +1,4 @@
-namespace Pgpg.Configuration.Host.Dto
+namespace Pgpg.Application.Configuration.Host.Dto
 {
     public class TenantManagementSettingsEditDto
     {

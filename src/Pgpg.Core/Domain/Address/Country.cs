@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Abp.Domain.Entities;
 
-namespace Pgpg.Domain.Address
+namespace Pgpg.Core.Domain.Address
 {
     [Table("Country")]
     public class Country: Entity,IPassivable

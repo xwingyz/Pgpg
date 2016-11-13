@@ -11,11 +11,12 @@ using Abp.Domain.Uow;
 using Abp.Extensions;
 using Abp.Linq.Extensions;
 using Abp.Runtime.Security;
-using Pgpg.Authorization;
-using Pgpg.Editions.Dto;
-using Pgpg.MultiTenancy.Dto;
+using Pgpg.Application.Editions.Dto;
+using Pgpg.Application.MultiTenancy.Dto;
+using Pgpg.Core.Authorization;
+using Pgpg.Core.MultiTenancy;
 
-namespace Pgpg.MultiTenancy
+namespace Pgpg.Application.MultiTenancy
 {
     [AbpAuthorize(AppPermissions.Pages_Tenants)]
     public class TenantAppService : PgpgAppServiceBase, ITenantAppService

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Abp.Notifications;
 
-namespace Pgpg.Notifications.Dto
+namespace Pgpg.Application.Notifications.Dto
 {
     public class NotificationSubscriptionDto
     {

@@ -1,10 +1,10 @@
 ﻿using System.Linq;
 using Abp;
 using Abp.Authorization;
-using Pgpg.Authorization;
-using Pgpg.Tenants.Dashboard.Dto;
+using Pgpg.Application.Tenants.Dashboard.Dto;
+using Pgpg.Core.Authorization;
 
-namespace Pgpg.Tenants.Dashboard
+namespace Pgpg.Application.Tenants.Dashboard
 {
     [AbpAuthorize(AppPermissions.Pages_Tenant_Dashboard)]
     public class TenantDashboardAppService : PgpgAppServiceBase, ITenantDashboardAppService

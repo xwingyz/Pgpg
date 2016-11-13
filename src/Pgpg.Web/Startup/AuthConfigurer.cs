@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Text;
-using Microsoft.AspNet.Identity;
 using Abp.Configuration;
 using Abp.Dependency;
+using Abp.Extensions;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Microsoft.IdentityModel.Tokens;
-using Pgpg.Configuration;
+using Pgpg.Core.Configuration;
 using Pgpg.Web.Authentication.JwtBearer;
-using Abp.Extensions;
 
 namespace Pgpg.Web.Startup
 {
@@ -78,6 +78,21 @@ namespace Pgpg.Web.Startup
             if (bool.Parse(configuration["Authentication:JwtBearer:IsEnabled"]))
             {
                 ConfigureJwtBearerAuthentication(app, configuration);
+            }
+
+            if (bool.Parse(configuration["Authentication:QQConnect:IsEnabled"]))
+            {
+                app.UseQQConnectAuthentication(CreateQQConnectAuthOptions(configuration));
+            }
+
+            if (bool.Parse(configuration["Authentication:WeChat:IsEnabled"]))
+            {
+                app.UseWeChatAuthentication(CreateWeChatAuthOptions(configuration));
+            }
+
+            if (bool.Parse(configuration["Authentication:WeiBo:IsEnabled"]))
+            {
+                app.UseWeiBoAuthentication(CreateWeiBoAuthOptions(configuration));
             }
         }
 
@@ -190,6 +205,41 @@ namespace Pgpg.Web.Startup
                 SigningCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256),
                 Expiration = TimeSpan.FromDays(1)
             }));
+        }
+
+        private static QQConnectOptions CreateQQConnectAuthOptions(IConfiguration configuration)
+        {
+            var options = new QQConnectOptions
+            {
+                AppId = configuration["Authentication:QQConnect:AppId"],
+                AppKey = configuration["Authentication:QQConnect:AppKey"], 
+                SignInScheme = AuthenticationScheme
+            };
+
+            return options;
+        }
+
+        private static WeChatOptions CreateWeChatAuthOptions(IConfiguration configuration)
+        {
+            var options = new WeChatOptions
+            {
+                AppId = configuration["Authentication:WeChat:AppId"],
+                AppSecret = configuration["Authentication:WeChat:AppSecret"],
+                SignInScheme = AuthenticationScheme
+            };
+           
+            return options;
+        }
+        private static WeiBoOptions CreateWeiBoAuthOptions(IConfiguration configuration)
+        {
+            var options = new WeiBoOptions
+            {
+                AppKey = configuration["Authentication:WeiBo:AppKey"],
+                AppSecret = configuration["Authentication:WeiBo:AppSecret"],
+                SignInScheme = AuthenticationScheme
+            };
+
+            return options;
         }
     }
 }

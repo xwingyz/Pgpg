@@ -1,5 +1,5 @@
 ﻿using Abp.AutoMapper;
-using Pgpg.Editions.Dto;
+using Pgpg.Application.Editions.Dto;
 using Pgpg.Web.Areas.Admin.Models.Common;
 
 namespace Pgpg.Web.Areas.Admin.Models.Editions

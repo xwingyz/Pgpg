@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Pgpg.Authorization.Users.Dto
+namespace Pgpg.Application.Authorization.Users.Dto
 {
     public class LinkToUserInput
     {

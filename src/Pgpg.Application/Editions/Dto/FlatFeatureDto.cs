@@ -2,7 +2,7 @@ using Abp.Application.Features;
 using Abp.AutoMapper;
 using Abp.UI.Inputs;
 
-namespace Pgpg.Editions.Dto
+namespace Pgpg.Application.Editions.Dto
 {
     [AutoMapFrom(typeof(Feature))]
     public class FlatFeatureDto

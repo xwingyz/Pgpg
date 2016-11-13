@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Abp.Authorization.Users;
 using Abp.Domain.Entities;
+using Pgpg.Core.Authorization.Users;
 
-namespace Pgpg.Authorization.Users.Dto
+namespace Pgpg.Application.Authorization.Users.Dto
 {
     //Mapped to/from User in CustomDtoMapper
     public class UserEditDto : IPassivable

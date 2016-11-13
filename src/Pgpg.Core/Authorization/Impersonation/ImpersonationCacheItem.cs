@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Pgpg.Authorization.Impersonation
+namespace Pgpg.Core.Authorization.Impersonation
 {
     [Serializable]
     public class ImpersonationCacheItem

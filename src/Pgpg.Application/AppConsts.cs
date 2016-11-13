@@ -1,4 +1,4 @@
-﻿namespace Pgpg
+﻿namespace Pgpg.Application
 {
     /// <summary>
     /// Some consts used in the application.

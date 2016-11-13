@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Pgpg.Authorization;
-using Pgpg.Authorization.Permissions;
-using Pgpg.Authorization.Roles;
+using Pgpg.Application.Authorization.Permissions;
+using Pgpg.Application.Authorization.Roles;
+using Pgpg.Core.Authorization;
 using Pgpg.Web.Areas.Admin.Models.Roles;
 using Pgpg.Web.Controllers;
 

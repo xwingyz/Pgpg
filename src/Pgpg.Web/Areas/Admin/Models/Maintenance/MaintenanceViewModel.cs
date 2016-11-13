@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Pgpg.Caching.Dto;
+using Pgpg.Application.Caching.Dto;
 
 namespace Pgpg.Web.Areas.Admin.Models.Maintenance
 {

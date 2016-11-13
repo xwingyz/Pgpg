@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Pgpg.Friendships.Cache
+namespace Pgpg.Core.Friendships.Cache
 {
     public class UserWithFriendsCacheItem
     {

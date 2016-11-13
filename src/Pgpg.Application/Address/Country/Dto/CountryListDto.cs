@@ -1,9 +1,9 @@
 using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 
-namespace Pgpg.Address.Country.Dto
+namespace Pgpg.Application.Address.Country.Dto
 {
-    [AutoMap(typeof(Domain.Address.Country))]
+    [AutoMap(typeof(Core.Domain.Address.Country))]
     public class CountryListDto : EntityDto
     {
         public string Name { get; set; }

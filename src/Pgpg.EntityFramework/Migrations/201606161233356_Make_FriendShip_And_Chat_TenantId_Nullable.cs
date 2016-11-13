@@ -1,8 +1,7 @@
-namespace Pgpg.Migrations
+using System.Data.Entity.Migrations;
+
+namespace Pgpg.EntityFramework.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
     public partial class Make_FriendShip_And_Chat_TenantId_Nullable : DbMigration
     {
         public override void Up()

@@ -1,6 +1,6 @@
 using System.Data.Entity.Migrations;
 
-namespace Pgpg.Migrations
+namespace Pgpg.EntityFramework.Migrations
 {
     public partial class UserLogin_Property_Restrictions : DbMigration
     {

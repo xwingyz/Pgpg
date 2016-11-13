@@ -1,8 +1,7 @@
-namespace Pgpg.Migrations
-{
-    using System;
-    using System.Data.Entity.Migrations;
+using System.Data.Entity.Migrations;
 
+namespace Pgpg.EntityFramework.Migrations
+{
     public partial class Create_Indexes_For_Edition_Tables : DbMigration
     {
         public override void Up()

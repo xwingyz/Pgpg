@@ -3,7 +3,7 @@ using Abp.Authorization.Users;
 using Abp.Extensions;
 using Microsoft.AspNet.Identity;
 
-namespace Pgpg.Authorization.Users
+namespace Pgpg.Core.Authorization.Users
 {
     /// <summary>
     /// Represents a user in the system.
@@ -17,6 +17,20 @@ namespace Pgpg.Authorization.Users
         public virtual Guid? ProfilePictureId { get; set; }
 
         public virtual bool ShouldChangePasswordOnNextLogin { get; set; }
+
+        /// <summary>
+        /// 昵称
+        /// </summary>
+        public string NickName { get; set; }
+
+        /// <summary>
+        /// 生日
+        /// </summary>
+        public DateTime? Birthday { get; set; }
+        /// <summary>
+        /// 性别
+        /// </summary>
+        public int Sex { get; set; }
 
         //Can add application specific user properties here
 

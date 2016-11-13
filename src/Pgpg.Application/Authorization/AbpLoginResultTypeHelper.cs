@@ -2,8 +2,9 @@
 using Abp.Authorization.Users;
 using Abp.Dependency;
 using Abp.UI;
+using Pgpg.Core;
 
-namespace Pgpg.Authorization
+namespace Pgpg.Application.Authorization
 {
     public class AbpLoginResultTypeHelper : PgpgServiceBase, ITransientDependency
     {

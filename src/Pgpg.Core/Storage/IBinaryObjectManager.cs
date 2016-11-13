@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Pgpg.Storage
+namespace Pgpg.Core.Storage
 {
     public interface IBinaryObjectManager
     {

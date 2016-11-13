@@ -3,10 +3,10 @@ using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.Authorization;
 using Abp.Runtime.Caching;
-using Pgpg.Authorization;
-using Pgpg.Caching.Dto;
+using Pgpg.Application.Caching.Dto;
+using Pgpg.Core.Authorization;
 
-namespace Pgpg.Caching
+namespace Pgpg.Application.Caching
 {
     [AbpAuthorize(AppPermissions.Pages_Administration_Host_Maintenance)]
     public class CachingAppService : PgpgAppServiceBase, ICachingAppService

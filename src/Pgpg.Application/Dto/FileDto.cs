@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Pgpg.Dto
+namespace Pgpg.Application.Dto
 {
     public class FileDto
     {

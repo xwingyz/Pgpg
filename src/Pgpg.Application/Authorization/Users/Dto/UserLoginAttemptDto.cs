@@ -2,7 +2,7 @@
 using Abp.Authorization.Users;
 using Abp.AutoMapper;
 
-namespace Pgpg.Authorization.Users.Dto
+namespace Pgpg.Application.Authorization.Users.Dto
 {
 
     [AutoMap(typeof(UserLoginAttempt))]

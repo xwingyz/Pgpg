@@ -7,11 +7,12 @@ using Abp.MultiTenancy;
 using Abp.RealTime;
 using Abp.Runtime.Session;
 using Abp.UI;
-using Pgpg.Authorization.Users;
-using Pgpg.Chat;
-using Pgpg.Friendships.Dto;
+using Pgpg.Application.Friendships.Dto;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.Chat;
+using Pgpg.Core.Friendships;
 
-namespace Pgpg.Friendships
+namespace Pgpg.Application.Friendships
 {
     [AbpAuthorize]
     public class FriendshipAppService : PgpgAppServiceBase, IFriendshipAppService

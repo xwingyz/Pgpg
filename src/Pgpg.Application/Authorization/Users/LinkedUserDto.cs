@@ -1,7 +1,7 @@
 ﻿using System;
 using Abp.Application.Services.Dto;
 
-namespace Pgpg.Authorization.Users
+namespace Pgpg.Application.Authorization.Users
 {
     public class LinkedUserDto : EntityDto<long>
     {

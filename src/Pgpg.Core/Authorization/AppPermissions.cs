@@ -1,4 +1,4 @@
-﻿namespace Pgpg.Authorization
+﻿namespace Pgpg.Core.Authorization
 {
     /// <summary>
     /// Defines string constants for application's permission names.

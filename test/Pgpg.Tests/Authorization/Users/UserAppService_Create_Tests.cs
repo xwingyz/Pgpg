@@ -3,9 +3,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Abp.Collections.Extensions;
 using Abp.UI;
-using Pgpg.Authorization.Roles;
-using Pgpg.Authorization.Users.Dto;
-using Pgpg.MultiTenancy;
+using Pgpg.Application.Authorization.Users.Dto;
+using Pgpg.Core.Authorization.Roles;
+using Pgpg.Core.MultiTenancy;
 using Shouldly;
 using Xunit;
 

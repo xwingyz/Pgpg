@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Abp.Application.Services.Dto;
 
-namespace Pgpg.Dto
+namespace Pgpg.Application.Dto
 {
     public class PagedAndFilteredInputDto : IPagedResultRequest
     {

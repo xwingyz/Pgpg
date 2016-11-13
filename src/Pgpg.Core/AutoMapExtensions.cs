@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Abp.AutoMapper;
-namespace Pgpg
+
+namespace Pgpg.Core
 {
     public static class AutoMapExtensions
     {

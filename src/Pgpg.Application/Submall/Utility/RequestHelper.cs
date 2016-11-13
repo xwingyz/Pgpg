@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Pgpg.Submall.Utility
+namespace Pgpg.Application.Submall.Utility
 {
     public class RequestHelper
     {

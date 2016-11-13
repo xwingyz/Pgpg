@@ -1,7 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using Abp.AutoMapper;
+using Pgpg.Core.Authorization.Roles;
 
-namespace Pgpg.Authorization.Roles.Dto
+namespace Pgpg.Application.Authorization.Roles.Dto
 {
     [AutoMap(typeof(Role))]
     public class RoleEditDto

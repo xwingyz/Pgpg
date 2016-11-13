@@ -1,6 +1,6 @@
 ﻿using Abp.Runtime.Caching;
 
-namespace Pgpg.Authorization.Impersonation
+namespace Pgpg.Core.Authorization.Impersonation
 {
     public static class ImpersonationCacheManagerExtensions
     {

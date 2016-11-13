@@ -2,9 +2,9 @@
 using Abp.Dependency;
 using Castle.Core.Logging;
 using Microsoft.AspNet.Identity;
-using Pgpg.Smsing;
+using Pgpg.Core.Smsing;
 
-namespace Pgpg.Identity
+namespace Pgpg.Core.Identity
 {
     public class IdentitySmsMessageService : IIdentityMessageService, ITransientDependency
     {

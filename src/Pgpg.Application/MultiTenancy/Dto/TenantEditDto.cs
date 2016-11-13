@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
+using Pgpg.Core.MultiTenancy;
 
-namespace Pgpg.MultiTenancy.Dto
+namespace Pgpg.Application.MultiTenancy.Dto
 {
     [AutoMap(typeof (Tenant))]
     public class TenantEditDto : EntityDto

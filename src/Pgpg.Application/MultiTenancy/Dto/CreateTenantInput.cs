@@ -1,8 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using Abp.MultiTenancy;
-using Pgpg.Authorization.Users;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.MultiTenancy;
 
-namespace Pgpg.MultiTenancy.Dto
+namespace Pgpg.Application.MultiTenancy.Dto
 {
     public class CreateTenantInput
     {

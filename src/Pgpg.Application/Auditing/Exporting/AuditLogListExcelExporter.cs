@@ -2,11 +2,11 @@
 using Abp.Extensions;
 using Abp.Runtime.Session;
 using Abp.Timing.Timezone;
-using Pgpg.Auditing.Dto;
-using Pgpg.DataExporting.Excel.EpPlus;
-using Pgpg.Dto;
+using Pgpg.Application.Auditing.Dto;
+using Pgpg.Application.DataExporting.Excel.EpPlus;
+using Pgpg.Application.Dto;
 
-namespace Pgpg.Auditing.Exporting
+namespace Pgpg.Application.Auditing.Exporting
 {
     public class AuditLogListExcelExporter : EpPlusExcelExporterBase, IAuditLogListExcelExporter
     {

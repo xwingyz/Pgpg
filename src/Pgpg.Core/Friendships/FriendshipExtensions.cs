@@ -1,6 +1,6 @@
 ﻿using Abp;
 
-namespace Pgpg.Friendships
+namespace Pgpg.Core.Friendships
 {
     public static class FriendshipExtensions
     {

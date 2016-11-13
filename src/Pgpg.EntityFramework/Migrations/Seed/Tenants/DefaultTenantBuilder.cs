@@ -1,8 +1,9 @@
 ﻿using System.Linq;
-using Pgpg.Editions;
-using Pgpg.EntityFramework;
+using Pgpg.Core.Editions;
+using Pgpg.Core.MultiTenancy;
+using Pgpg.EntityFramework.EntityFramework;
 
-namespace Pgpg.Migrations.Seed.Tenants
+namespace Pgpg.EntityFramework.Migrations.Seed.Tenants
 {
     public class DefaultTenantBuilder
     {
@@ -22,10 +23,10 @@ namespace Pgpg.Migrations.Seed.Tenants
         {
             //Default tenant
 
-            var defaultTenant = _context.Tenants.FirstOrDefault(t => t.TenancyName == MultiTenancy.Tenant.DefaultTenantName);
+            var defaultTenant = _context.Tenants.FirstOrDefault(t => t.TenancyName == Tenant.DefaultTenantName);
             if (defaultTenant == null)
             {
-                defaultTenant = new MultiTenancy.Tenant(MultiTenancy.Tenant.DefaultTenantName, MultiTenancy.Tenant.DefaultTenantName);
+                defaultTenant = new Tenant(Tenant.DefaultTenantName, Tenant.DefaultTenantName);
 
                 var defaultEdition = _context.Editions.FirstOrDefault(e => e.Name == EditionManager.DefaultEditionName);
                 if (defaultEdition != null)

@@ -1,4 +1,4 @@
-﻿namespace Pgpg.Emailing
+﻿namespace Pgpg.Core.Emailing
 {
     public interface IEmailTemplateProvider
     {

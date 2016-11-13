@@ -1,7 +1,7 @@
 ﻿using Abp.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Pgpg.Authorization;
-using Pgpg.Caching;
+using Pgpg.Application.Caching;
+using Pgpg.Core.Authorization;
 using Pgpg.Web.Areas.Admin.Models.Maintenance;
 using Pgpg.Web.Controllers;
 

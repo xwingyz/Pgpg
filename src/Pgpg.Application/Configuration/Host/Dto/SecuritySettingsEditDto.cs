@@ -1,6 +1,6 @@
-﻿using Pgpg.Security;
+﻿using Pgpg.Core.Security;
 
-namespace Pgpg.Configuration.Host.Dto
+namespace Pgpg.Application.Configuration.Host.Dto
 {
     public class SecuritySettingsEditDto
     {

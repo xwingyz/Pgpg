@@ -1,10 +1,10 @@
 using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
-using Pgpg.Auditing.Dto;
-using Pgpg.Dto;
+using Pgpg.Application.Auditing.Dto;
+using Pgpg.Application.Dto;
 
-namespace Pgpg.Auditing
+namespace Pgpg.Application.Auditing
 {
     public interface IAuditLogAppService : IApplicationService
     {

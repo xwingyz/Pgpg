@@ -1,7 +1,6 @@
 ﻿@using System.Globalization
 @using Abp.Extensions
 @using Abp.MultiTenancy
-@using Pgpg.MultiTenancy
 @model Pgpg.Web.Models.Account.LoginFormViewModel
 @section Scripts
 {
@@ -103,7 +102,7 @@
                         <a class="social-login-icon social-icon-color @getSocialIconClass(p.DisplayName)"
                            title="@p.DisplayName"
                            data-provider="@p.DisplayName"
-                           href="javascript:;"></a>
+                           href="javascript:;">@p.DisplayName</a>
                     </li>
                 }
             </form>

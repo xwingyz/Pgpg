@@ -1,10 +1,9 @@
-namespace Pgpg.Migrations
+using System.Collections.Generic;
+using System.Data.Entity.Infrastructure.Annotations;
+using System.Data.Entity.Migrations;
+
+namespace Pgpg.EntityFramework.Migrations
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Data.Entity.Infrastructure.Annotations;
-    using System.Data.Entity.Migrations;
-    
     public partial class Added_TenantId_To_BinaryObject : DbMigration
     {
         public override void Up()

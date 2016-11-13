@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Pgpg.Auditing.Dto;
-using Pgpg.Dto;
+using Pgpg.Application.Auditing.Dto;
+using Pgpg.Application.Dto;
 
-namespace Pgpg.Auditing.Exporting
+namespace Pgpg.Application.Auditing.Exporting
 {
     public interface IAuditLogListExcelExporter
     {

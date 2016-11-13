@@ -1,10 +1,11 @@
 using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Abp.Organizations;
+using Pgpg.Core.Domain.Organizations;
 
-namespace Pgpg.Organizations.Dto
+namespace Pgpg.Application.Organizations.Dto
 {
-    [AutoMapFrom(typeof(OrganizationUnit))]
+    [AutoMapFrom(typeof(OrganizationUnit), typeof(PgpgOrganizationUnit))]
     public class OrganizationUnitDto : AuditedEntityDto<long>
     {
         public long? ParentId { get; set; }

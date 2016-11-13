@@ -3,10 +3,10 @@ using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using Abp.MultiTenancy;
 using Abp.Runtime.Caching;
-using Pgpg.Authorization.Users;
-using Pgpg.MultiTenancy;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.MultiTenancy;
 
-namespace Pgpg.Editions
+namespace Pgpg.Core.Editions
 {
     public class FeatureValueStore : AbpFeatureValueStore<Tenant, User>
     {

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Pgpg.Submall.Lib
+namespace Pgpg.Application.Submall.Lib
 {
     public abstract class SendBase
     {

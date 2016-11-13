@@ -10,8 +10,8 @@ using Abp.Web.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using Pgpg.Authorization;
-using Pgpg.Net.MimeTypes;
+using Pgpg.Application.Authorization;
+using Pgpg.Application.Net.MimeTypes;
 
 namespace Pgpg.Web.Authentication.JwtBearer
 {

@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Abp.Application.Services;
-using Pgpg.Configuration.Host.Dto;
+using Pgpg.Application.Configuration.Host.Dto;
 
-namespace Pgpg.Configuration.Host
+namespace Pgpg.Application.Configuration.Host
 {
     public interface IHostSettingsAppService : IApplicationService
     {

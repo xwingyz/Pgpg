@@ -15,12 +15,13 @@ using Abp.TestBase;
 using Castle.MicroKernel.Registration;
 using Effort;
 using EntityFramework.DynamicFilters;
-using Pgpg.Authorization.Roles;
-using Pgpg.Authorization.Users;
+using Pgpg.Core.Authorization.Roles;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.MultiTenancy;
 using Pgpg.EntityFramework;
-using Pgpg.Migrations.Seed.Host;
-using Pgpg.Migrations.Seed.Tenants;
-using Pgpg.MultiTenancy;
+using Pgpg.EntityFramework.EntityFramework;
+using Pgpg.EntityFramework.Migrations.Seed.Host;
+using Pgpg.EntityFramework.Migrations.Seed.Tenants;
 using Pgpg.Tests.TestDatas;
 
 namespace Pgpg.Tests

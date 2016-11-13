@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
-using Pgpg.Notifications.Dto;
+using Pgpg.Application.Notifications.Dto;
 
-namespace Pgpg.Notifications
+namespace Pgpg.Application.Notifications
 {
     public interface INotificationAppService : IApplicationService
     {

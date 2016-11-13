@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Abp.Application.Services;
-using Pgpg.Friendships.Dto;
+using Pgpg.Application.Friendships.Dto;
 
-namespace Pgpg.Friendships
+namespace Pgpg.Application.Friendships
 {
     public interface IFriendshipAppService : IApplicationService
     {

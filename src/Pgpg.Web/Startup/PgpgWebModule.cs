@@ -20,6 +20,9 @@ using Abp.Hangfire.Configuration;
 using Hangfire;
 using Abp.Reflection.Extensions;
 using Abp.Zero.AspNetCore;
+using Pgpg.Application;
+using Pgpg.Core;
+using Pgpg.EntityFramework.EntityFramework;
 
 namespace Pgpg.Web.Startup
 {

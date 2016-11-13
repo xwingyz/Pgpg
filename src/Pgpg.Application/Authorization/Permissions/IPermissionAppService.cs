@@ -1,8 +1,8 @@
 ﻿using Abp.Application.Services;
 using Abp.Application.Services.Dto;
-using Pgpg.Authorization.Permissions.Dto;
+using Pgpg.Application.Authorization.Permissions.Dto;
 
-namespace Pgpg.Authorization.Permissions
+namespace Pgpg.Application.Authorization.Permissions
 {
     public interface IPermissionAppService : IApplicationService
     {

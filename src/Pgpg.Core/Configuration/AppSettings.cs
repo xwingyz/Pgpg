@@ -1,4 +1,4 @@
-namespace Pgpg.Configuration
+namespace Pgpg.Core.Configuration
 {
     /// <summary>
     /// Defines string constants for setting names in the application.

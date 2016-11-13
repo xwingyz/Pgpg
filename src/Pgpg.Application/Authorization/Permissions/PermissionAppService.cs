@@ -3,9 +3,9 @@ using System.Linq;
 using Abp.Application.Services.Dto;
 using Abp.Authorization;
 using Abp.AutoMapper;
-using Pgpg.Authorization.Permissions.Dto;
+using Pgpg.Application.Authorization.Permissions.Dto;
 
-namespace Pgpg.Authorization.Permissions
+namespace Pgpg.Application.Authorization.Permissions
 {
     public class PermissionAppService : PgpgAppServiceBase, IPermissionAppService
     {

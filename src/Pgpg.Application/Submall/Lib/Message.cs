@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using Pgpg.Submall.Utility;
+using Pgpg.Application.Submall.Utility;
 
-namespace Pgpg.Submall.Lib
+namespace Pgpg.Application.Submall.Lib
 {
     public class Message : ISender
     {

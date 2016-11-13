@@ -1,10 +1,10 @@
 ﻿using System;
 using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
-using Pgpg.Authorization.Users;
-using Pgpg.Friendships;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.Friendships;
 
-namespace Pgpg.Chat.Dto
+namespace Pgpg.Application.Chat.Dto
 {
     [AutoMapFrom(typeof(User))]
     public class ChatUserDto : EntityDto<long>

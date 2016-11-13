@@ -6,11 +6,11 @@ using Abp.Dependency;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using Abp.Zero.Configuration;
-using Pgpg.Authorization.Roles;
-using Pgpg.Authorization.Users;
-using Pgpg.MultiTenancy;
+using Pgpg.Core.Authorization.Roles;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.MultiTenancy;
 
-namespace Pgpg.Authorization
+namespace Pgpg.Application.Authorization
 {
     public class LogInManager : AbpLogInManager<Tenant, Role, User>
     {

@@ -1,8 +1,8 @@
 using Abp.Application.Features;
 using Abp.UI;
-using Pgpg.Features;
+using Pgpg.Core.Features;
 
-namespace Pgpg.Chat
+namespace Pgpg.Core.Chat
 {
     public class ChatFeatureChecker : PgpgDomainServiceBase, IChatFeatureChecker
     {

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Abp.Domain.Entities;
 
-namespace Pgpg.Storage
+namespace Pgpg.Core.Storage
 {
     [Table("AppBinaryObjects")]
     public class BinaryObject : Entity<Guid>, IMayHaveTenant

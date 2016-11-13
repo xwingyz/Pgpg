@@ -11,7 +11,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Pgpg.Authorization;
 using Pgpg.Web.Configuration;
 using Pgpg.Web.MultiTenancy;
 using Pgpg.Web.Startup.Owin;

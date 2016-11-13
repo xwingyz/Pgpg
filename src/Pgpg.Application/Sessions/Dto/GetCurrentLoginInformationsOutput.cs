@@ -1,4 +1,4 @@
-﻿namespace Pgpg.Sessions.Dto
+﻿namespace Pgpg.Application.Sessions.Dto
 {
     public class GetCurrentLoginInformationsOutput
     {

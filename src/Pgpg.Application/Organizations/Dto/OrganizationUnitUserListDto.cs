@@ -1,9 +1,9 @@
 ﻿using System;
 using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
-using Pgpg.Authorization.Users;
+using Pgpg.Core.Authorization.Users;
 
-namespace Pgpg.Organizations.Dto
+namespace Pgpg.Application.Organizations.Dto
 {
     [AutoMapFrom(typeof(User))]
     public class OrganizationUnitUserListDto : EntityDto<long>

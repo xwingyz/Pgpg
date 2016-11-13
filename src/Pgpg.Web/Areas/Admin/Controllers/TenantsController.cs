@@ -3,10 +3,11 @@ using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Pgpg.Authorization;
-using Pgpg.Common;
-using Pgpg.Editions;
-using Pgpg.MultiTenancy;
+using Pgpg.Application.Common;
+using Pgpg.Application.Editions;
+using Pgpg.Application.MultiTenancy;
+using Pgpg.Core.Authorization;
+using Pgpg.Core.MultiTenancy;
 using Pgpg.Web.Areas.Admin.Models.Tenants;
 using Pgpg.Web.Controllers;
 

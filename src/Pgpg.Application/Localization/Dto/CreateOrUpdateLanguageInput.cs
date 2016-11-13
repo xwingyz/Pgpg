@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Pgpg.Localization.Dto
+namespace Pgpg.Application.Localization.Dto
 {
     public class CreateOrUpdateLanguageInput
     {

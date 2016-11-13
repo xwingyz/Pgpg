@@ -1,6 +1,6 @@
 using System.Data.Entity.Migrations;
 
-namespace Pgpg.Migrations
+namespace Pgpg.EntityFramework.Migrations
 {
     public partial class Create_Indexes_For_Module_Zero_Tables : DbMigration
     {

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Pgpg.Authorization.Users;
+using Pgpg.Core.Authorization.Users;
 
-namespace Pgpg.Configuration.Host.Dto
+namespace Pgpg.Application.Configuration.Host.Dto
 {
     public class SendTestSmsInput
     {

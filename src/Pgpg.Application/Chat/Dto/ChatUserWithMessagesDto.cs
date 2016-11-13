@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Pgpg.Chat.Dto
+namespace Pgpg.Application.Chat.Dto
 {
     public class ChatUserWithMessagesDto : ChatUserDto
     {

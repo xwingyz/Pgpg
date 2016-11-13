@@ -4,12 +4,12 @@ using Abp.Configuration;
 using Abp.Runtime.Session;
 using Abp.Timing;
 using Microsoft.AspNetCore.Mvc;
-using Pgpg.Authorization;
-using Pgpg.Authorization.Users;
-using Pgpg.Configuration.Host;
-using Pgpg.Editions;
-using Pgpg.Timing;
-using Pgpg.Timing.Dto;
+using Pgpg.Application.Configuration.Host;
+using Pgpg.Application.Editions;
+using Pgpg.Application.Timing;
+using Pgpg.Application.Timing.Dto;
+using Pgpg.Core.Authorization;
+using Pgpg.Core.Authorization.Users;
 using Pgpg.Web.Areas.Admin.Models.HostSettings;
 using Pgpg.Web.Controllers;
 

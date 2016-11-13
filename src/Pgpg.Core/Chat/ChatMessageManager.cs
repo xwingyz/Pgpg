@@ -7,11 +7,11 @@ using Abp.Domain.Uow;
 using Abp.MultiTenancy;
 using Abp.RealTime;
 using Abp.UI;
-using Pgpg.Authorization.Users;
-using Pgpg.Friendships;
-using Pgpg.Friendships.Cache;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.Friendships;
+using Pgpg.Core.Friendships.Cache;
 
-namespace Pgpg.Chat
+namespace Pgpg.Core.Chat
 {
     [AbpAuthorize]
     public class ChatMessageManager : PgpgDomainServiceBase, IChatMessageManager

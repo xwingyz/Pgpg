@@ -1,6 +1,6 @@
 using Abp.Runtime.Session;
 
-namespace Pgpg.MultiTenancy
+namespace Pgpg.Core.MultiTenancy
 {
     /// <summary>
     /// Used to get current tenant id where <see cref="IAbpSession"/> is not usable.

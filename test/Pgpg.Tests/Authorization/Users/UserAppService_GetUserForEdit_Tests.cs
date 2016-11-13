@@ -2,8 +2,8 @@
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.Extensions;
-using Pgpg.Authorization.Roles;
-using Pgpg.Authorization.Users;
+using Pgpg.Core.Authorization.Roles;
+using Pgpg.Core.Authorization.Users;
 using Shouldly;
 using Xunit;
 

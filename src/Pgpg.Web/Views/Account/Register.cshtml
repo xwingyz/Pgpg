@@ -1,7 +1,7 @@
 ﻿@model Pgpg.Web.Models.Account.RegisterViewModel
 @using Abp.Extensions
 @using Abp.Json
-@using Pgpg.MultiTenancy
+@using Pgpg.Core.MultiTenancy
 @addTagHelper *, PaulMiami.AspNetCore.Mvc.Recaptcha
 @section Scripts
 {
@@ -56,15 +56,15 @@
     </p>
     <div class="form-group">
         <label class="control-label visible-ie8 visible-ie9">@L("Name")</label>
-        <input class="form-control placeholder-no-fix" type="text" placeholder="@L("Name")" name="Name" required value="@Model.Name" maxlength="@Pgpg.Authorization.Users.User.MaxNameLength" />
+        <input class="form-control placeholder-no-fix" type="text" placeholder="@L("Name")" name="Name" required value="@Model.Name" maxlength="@Pgpg.Core.Authorization.Users.User.MaxNameLength" />
     </div>
     <div class="form-group">
         <label class="control-label visible-ie8 visible-ie9">@L("Surname")</label>
-        <input class="form-control placeholder-no-fix" type="text" placeholder="@L("Surname")" name="Surname" required value="@Model.Surname" maxlength="@Pgpg.Authorization.Users.User.MaxSurnameLength" />
+        <input class="form-control placeholder-no-fix" type="text" placeholder="@L("Surname")" name="Surname" required value="@Model.Surname" maxlength="@Pgpg.Core.Authorization.Users.User.MaxSurnameLength" />
     </div>
     <div class="form-group">
         <label class="control-label visible-ie8 visible-ie9">@L("EmailAddress")</label>
-        <input class="form-control placeholder-no-fix" type="email" placeholder="@L("EmailAddress")" name="EmailAddress" required value="@Model.EmailAddress" maxlength="@Pgpg.Authorization.Users.User.MaxEmailAddressLength" />
+        <input class="form-control placeholder-no-fix" type="email" placeholder="@L("EmailAddress")" name="EmailAddress" required value="@Model.EmailAddress" maxlength="@Pgpg.Core.Authorization.Users.User.MaxEmailAddressLength" />
     </div>
 
     @if (!Model.IsExternalLogin)
@@ -74,7 +74,7 @@
         </p>
         <div class="form-group">
             <label class="control-label visible-ie8 visible-ie9">@L("UserName")</label>
-            <input class="form-control placeholder-no-fix input-ltr" type="text" autocomplete="off" placeholder="@L("UserName")" name="UserName" value="@Model.UserName" required maxlength="@Pgpg.Authorization.Users.User.MaxUserNameLength" />
+            <input class="form-control placeholder-no-fix input-ltr" type="text" autocomplete="off" placeholder="@L("UserName")" name="UserName" value="@Model.UserName" required maxlength="@Pgpg.Core.Authorization.Users.User.MaxUserNameLength" />
         </div>
         <div class="form-group">
             <label class="control-label visible-ie8 visible-ie9">@L("Password")</label>

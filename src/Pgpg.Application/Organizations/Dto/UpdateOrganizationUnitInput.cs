@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Abp.Organizations;
 
-namespace Pgpg.Organizations.Dto
+namespace Pgpg.Application.Organizations.Dto
 {
     public class UpdateOrganizationUnitInput
     {

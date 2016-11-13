@@ -5,9 +5,9 @@ using Abp.Auditing;
 using Abp.Localization;
 using Abp.Timing;
 using Abp.Zero;
-using Pgpg.Auditing;
-using Pgpg.Auditing.Dto;
-using Pgpg.Authorization.Users;
+using Pgpg.Application.Auditing;
+using Pgpg.Application.Auditing.Dto;
+using Pgpg.Core.Authorization.Users;
 using Shouldly;
 using Xunit;
 

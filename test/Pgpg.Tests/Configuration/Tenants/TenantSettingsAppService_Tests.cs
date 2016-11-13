@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Abp.Configuration;
-using Pgpg.Configuration;
-using Pgpg.Configuration.Tenants;
+using Pgpg.Application.Configuration.Tenants;
+using Pgpg.Core.Configuration;
 using Shouldly;
 using Xunit;
 

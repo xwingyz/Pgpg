@@ -1,4 +1,4 @@
-﻿namespace Pgpg.Authorization.Roles
+﻿namespace Pgpg.Core.Authorization.Roles
 {
     public static class StaticRoleNames
     {

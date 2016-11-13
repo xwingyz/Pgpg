@@ -1,8 +1,7 @@
-namespace Pgpg.Migrations
+using System.Data.Entity.Migrations;
+
+namespace Pgpg.EntityFramework.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
     public partial class Changed_Code_MaxLength_Of_OrganizationUnit : DbMigration
     {
         public override void Up()

@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using Abp.AutoMapper;
-using Pgpg.Authorization.Users.Dto;
+using Pgpg.Application.Authorization.Users.Dto;
 
 namespace Pgpg.Web.Areas.Admin.Models.Users
 {
@@ -9,7 +9,7 @@ namespace Pgpg.Web.Areas.Admin.Models.Users
     {
         public bool CanChangeUserName
         {
-            get { return User.UserName != Authorization.Users.User.AdminUserName; }
+            get { return User.UserName != Core.Authorization.Users.User.AdminUserName; }
         }
 
         public int AssignedRoleCount

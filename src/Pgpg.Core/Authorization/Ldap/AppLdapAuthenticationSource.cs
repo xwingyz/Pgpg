@@ -1,9 +1,9 @@
 ﻿using Abp.Zero.Ldap.Authentication;
 using Abp.Zero.Ldap.Configuration;
-using Pgpg.Authorization.Users;
-using Pgpg.MultiTenancy;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.MultiTenancy;
 
-namespace Pgpg.Authorization.Ldap
+namespace Pgpg.Core.Authorization.Ldap
 {
     public class AppLdapAuthenticationSource : LdapAuthenticationSource<Tenant, User>
     {

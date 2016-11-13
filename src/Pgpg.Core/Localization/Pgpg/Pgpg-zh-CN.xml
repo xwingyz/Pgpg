@@ -299,5 +299,10 @@
     <text name="CountryCode" value="代码" />
     <text name="CountryDeleteWarningMessage" value="国家 {0} 将被删除." />
     <text name="CountryAlreadyExists" value="该国家已经存在。" />
+  
+      <text name="Cities" value="城市管理" />
+			<text name="CreateCity" value="新增城市" />
+			<text name="EditCity" value="更新城市" />
+			<text name="DeleteCity" value="删除城市" />
   </texts>
 </localizationDictionary>

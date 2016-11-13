@@ -1,6 +1,6 @@
 ﻿using Abp.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Pgpg.Authorization;
+using Pgpg.Core.Authorization;
 using Pgpg.Web.Controllers;
 
 namespace Pgpg.Web.Areas.Admin.Controllers

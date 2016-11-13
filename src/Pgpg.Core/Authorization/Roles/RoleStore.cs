@@ -1,9 +1,9 @@
 ﻿using Abp.Authorization.Roles;
 using Abp.Authorization.Users;
 using Abp.Domain.Repositories;
-using Pgpg.Authorization.Users;
+using Pgpg.Core.Authorization.Users;
 
-namespace Pgpg.Authorization.Roles
+namespace Pgpg.Core.Authorization.Roles
 {
     public class RoleStore : AbpRoleStore<Role, User>
     {

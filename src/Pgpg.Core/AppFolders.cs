@@ -1,6 +1,6 @@
 ﻿using Abp.Dependency;
 
-namespace Pgpg
+namespace Pgpg.Core
 {
     public class AppFolders : IAppFolders, ISingletonDependency
     {

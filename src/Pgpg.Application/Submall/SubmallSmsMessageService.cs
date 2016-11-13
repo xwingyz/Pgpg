@@ -3,11 +3,11 @@ using System.Threading.Tasks;
 using Abp.Configuration;
 using Abp.Dependency;
 using Castle.Core.Logging;
-using Pgpg.Smsing;
-using Pgpg.Submall.Lib;
-using Pgpg.Validation;
+using Pgpg.Application.Submall.Lib;
+using Pgpg.Core.Smsing;
+using Pgpg.Core.Validation;
 
-namespace Pgpg.Submall
+namespace Pgpg.Application.Submall
 {
     public class SubmallSmsMessageService : SmsSenderBase, ITransientDependency
     {

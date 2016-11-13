@@ -3,7 +3,8 @@ using Abp.AspNetCore.Mvc.Authorization;
 using Abp.Auditing;
 using Abp.UI;
 using Microsoft.AspNetCore.Mvc;
-using Pgpg.Dto;
+using Pgpg.Application.Dto;
+using Pgpg.Core;
 
 namespace Pgpg.Web.Controllers
 {

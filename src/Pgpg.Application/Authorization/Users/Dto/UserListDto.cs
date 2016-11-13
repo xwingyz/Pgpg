@@ -5,8 +5,9 @@ using Abp.Authorization.Users;
 using Abp.AutoMapper;
 using Abp.Domain.Entities;
 using Abp.Domain.Entities.Auditing;
+using Pgpg.Core.Authorization.Users;
 
-namespace Pgpg.Authorization.Users.Dto
+namespace Pgpg.Application.Authorization.Users.Dto
 {
     [AutoMapFrom(typeof(User))]
     public class UserListDto : EntityDto<long>, IPassivable, IHasCreationTime

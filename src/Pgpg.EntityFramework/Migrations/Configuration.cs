@@ -4,11 +4,11 @@ using Abp.Events.Bus.Entities;
 using Abp.MultiTenancy;
 using Abp.Zero.EntityFramework;
 using EntityFramework.DynamicFilters;
-using Pgpg.EntityFramework;
-using Pgpg.Migrations.Seed.Host;
-using Pgpg.Migrations.Seed.Tenants;
+using Pgpg.EntityFramework.EntityFramework;
+using Pgpg.EntityFramework.Migrations.Seed.Host;
+using Pgpg.EntityFramework.Migrations.Seed.Tenants;
 
-namespace Pgpg.Migrations
+namespace Pgpg.EntityFramework.Migrations
 {
     public sealed class Configuration : DbMigrationsConfiguration<PgpgDbContext>, IMultiTenantSeed
     {

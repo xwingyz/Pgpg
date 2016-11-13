@@ -3,7 +3,7 @@ using System.Text;
 using Abp.Dependency;
 using Abp.IO.Extensions;
 
-namespace Pgpg.Emailing
+namespace Pgpg.Core.Emailing
 {
     public class EmailTemplateProvider : IEmailTemplateProvider, ITransientDependency
     {

@@ -4,7 +4,7 @@ using Abp.AutoMapper;
 using Abp.Domain.Repositories;
 using Abp.Organizations;
 using Microsoft.AspNetCore.Mvc;
-using Pgpg.Authorization;
+using Pgpg.Core.Authorization;
 using Pgpg.Web.Areas.Admin.Models.OrganizationUnits;
 using Pgpg.Web.Controllers;
 

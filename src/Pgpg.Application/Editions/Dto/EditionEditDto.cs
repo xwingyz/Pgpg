@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using Abp.Application.Editions;
 using Abp.AutoMapper;
 
-namespace Pgpg.Editions.Dto
+namespace Pgpg.Application.Editions.Dto
 {
     [AutoMap(typeof(Edition))]
     public class EditionEditDto

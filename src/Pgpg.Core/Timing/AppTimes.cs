@@ -1,7 +1,7 @@
 ﻿using System;
 using Abp.Dependency;
 
-namespace Pgpg.Timing
+namespace Pgpg.Core.Timing
 {
     public class AppTimes : ISingletonDependency
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Castle.Components.DictionaryAdapter;
-using Pgpg.Friendships.Dto;
+using Pgpg.Application.Friendships.Dto;
 
-namespace Pgpg.Chat.Dto
+namespace Pgpg.Application.Chat.Dto
 {
     public class GetUserChatFriendsWithSettingsOutput
     {

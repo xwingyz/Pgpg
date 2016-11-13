@@ -4,7 +4,7 @@ using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Abp.Domain.Entities.Auditing;
 
-namespace Pgpg.Editions.Dto
+namespace Pgpg.Application.Editions.Dto
 {
     [AutoMapFrom(typeof(Edition))]
     public class EditionListDto : EntityDto, IHasCreationTime

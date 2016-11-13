@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Abp.Application.Services.Dto;
-using Pgpg.Configuration.Host.Dto;
+using Pgpg.Application.Configuration.Host.Dto;
 
 namespace Pgpg.Web.Areas.Admin.Models.HostSettings
 {
