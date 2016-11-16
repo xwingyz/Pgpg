@@ -99,10 +99,10 @@
                 @foreach (var p in loginProviders)
                 {
                     <li>
-                        <a class="social-login-icon social-icon-color @getSocialIconClass(p.DisplayName)"
-                           title="@p.DisplayName"
-                           data-provider="@p.DisplayName"
-                           href="javascript:;">@p.DisplayName</a>
+                            <a style="text-indent: 0;" class="social-login-icon social-icon-color @getSocialIconClass(p.DisplayName)"
+                               title="@p.DisplayName"
+                               data-provider="@p.DisplayName"
+                               href="javascript:;">@p.DisplayName</a>
                     </li>
                 }
             </form>

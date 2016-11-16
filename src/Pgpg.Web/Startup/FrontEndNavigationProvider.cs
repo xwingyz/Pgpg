@@ -26,9 +26,12 @@ namespace Pgpg.Web.Startup
                     L("HomePage"),
                     url: ""
                     )
-
+                )
+                 .AddItem(new MenuItemDefinition(FrontEndPageNames.CreditCalculator, L("CreditCalculator"), null, "/Credit/Calculator"))
+                .AddItem(new MenuItemDefinition(FrontEndPageNames.CreditCalculator, L("SocialLogin"), null, "/Account/Login"))
+                .AddItem(new MenuItemDefinition(FrontEndPageNames.CreditCalculator, L("Payments"), null, "Payment"))
                 //ABOUT
-                ).AddItem(new MenuItemDefinition(
+                .AddItem(new MenuItemDefinition(
                     FrontEndPageNames.About,
                     L("AboutUs"),
                     url: "About"
@@ -69,7 +72,9 @@ namespace Pgpg.Web.Startup
                 //            )
                 //        )
                 //    )
-                );
+                )
+               
+                ;
         }
 
         private static ILocalizableString L(string name)

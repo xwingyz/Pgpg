@@ -24,7 +24,6 @@ using Abp.Web.Models;
 using Abp.Zero.AspNetCore;
 using Abp.Zero.Configuration;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Pgpg.Web.Models.Account;
@@ -104,8 +103,14 @@ namespace Pgpg.Web.Controllers
 
         #region Login / Logout
 
-        public ActionResult Login(string userNameOrEmailAddress = "", string returnUrl = "", string successMessage = "")
+        public async Task<ActionResult> Login(string userNameOrEmailAddress = "", string returnUrl = "", string successMessage = "")
         {
+            if (this.AbpSession.UserId.HasValue)
+            {
+                await _signInManager.SignOutAllAsync();
+                return RedirectToAction("Login", new { userNameOrEmailAddress , returnUrl, successMessage });
+            }
+
             if (string.IsNullOrWhiteSpace(returnUrl))
             {
                 returnUrl = GetAppHomeUrl();

@@ -22,6 +22,7 @@ using Abp.Reflection.Extensions;
 using Abp.Zero.AspNetCore;
 using Pgpg.Application;
 using Pgpg.Core;
+using Pgpg.Credit;
 using Pgpg.EntityFramework.EntityFramework;
 
 namespace Pgpg.Web.Startup
@@ -29,6 +30,7 @@ namespace Pgpg.Web.Startup
     [DependsOn(
         typeof(PgpgApplicationModule),
         typeof(PgpgEntityFrameworkModule),
+        typeof(PgpgCreditModule),
         typeof(AbpAspNetCoreModule),
         typeof(AbpZeroAspNetCoreModule),
         typeof(AbpWebSignalRModule),

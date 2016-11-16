@@ -1,0 +1,158 @@
+﻿@model List<Pgpg.Credit.Dto.CreditRepaymentPlanDto>
+@{
+    var calculatorModel =  ViewBag.CalculatorModel as Pgpg.Web.Models.Credit.CalculatorModel;
+}
+@using Pgpg.Web.Utils
+<div class="portlet box red">
+
+    <div class="portlet-title">
+        <div class="caption"><i class="icon-reorder"></i>@L("CreditCalculator")</div>
+    </div>
+
+    <div class="portlet-body form">
+
+        <!-- BEGIN FORM-->
+        @using (Html.BeginForm(FormMethod.Post,new {@class=""}))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="row-fluid">
+
+                <div class="span6 ">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label text-right">还款方式</label>
+                        <div class="col-sm-10">
+                            <select name="repaymentWay" class="form-control" asp-items="(calculatorModel.RepaymentWay).ToSelectListItem()"></select>  
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--/span-->
+
+                <div class="span6 ">
+
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label text-right">投资金额</label>
+
+                        <div class="col-sm-10 controls">
+                            <div class="input-group">
+                                <input class="form-control" type="number"
+                                       name="principal" id="principal" value="@calculatorModel.Principal" onkeyup="if (isNaN(value)) execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')" />
+                                <div class="input-group-addon">元</div>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--/span-->
+
+            </div>
+
+            <!--/row-->
+
+            <div class="row-fluid">
+
+                <div class="span6 ">
+
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label text-right">年化利率</label>
+
+                        <div class="col-sm-10 controls">
+                            <div class="input-group">
+                                <input class="form-control" name="rate" id="rate" type="text" value="@calculatorModel.Rate" onkeyup="if (isNaN(value)) execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')" />
+                                <div class="input-group-addon">%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--/span-->
+
+                <div class="span6 ">
+
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label text-right">投资时长</label>
+
+                        <div class="col-sm-10 controls">
+                            <div class="input-group">
+                                <input class="form-control" type="number" name="deadline" value="@calculatorModel.Deadline" onkeyup="if (isNaN(value)) execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')" />
+                                <div class="input-group-addon">
+                                    <select name="deadlineType" asp-items="(calculatorModel.DeadlineType).ToSelectListItem()"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--/span-->
+
+            </div>
+
+            <div class="form-group text-center">
+
+                <button type="submit" class="btn blue"><i class="icon-ok"></i>生成还款计划</button>
+
+                <button type="reset" class="btn">重置</button>
+
+            </div>
+
+        }
+      
+        <!-- END FORM-->
+
+    </div>
+
+</div>
+<div>
+    <div id="box">
+       
+        <div class="portlet box red">
+            <div class="portlet-title">
+                <div class="caption"><i class="icon-cogs"></i>投资收益：<b id="lixi">@(Model!=null?Model.Sum(c=>c.Interest):0) </b>元</div>
+            </div>
+            <div class="portlet-body">
+
+                <table class="table table-hover">
+
+                    <thead>
+                        <tr>
+                            <th>期次</th>
+                            <th>回款日期</th>
+                            <th>应收本息(元) </th>
+                            <th>应收本金(元)</th>
+                            <th>应收利息(元) </th>
+                            <th>剩余本金(元) </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Count > 0)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td> @item.OrderNumber   </td>
+                                    <td> @item.RepaymentDate.ToString("yyyy-MM-dd")</td>
+                                    <td> @item.PrincipalAndInterest  </td>
+                                    <td> @item.Principal  </td>
+                                    <td> @item.Interest  </td>
+                                    <td> @item.RemainingPrincipal </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                  
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -42,6 +42,7 @@
     },
     "PaulMiami.AspNetCore.Mvc.Recaptcha": "1.1.1",
     "Pgpg.Application": "1.0.0.0-*",
+    "Pgpg.Credit": "1.0.0-*",
     "Pgpg.EntityFramework": "1.0.0.0-*",
     "Swashbuckle": "6.0.0-beta902"
   },

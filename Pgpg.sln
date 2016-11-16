@@ -31,6 +31,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Microsoft.AspNetCore.Authen
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Microsoft.AspNetCore.Authentication.WeiBo", "src\Microsoft.AspNetCore.Authentication.WeiBo\Microsoft.AspNetCore.Authentication.WeiBo.xproj", "{366E5251-48B2-4C72-A287-00A05984A72D}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Pgpg.Credit", "src\Pgpg.Credit\Pgpg.Credit.xproj", "{F9DBF389-9EA6-48DC-AC67-4F805B6E14B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{366E5251-48B2-4C72-A287-00A05984A72D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{366E5251-48B2-4C72-A287-00A05984A72D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{366E5251-48B2-4C72-A287-00A05984A72D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9DBF389-9EA6-48DC-AC67-4F805B6E14B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9DBF389-9EA6-48DC-AC67-4F805B6E14B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9DBF389-9EA6-48DC-AC67-4F805B6E14B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9DBF389-9EA6-48DC-AC67-4F805B6E14B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,5 +93,6 @@ Global
 		{DA61C3B1-DA49-4E15-B9A9-ACC304FE13B1} = {AFAA0841-BD93-466F-B8F4-FB4EEC86F1FC}
 		{941EE257-E4B6-4C8F-8D93-E04FB07CA9F0} = {AFAA0841-BD93-466F-B8F4-FB4EEC86F1FC}
 		{366E5251-48B2-4C72-A287-00A05984A72D} = {AFAA0841-BD93-466F-B8F4-FB4EEC86F1FC}
+		{F9DBF389-9EA6-48DC-AC67-4F805B6E14B5} = {AFAA0841-BD93-466F-B8F4-FB4EEC86F1FC}
 	EndGlobalSection
 EndGlobal

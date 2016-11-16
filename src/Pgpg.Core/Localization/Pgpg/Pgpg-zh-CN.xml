@@ -300,6 +300,10 @@
     <text name="CountryDeleteWarningMessage" value="国家 {0} 将被删除." />
     <text name="CountryAlreadyExists" value="该国家已经存在。" />
   
+    <text name="CreditCalculator" value="P2P还款计划算法" />
+    <text name="SocialLogin" value="第三方帐号登录" />
+    <text name="Payments" value="第三方支付" />
+    
       <text name="Cities" value="城市管理" />
 			<text name="CreateCity" value="新增城市" />
 			<text name="EditCity" value="更新城市" />
