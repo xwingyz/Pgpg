@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Pgpg.Net.MimeTypes
+namespace Pgpg.Application.Net.MimeTypes
 {
     /* Copied from:
      * http://stackoverflow.com/questions/10362140/asp-mvc-are-there-any-constants-for-the-default-content-types */

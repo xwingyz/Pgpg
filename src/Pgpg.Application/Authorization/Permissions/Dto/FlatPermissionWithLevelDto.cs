@@ -1,4 +1,4 @@
-﻿namespace Pgpg.Authorization.Permissions.Dto
+﻿namespace Pgpg.Application.Authorization.Permissions.Dto
 {
     public class FlatPermissionWithLevelDto: FlatPermissionDto
     {

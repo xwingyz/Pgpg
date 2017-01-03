@@ -6,8 +6,8 @@
         <div class="row">
             <div class="col-md-6 col-sm-6 additional-shop-info">
                 <ul class="list-unstyled list-inline">
-                    <li><i class="fa fa-phone"></i><span>+1 456 6717</span></li>
-                    <li><i class="fa fa-envelope-o"></i><span>info@mydomain.com</span></li>
+                    <li><i class="fa fa-phone"></i><span>QQ:95572457</span></li>
+                    <li><i class="fa fa-envelope-o"></i><span>95572457@qq.com</span></li>
                 </ul>
             </div>
             <div class="col-md-6 col-sm-6 additional-nav">
@@ -42,7 +42,8 @@
                     <li>
                         @if (Model.LoginInformations != null)
                         {
-                            <a href="@Url.Action("Index", "Home", new { area = "Admin" })">@Model.GetShownLoginName() (@L("GoToApplication"))</a>
+                            <a href="@Url.Action("Index", "Home", new { area = "Admin" })">@Model.GetShownLoginName() (进入后台)</a>
+                            <a href="@Url.Action("Logout", "Account")">@L("Logout")</a>
                         }
                         else
                         {

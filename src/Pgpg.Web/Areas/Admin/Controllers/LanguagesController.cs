@@ -8,8 +8,9 @@ using Abp.Extensions;
 using Abp.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Pgpg.Authorization;
-using Pgpg.Localization;
+using Pgpg.Application.Localization;
+using Pgpg.Core;
+using Pgpg.Core.Authorization;
 using Pgpg.Web.Areas.Admin.Models.Languages;
 using Pgpg.Web.Controllers;
 

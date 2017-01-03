@@ -3,9 +3,8 @@ using System.Threading.Tasks;
 using Abp.Configuration;
 using Abp.Dependency;
 using Abp.Timing;
-using Abp.Extensions;
 
-namespace Pgpg.Timing
+namespace Pgpg.Core.Timing
 {
     public class TimeZoneService : ITimeZoneService, ITransientDependency
     {

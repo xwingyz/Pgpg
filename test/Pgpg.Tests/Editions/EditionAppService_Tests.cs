@@ -2,9 +2,10 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
-using Pgpg.Editions;
-using Pgpg.Editions.Dto;
-using Pgpg.Features;
+using Pgpg.Application.Editions;
+using Pgpg.Application.Editions.Dto;
+using Pgpg.Core.Editions;
+using Pgpg.Core.Features;
 using Shouldly;
 using Xunit;
 

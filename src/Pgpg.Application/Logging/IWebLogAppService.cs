@@ -1,8 +1,8 @@
 ﻿using Abp.Application.Services;
-using Pgpg.Dto;
-using Pgpg.Logging.Dto;
+using Pgpg.Application.Dto;
+using Pgpg.Application.Logging.Dto;
 
-namespace Pgpg.Logging
+namespace Pgpg.Application.Logging
 {
     public interface IWebLogAppService : IApplicationService
     {

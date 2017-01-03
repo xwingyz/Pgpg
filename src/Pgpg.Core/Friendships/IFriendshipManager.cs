@@ -1,7 +1,7 @@
 ﻿using Abp;
 using Abp.Domain.Services;
 
-namespace Pgpg.Friendships
+namespace Pgpg.Core.Friendships
 {
     public interface IFriendshipManager : IDomainService
     {

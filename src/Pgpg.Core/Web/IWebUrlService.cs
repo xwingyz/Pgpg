@@ -1,4 +1,4 @@
-﻿namespace Pgpg.Web
+﻿namespace Pgpg.Core.Web
 {
     public interface IWebUrlService
     {

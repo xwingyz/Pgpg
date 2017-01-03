@@ -1,8 +1,7 @@
-namespace Pgpg.Migrations
+using System.Data.Entity.Migrations;
+
+namespace Pgpg.EntityFramework.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
     public partial class Added_Validation_To_Chat_Entities : DbMigration
     {
         public override void Up()

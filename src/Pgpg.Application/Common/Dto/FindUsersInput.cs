@@ -1,6 +1,6 @@
-﻿using Pgpg.Dto;
+﻿using Pgpg.Application.Dto;
 
-namespace Pgpg.Common.Dto
+namespace Pgpg.Application.Common.Dto
 {
     public class FindUsersInput : PagedAndFilteredInputDto
     {

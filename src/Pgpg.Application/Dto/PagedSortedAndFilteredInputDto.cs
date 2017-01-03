@@ -1,4 +1,4 @@
-﻿namespace Pgpg.Dto
+﻿namespace Pgpg.Application.Dto
 {
     public class PagedSortedAndFilteredInputDto : PagedAndSortedInputDto
     {

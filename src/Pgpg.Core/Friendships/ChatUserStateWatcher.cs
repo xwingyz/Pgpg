@@ -2,10 +2,10 @@
 using Abp;
 using Abp.Dependency;
 using Abp.RealTime;
-using Pgpg.Chat;
-using Pgpg.Friendships.Cache;
+using Pgpg.Core.Chat;
+using Pgpg.Core.Friendships.Cache;
 
-namespace Pgpg.Friendships
+namespace Pgpg.Core.Friendships
 {
     public class ChatUserStateWatcher : ISingletonDependency
     {

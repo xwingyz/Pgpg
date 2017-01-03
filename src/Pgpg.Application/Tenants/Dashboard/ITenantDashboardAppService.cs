@@ -1,7 +1,7 @@
 ﻿using Abp.Application.Services;
-using Pgpg.Tenants.Dashboard.Dto;
+using Pgpg.Application.Tenants.Dashboard.Dto;
 
-namespace Pgpg.Tenants.Dashboard
+namespace Pgpg.Application.Tenants.Dashboard
 {
     public interface ITenantDashboardAppService : IApplicationService
     {

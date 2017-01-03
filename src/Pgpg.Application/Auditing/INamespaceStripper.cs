@@ -1,4 +1,4 @@
-﻿namespace Pgpg.Auditing
+﻿namespace Pgpg.Application.Auditing
 {
     public interface INamespaceStripper
     {

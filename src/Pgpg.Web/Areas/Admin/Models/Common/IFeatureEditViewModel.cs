@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Abp.Application.Services.Dto;
-using Pgpg.Editions.Dto;
+using Pgpg.Application.Editions.Dto;
 
 namespace Pgpg.Web.Areas.Admin.Models.Common
 {

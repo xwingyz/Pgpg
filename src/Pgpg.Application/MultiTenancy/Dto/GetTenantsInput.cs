@@ -1,7 +1,7 @@
 ﻿using Abp.Runtime.Validation;
-using Pgpg.Dto;
+using Pgpg.Application.Dto;
 
-namespace Pgpg.MultiTenancy.Dto
+namespace Pgpg.Application.MultiTenancy.Dto
 {
     public class GetTenantsInput : PagedAndSortedInputDto, IShouldNormalize
     {

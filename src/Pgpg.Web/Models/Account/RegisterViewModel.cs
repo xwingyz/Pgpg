@@ -3,10 +3,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 using Abp.Auditing;
 using Abp.Extensions;
-using Pgpg.Authorization.Users;
-using Pgpg.MultiTenancy;
-using Pgpg.Security;
-using Pgpg.Validation;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.MultiTenancy;
+using Pgpg.Core.Security;
+using Pgpg.Core.Validation;
 
 namespace Pgpg.Web.Models.Account
 {

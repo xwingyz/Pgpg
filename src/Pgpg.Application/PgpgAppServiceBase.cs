@@ -5,10 +5,11 @@ using Abp.IdentityFramework;
 using Abp.MultiTenancy;
 using Abp.Runtime.Session;
 using Microsoft.AspNet.Identity;
-using Pgpg.Authorization.Users;
-using Pgpg.MultiTenancy;
+using Pgpg.Core;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.MultiTenancy;
 
-namespace Pgpg
+namespace Pgpg.Application
 {
     /// <summary>
     /// Derive your application services from this class.

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Pgpg.Authorization.Users
+namespace Pgpg.Core.Authorization.Users
 {
     [Serializable]
     public class SwitchToLinkedAccountCacheItem

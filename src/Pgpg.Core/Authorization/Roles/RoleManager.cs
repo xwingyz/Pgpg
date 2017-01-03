@@ -3,9 +3,9 @@ using Abp.Authorization.Roles;
 using Abp.Domain.Uow;
 using Abp.Runtime.Caching;
 using Abp.Zero.Configuration;
-using Pgpg.Authorization.Users;
+using Pgpg.Core.Authorization.Users;
 
-namespace Pgpg.Authorization.Roles
+namespace Pgpg.Core.Authorization.Roles
 {
     /// <summary>
     /// Role manager.

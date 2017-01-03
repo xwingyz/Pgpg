@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using Abp.Dependency;
 using Abp.RealTime;
 
-namespace Pgpg.Authorization.Users
+namespace Pgpg.Core.Authorization.Users
 {
     public interface IUserLogoutInformer
     {

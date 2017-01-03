@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Abp.Application.Services.Dto;
 
-namespace Pgpg.Editions.Dto
+namespace Pgpg.Application.Editions.Dto
 {
     public class CreateOrUpdateEditionDto
     {

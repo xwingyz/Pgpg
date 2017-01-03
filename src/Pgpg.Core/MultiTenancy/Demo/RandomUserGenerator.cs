@@ -3,9 +3,9 @@ using System.Globalization;
 using Abp;
 using Abp.Dependency;
 using Microsoft.AspNet.Identity;
-using Pgpg.Authorization.Users;
+using Pgpg.Core.Authorization.Users;
 
-namespace Pgpg.MultiTenancy.Demo
+namespace Pgpg.Core.MultiTenancy.Demo
 {
     public class RandomUserGenerator : ITransientDependency
     {

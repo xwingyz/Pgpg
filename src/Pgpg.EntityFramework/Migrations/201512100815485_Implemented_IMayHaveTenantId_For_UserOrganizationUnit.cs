@@ -1,10 +1,9 @@
-namespace Pgpg.Migrations
+using System.Collections.Generic;
+using System.Data.Entity.Infrastructure.Annotations;
+using System.Data.Entity.Migrations;
+
+namespace Pgpg.EntityFramework.Migrations
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Data.Entity.Infrastructure.Annotations;
-    using System.Data.Entity.Migrations;
-    
     public partial class Implemented_IMayHaveTenantId_For_UserOrganizationUnit : DbMigration
     {
         public override void Up()

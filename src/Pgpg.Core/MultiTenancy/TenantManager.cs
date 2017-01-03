@@ -5,19 +5,19 @@ using Abp;
 using Abp.Application.Features;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
+using Abp.Extensions;
 using Abp.IdentityFramework;
 using Abp.MultiTenancy;
-using Microsoft.AspNet.Identity;
-using Pgpg.Authorization.Roles;
-using Pgpg.Authorization.Users;
-using Pgpg.Editions;
-using Pgpg.MultiTenancy.Demo;
-using Abp.Extensions;
 using Abp.Notifications;
 using Abp.Runtime.Security;
-using Pgpg.Notifications;
+using Microsoft.AspNet.Identity;
+using Pgpg.Core.Authorization.Roles;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.Editions;
+using Pgpg.Core.MultiTenancy.Demo;
+using Pgpg.Core.Notifications;
 
-namespace Pgpg.MultiTenancy
+namespace Pgpg.Core.MultiTenancy
 {
     /// <summary>
     /// Tenant manager.

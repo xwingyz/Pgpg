@@ -8,10 +8,10 @@ using Abp.AutoMapper;
 using Abp.Domain.Repositories;
 using Abp.Linq.Extensions;
 using Abp.Organizations;
-using Pgpg.Authorization;
-using Pgpg.Organizations.Dto;
+using Pgpg.Application.Organizations.Dto;
+using Pgpg.Core.Authorization;
 
-namespace Pgpg.Organizations
+namespace Pgpg.Application.Organizations
 {
     [AbpAuthorize(AppPermissions.Pages_Administration_OrganizationUnits)]
     public class OrganizationUnitAppService : PgpgAppServiceBase, IOrganizationUnitAppService

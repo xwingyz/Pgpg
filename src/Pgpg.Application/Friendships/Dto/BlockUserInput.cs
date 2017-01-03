@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Pgpg.Friendships.Dto
+namespace Pgpg.Application.Friendships.Dto
 {
     public class BlockUserInput 
     {

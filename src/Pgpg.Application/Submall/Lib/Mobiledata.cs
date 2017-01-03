@@ -1,7 +1,8 @@
 using System.Collections.Generic;
-using Pgpg.Submall.Utility;
+using Pgpg.Application.Submall.Utility;
+using Pgpg.Core.Validation;
 
-namespace Pgpg.Submall.Lib
+namespace Pgpg.Application.Submall.Lib
 {
     public class Mobiledata
     {
@@ -19,7 +20,7 @@ namespace Pgpg.Submall.Lib
         {
             var dataPair = new Dictionary<string, object>();
             dataPair.Add("to", to);
-            var v = new Validation.ValidationHelper();
+            var v = new ValidationHelper();
             if (v.IsChinaMobilePhoneNumber(to))
             {
                 dataPair.Add("cm", packageType);

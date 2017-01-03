@@ -5,10 +5,10 @@ using Abp.Application.Services.Dto;
 using Abp.Authorization;
 using Abp.Extensions;
 using Abp.Linq.Extensions;
-using Pgpg.Common.Dto;
-using Pgpg.Editions;
+using Pgpg.Application.Common.Dto;
+using Pgpg.Core.Editions;
 
-namespace Pgpg.Common
+namespace Pgpg.Application.Common
 {
     [AbpAuthorize]
     public class CommonLookupAppService : PgpgAppServiceBase, ICommonLookupAppService

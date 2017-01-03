@@ -1,7 +1,7 @@
 ﻿using Abp.Authorization.Roles;
-using Pgpg.Authorization.Users;
+using Pgpg.Core.Authorization.Users;
 
-namespace Pgpg.Authorization.Roles
+namespace Pgpg.Core.Authorization.Roles
 {
     /// <summary>
     /// Represents a role in the system.

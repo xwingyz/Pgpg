@@ -1,4 +1,4 @@
-﻿namespace Pgpg.Debugging
+﻿namespace Pgpg.Core.Debugging
 {
     public static class DebugHelper
     {

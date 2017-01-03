@@ -2,7 +2,7 @@
 using Abp.Application.Features;
 using Abp.Domain.Repositories;
 
-namespace Pgpg.Editions
+namespace Pgpg.Core.Editions
 {
     public class EditionManager : AbpEditionManager
     {

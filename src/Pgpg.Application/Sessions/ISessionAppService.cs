@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Abp.Application.Services;
-using Pgpg.Sessions.Dto;
+using Pgpg.Application.Sessions.Dto;
 
-namespace Pgpg.Sessions
+namespace Pgpg.Application.Sessions
 {
     public interface ISessionAppService : IApplicationService
     {

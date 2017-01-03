@@ -1,5 +1,5 @@
 ﻿using Abp.AutoMapper;
-using Pgpg.Authorization.Roles.Dto;
+using Pgpg.Application.Authorization.Roles.Dto;
 using Pgpg.Web.Areas.Admin.Models.Common;
 
 namespace Pgpg.Web.Areas.Admin.Models.Roles

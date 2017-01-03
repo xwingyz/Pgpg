@@ -6,6 +6,8 @@ using Abp.Zero.Configuration;
 using Castle.MicroKernel.Registration;
 using Pgpg.EntityFramework;
 using NSubstitute;
+using Pgpg.Application;
+using Pgpg.EntityFramework.EntityFramework;
 
 namespace Pgpg.Tests
 {

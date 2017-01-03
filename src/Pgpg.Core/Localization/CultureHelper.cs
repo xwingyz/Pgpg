@@ -1,6 +1,6 @@
 ﻿using System.Threading;
 
-namespace Pgpg.Localization
+namespace Pgpg.Core.Localization
 {
     public static class CultureHelper
     {

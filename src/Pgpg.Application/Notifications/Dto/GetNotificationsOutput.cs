@@ -2,7 +2,7 @@
 using Abp.Application.Services.Dto;
 using Abp.Notifications;
 
-namespace Pgpg.Notifications.Dto
+namespace Pgpg.Application.Notifications.Dto
 {
     public class GetNotificationsOutput : PagedResultDto<UserNotification>
     {

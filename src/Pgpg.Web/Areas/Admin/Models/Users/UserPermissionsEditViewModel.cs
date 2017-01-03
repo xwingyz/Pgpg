@@ -1,6 +1,6 @@
 using Abp.AutoMapper;
-using Pgpg.Authorization.Users;
-using Pgpg.Authorization.Users.Dto;
+using Pgpg.Application.Authorization.Users.Dto;
+using Pgpg.Core.Authorization.Users;
 using Pgpg.Web.Areas.Admin.Models.Common;
 
 namespace Pgpg.Web.Areas.Admin.Models.Users

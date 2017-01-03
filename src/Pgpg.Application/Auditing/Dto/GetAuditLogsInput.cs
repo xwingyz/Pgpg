@@ -1,10 +1,9 @@
 ﻿using System;
 using Abp.Extensions;
 using Abp.Runtime.Validation;
-using Abp.Timing;
-using Pgpg.Dto;
+using Pgpg.Application.Dto;
 
-namespace Pgpg.Auditing.Dto
+namespace Pgpg.Application.Auditing.Dto
 {
     public class GetAuditLogsInput : PagedAndSortedInputDto, IShouldNormalize
     {

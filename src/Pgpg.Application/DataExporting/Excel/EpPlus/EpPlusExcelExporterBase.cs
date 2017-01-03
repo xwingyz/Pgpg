@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using Abp.Collections.Extensions;
 using Abp.Dependency;
-using Pgpg.Dto;
-using Pgpg.Net.MimeTypes;
 using OfficeOpenXml;
+using Pgpg.Application.Dto;
+using Pgpg.Application.Net.MimeTypes;
+using Pgpg.Core;
 
-namespace Pgpg.DataExporting.Excel.EpPlus
+namespace Pgpg.Application.DataExporting.Excel.EpPlus
 {
     public abstract class EpPlusExcelExporterBase : PgpgServiceBase, ITransientDependency
     {

@@ -9,14 +9,15 @@ using Abp.IO;
 using Abp.Runtime.Session;
 using Abp.Timing;
 using Abp.UI;
-using Pgpg.Authorization.Users.Profile.Dto;
-using Pgpg.Configuration;
-using Pgpg.Security;
-using Pgpg.Storage;
-using Pgpg.Timing;
 using Newtonsoft.Json;
+using Pgpg.Application.Authorization.Users.Profile.Dto;
+using Pgpg.Core;
+using Pgpg.Core.Configuration;
+using Pgpg.Core.Security;
+using Pgpg.Core.Storage;
+using Pgpg.Core.Timing;
 
-namespace Pgpg.Authorization.Users.Profile
+namespace Pgpg.Application.Authorization.Users.Profile
 {
     [AbpAuthorize]
     public class ProfileAppService : PgpgAppServiceBase, IProfileAppService

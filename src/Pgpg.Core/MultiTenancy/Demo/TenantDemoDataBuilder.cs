@@ -9,13 +9,13 @@ using Abp.Dependency;
 using Abp.Domain.Repositories;
 using Abp.Organizations;
 using Microsoft.AspNet.Identity;
-using Pgpg.Authorization.Roles;
-using Pgpg.Authorization.Users;
-using Pgpg.Chat;
-using Pgpg.Friendships;
-using Pgpg.Storage;
+using Pgpg.Core.Authorization.Roles;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.Chat;
+using Pgpg.Core.Friendships;
+using Pgpg.Core.Storage;
 
-namespace Pgpg.MultiTenancy.Demo
+namespace Pgpg.Core.MultiTenancy.Demo
 {
     /// <summary>
     /// Used to build demo data for new tenants.

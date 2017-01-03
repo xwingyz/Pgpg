@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Abp.Application.Services.Dto;
-using Pgpg.Configuration.Tenants.Dto;
+using Pgpg.Application.Configuration.Tenants.Dto;
 
 namespace Pgpg.Web.Areas.Admin.Models.Settings
 {

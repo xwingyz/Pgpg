@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Pgpg.Localization
+namespace Pgpg.Application.Localization
 {
     public static class FamFamFamFlagsHelper
     {

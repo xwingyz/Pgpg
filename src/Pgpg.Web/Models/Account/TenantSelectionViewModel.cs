@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Abp.AutoMapper;
-using Pgpg.MultiTenancy;
+using Pgpg.Core.MultiTenancy;
 
 namespace Pgpg.Web.Models.Account
 {

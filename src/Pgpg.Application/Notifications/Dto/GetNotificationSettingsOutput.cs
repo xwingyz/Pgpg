@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Pgpg.Notifications.Dto
+namespace Pgpg.Application.Notifications.Dto
 {
     public class GetNotificationSettingsOutput
     {

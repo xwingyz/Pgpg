@@ -3,7 +3,7 @@ using Abp.Configuration.Startup;
 using Abp.Localization;
 using Abp.MultiTenancy;
 
-namespace Pgpg.Authorization
+namespace Pgpg.Core.Authorization
 {
     /// <summary>
     /// Application's authorization provider.

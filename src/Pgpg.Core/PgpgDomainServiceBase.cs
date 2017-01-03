@@ -1,6 +1,6 @@
 ﻿using Abp.Domain.Services;
 
-namespace Pgpg
+namespace Pgpg.Core
 {
     public abstract class PgpgDomainServiceBase : DomainService
     {

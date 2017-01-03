@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Pgpg.Address.Country.Dto
+namespace Pgpg.Application.Address.Country.Dto
 {
     public class CreateOrUpdateCountryInput
     {

@@ -1,8 +1,8 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
-using Pgpg.Submall.Lib;
+using Pgpg.Application.Submall.Lib;
 
-namespace Pgpg.Submall.Utility
+namespace Pgpg.Application.Submall.Utility
 {
     public class SignatureHelper
     {

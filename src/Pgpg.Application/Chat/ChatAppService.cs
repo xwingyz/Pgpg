@@ -1,21 +1,22 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
-using Abp.Domain.Repositories;
-using Pgpg.Chat.Dto;
 using System.Linq;
 using System.Threading.Tasks;
 using Abp;
 using Abp.Application.Services.Dto;
 using Abp.Auditing;
 using Abp.AutoMapper;
+using Abp.Domain.Repositories;
 using Abp.Linq.Extensions;
 using Abp.RealTime;
 using Abp.Runtime.Session;
 using Abp.Timing;
-using Pgpg.Friendships.Cache;
-using Pgpg.Friendships.Dto;
+using Pgpg.Application.Chat.Dto;
+using Pgpg.Application.Friendships.Dto;
+using Pgpg.Core.Chat;
+using Pgpg.Core.Friendships.Cache;
 
-namespace Pgpg.Chat
+namespace Pgpg.Application.Chat
 {
     public class ChatAppService : PgpgAppServiceBase, IChatAppService
     {

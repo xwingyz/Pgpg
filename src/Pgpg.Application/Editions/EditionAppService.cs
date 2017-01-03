@@ -8,10 +8,11 @@ using Abp.Application.Editions;
 using Abp.Application.Services.Dto;
 using Abp.Authorization;
 using Abp.AutoMapper;
-using Pgpg.Authorization;
-using Pgpg.Editions.Dto;
+using Pgpg.Application.Editions.Dto;
+using Pgpg.Core.Authorization;
+using Pgpg.Core.Editions;
 
-namespace Pgpg.Editions
+namespace Pgpg.Application.Editions
 {
     [AbpAuthorize(AppPermissions.Pages_Editions)]
     public class EditionAppService : PgpgAppServiceBase, IEditionAppService

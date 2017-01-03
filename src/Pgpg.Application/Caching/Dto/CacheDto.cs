@@ -1,4 +1,4 @@
-﻿namespace Pgpg.Caching.Dto
+﻿namespace Pgpg.Application.Caching.Dto
 {
     public class CacheDto
     {

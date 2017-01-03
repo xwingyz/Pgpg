@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
-using Pgpg.Authorization.Roles.Dto;
+using Pgpg.Application.Authorization.Roles.Dto;
 
-namespace Pgpg.Authorization.Roles
+namespace Pgpg.Application.Authorization.Roles
 {
     /// <summary>
     /// Application service that is used by 'role management' page.

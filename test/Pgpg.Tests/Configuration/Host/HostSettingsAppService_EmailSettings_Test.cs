@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Abp.Configuration;
 using Abp.Net.Mail;
-using Pgpg.Configuration.Host;
+using Pgpg.Application.Configuration.Host;
 using Shouldly;
 using Xunit;
 

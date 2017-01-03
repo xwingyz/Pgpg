@@ -1,9 +1,9 @@
 ﻿using Abp.AutoMapper;
 using Abp.Domain.Entities;
 
-namespace Pgpg.Address.Country.Dto
+namespace Pgpg.Application.Address.Country.Dto
 {
-    [AutoMap(typeof(Domain.Address.Country))]
+    [AutoMap(typeof(Core.Domain.Address.Country))]
     public class CountryEditDto: IPassivable
     {
         public int? Id { get; set; }

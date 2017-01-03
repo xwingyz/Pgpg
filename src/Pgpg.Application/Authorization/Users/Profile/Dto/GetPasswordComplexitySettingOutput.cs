@@ -1,6 +1,6 @@
-﻿using Pgpg.Security;
+﻿using Pgpg.Core.Security;
 
-namespace Pgpg.Authorization.Users.Profile.Dto
+namespace Pgpg.Application.Authorization.Users.Profile.Dto
 {
     public class GetPasswordComplexitySettingOutput
     {

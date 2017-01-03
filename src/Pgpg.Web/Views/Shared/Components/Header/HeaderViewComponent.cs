@@ -5,8 +5,8 @@ using Abp.Configuration.Startup;
 using Abp.Localization;
 using Abp.Runtime.Session;
 using Microsoft.AspNetCore.Mvc;
-using Pgpg.Configuration;
-using Pgpg.Sessions;
+using Pgpg.Application.Sessions;
+using Pgpg.Core.Configuration;
 using Pgpg.Web.Models.Layout;
 using Pgpg.Web.Startup;
 

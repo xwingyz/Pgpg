@@ -4,9 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.Configuration;
-using Pgpg.Timing.Dto;
+using Pgpg.Application.Timing.Dto;
+using Pgpg.Core.Timing;
 
-namespace Pgpg.Timing
+namespace Pgpg.Application.Timing
 {
     public class TimingAppService : PgpgAppServiceBase, ITimingAppService
     {

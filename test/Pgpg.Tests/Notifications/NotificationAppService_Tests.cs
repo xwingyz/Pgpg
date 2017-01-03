@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Pgpg.Notifications;
+using Pgpg.Application.Notifications;
 using Shouldly;
 using Xunit;
 

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Pgpg.Authorization.Users.Profile.Dto
+namespace Pgpg.Application.Authorization.Users.Profile.Dto
 {
     public class UpdateProfilePictureInput
     {

@@ -1,9 +1,9 @@
 ﻿using System.Linq;
 using Abp.EntityFramework;
-using Pgpg.Domain.Address;
-using Pgpg.IRepositories;
+using Pgpg.Core.Domain.Address;
+using Pgpg.Core.IRepositories;
 
-namespace Pgpg.EntityFramework.Repositories
+namespace Pgpg.EntityFramework.EntityFramework.Repositories
 {
     public class StateProvinceRepositry : PgpgRepositoryBase<StateProvince>,IStateProvinceRepositry
     {

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Abp.Application.Services.Dto;
 
-namespace Pgpg.MultiTenancy.Dto
+namespace Pgpg.Application.MultiTenancy.Dto
 {
     public class UpdateTenantFeaturesInput
     {

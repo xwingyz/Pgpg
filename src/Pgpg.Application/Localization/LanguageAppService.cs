@@ -12,10 +12,10 @@ using Abp.Domain.Repositories;
 using Abp.Extensions;
 using Abp.Localization;
 using Abp.UI;
-using Pgpg.Authorization;
-using Pgpg.Localization.Dto;
+using Pgpg.Application.Localization.Dto;
+using Pgpg.Core.Authorization;
 
-namespace Pgpg.Localization
+namespace Pgpg.Application.Localization
 {
     [AbpAuthorize(AppPermissions.Pages_Administration_Languages)]
     public class LanguageAppService : PgpgAppServiceBase, ILanguageAppService

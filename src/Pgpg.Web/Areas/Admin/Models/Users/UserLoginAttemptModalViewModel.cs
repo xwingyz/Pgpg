@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Pgpg.Authorization.Users.Dto;
+using Pgpg.Application.Authorization.Users.Dto;
 
 namespace Pgpg.Web.Areas.Admin.Models.Users
 {

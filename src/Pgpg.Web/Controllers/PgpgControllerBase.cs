@@ -5,6 +5,7 @@ using Abp.IdentityFramework;
 using Abp.UI;
 using Microsoft.AspNet.Identity;
 using PaulMiami.AspNetCore.Mvc.Recaptcha;
+using Pgpg.Core;
 
 namespace Pgpg.Web.Controllers
 {

@@ -1,8 +1,7 @@
-namespace Pgpg.Migrations
+using System.Data.Entity.Migrations;
+
+namespace Pgpg.EntityFramework.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
     public partial class Added_ConnString_To_Tenant_Entity : DbMigration
     {
         public override void Up()

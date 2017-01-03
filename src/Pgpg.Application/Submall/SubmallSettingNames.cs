@@ -1,4 +1,4 @@
-﻿namespace Pgpg.Submall
+﻿namespace Pgpg.Application.Submall
 {
     public static class SubmallSettingNames
     {

@@ -7,7 +7,7 @@ using Abp.Domain.Uow;
 using Abp.Extensions;
 using Abp.MultiTenancy;
 using Abp.Runtime.Security;
-using Pgpg.MultiTenancy;
+using Pgpg.Core.MultiTenancy;
 
 namespace Pgpg.Migrator
 {

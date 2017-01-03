@@ -2,7 +2,7 @@
 using Abp.Localization;
 using Abp.UI.Inputs;
 
-namespace Pgpg.Features
+namespace Pgpg.Core.Features
 {
     /* This feature provider is just for an example.
      * You can freely delete all features and add your own.

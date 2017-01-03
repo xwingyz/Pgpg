@@ -2,17 +2,22 @@ using System.Data.Common;
 using System.Data.Entity;
 using Abp.Zero.EntityFramework;
 using Microsoft.Extensions.Configuration;
-using Pgpg.Authorization.Roles;
-using Pgpg.Authorization.Users;
-using Pgpg.Chat;
-using Pgpg.Configuration;
-using Pgpg.Domain.Address;
-using Pgpg.Friendships;
-using Pgpg.MultiTenancy;
-using Pgpg.Storage;
-using Pgpg.Web;
+using Pgpg.Core;
+using Pgpg.Core.Authorization.Roles;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.Chat;
+using Pgpg.Core.Configuration;
+using Pgpg.Core.Domain.Address;
+using Pgpg.Core.Domain.Devices;
+using Pgpg.Core.Domain.Gps;
+using Pgpg.Core.Domain.Messages;
+using Pgpg.Core.Domain.Users;
+using Pgpg.Core.Friendships;
+using Pgpg.Core.MultiTenancy;
+using Pgpg.Core.Storage;
+using Pgpg.Core.Web;
 
-namespace Pgpg.EntityFramework
+namespace Pgpg.EntityFramework.EntityFramework
 {
     [DbConfigurationType(typeof(PgpgDbConfiguration))]
     public class PgpgDbContext : AbpZeroDbContext<Tenant, Role, User>
@@ -30,6 +35,12 @@ namespace Pgpg.EntityFramework
         public virtual IDbSet<StateProvince> StateProvinces { get; set; }
 
         public virtual IDbSet<City> Cities { get; set; }
+
+        public virtual IDbSet<SmartDevice> SmartDevices { get; set; }
+        public virtual IDbSet<GpsRecord> GpsRecords { get; set; }
+        public virtual IDbSet<SmsRecord> SmsRecords { get; set; }
+        public virtual IDbSet<WarningMessage> WarningMessages { get; set; }
+        public virtual IDbSet<FamilyMap> FamilyMaps { get; set; }
 
         /* Default constructor is needed for EF command line tool. */
         public PgpgDbContext()

@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using Abp.Extensions;
 
-namespace Pgpg.Security
+namespace Pgpg.Core.Security
 {
     public class PasswordComplexityChecker
     {

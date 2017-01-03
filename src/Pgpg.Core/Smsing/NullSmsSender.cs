@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using Castle.Core.Logging;
 
-namespace Pgpg.Smsing
+namespace Pgpg.Core.Smsing
 {
     public class NullSmsSender : SmsSenderBase
     {

@@ -2,8 +2,8 @@
 using Abp.Application.Services.Dto;
 using Abp.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Pgpg.Address.Country;
-using Pgpg.Authorization;
+using Pgpg.Application.Address.Country;
+using Pgpg.Core.Authorization;
 using Pgpg.Web.Areas.Admin.Models.Country;
 
 namespace Pgpg.Web.Areas.Admin.Controllers

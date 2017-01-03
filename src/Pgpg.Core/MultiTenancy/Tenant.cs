@@ -1,7 +1,7 @@
 ﻿using Abp.MultiTenancy;
-using Pgpg.Authorization.Users;
+using Pgpg.Core.Authorization.Users;
 
-namespace Pgpg.MultiTenancy
+namespace Pgpg.Core.MultiTenancy
 {
     /// <summary>
     /// Represents a Tenant in the system.

@@ -1,4 +1,4 @@
-﻿namespace Pgpg.Chat
+﻿namespace Pgpg.Core.Chat
 {
     public interface IChatFeatureChecker
     {

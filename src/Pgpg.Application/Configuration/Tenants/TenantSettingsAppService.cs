@@ -10,14 +10,15 @@ using Abp.Runtime.Session;
 using Abp.Timing;
 using Abp.Zero.Configuration;
 using Abp.Zero.Ldap.Configuration;
-using Pgpg.Authorization;
-using Pgpg.Configuration.Host.Dto;
-using Pgpg.Configuration.Tenants.Dto;
-using Pgpg.Security;
-using Pgpg.Timing;
 using Newtonsoft.Json;
+using Pgpg.Application.Configuration.Host.Dto;
+using Pgpg.Application.Configuration.Tenants.Dto;
+using Pgpg.Core.Authorization;
+using Pgpg.Core.Configuration;
+using Pgpg.Core.Security;
+using Pgpg.Core.Timing;
 
-namespace Pgpg.Configuration.Tenants
+namespace Pgpg.Application.Configuration.Tenants
 {
     [AbpAuthorize(AppPermissions.Pages_Administration_Tenant_Settings)]
     public class TenantSettingsAppService : PgpgAppServiceBase, ITenantSettingsAppService

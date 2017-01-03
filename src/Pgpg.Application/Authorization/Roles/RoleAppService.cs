@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.Authorization;
 using Abp.AutoMapper;
-using Abp.Linq.Extensions;
 using Abp.Extensions;
-using Pgpg.Authorization.Permissions;
-using Pgpg.Authorization.Permissions.Dto;
-using Pgpg.Authorization.Roles.Dto;
+using Abp.Linq.Extensions;
+using Pgpg.Application.Authorization.Permissions;
+using Pgpg.Application.Authorization.Permissions.Dto;
+using Pgpg.Application.Authorization.Roles.Dto;
+using Pgpg.Core.Authorization;
+using Pgpg.Core.Authorization.Roles;
 
-namespace Pgpg.Authorization.Roles
+namespace Pgpg.Application.Authorization.Roles
 {
     /// <summary>
     /// Application service that is used by 'role management' page.

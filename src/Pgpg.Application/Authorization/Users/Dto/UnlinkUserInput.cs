@@ -1,6 +1,6 @@
 using Abp;
 
-namespace Pgpg.Authorization.Users.Dto
+namespace Pgpg.Application.Authorization.Users.Dto
 {
     public class UnlinkUserInput
     {

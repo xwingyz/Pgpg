@@ -3,8 +3,9 @@ using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Abp.Domain.Entities;
 using Abp.Domain.Entities.Auditing;
+using Pgpg.Core.MultiTenancy;
 
-namespace Pgpg.MultiTenancy.Dto
+namespace Pgpg.Application.MultiTenancy.Dto
 {
     [AutoMapFrom(typeof (Tenant))]
     public class TenantListDto : EntityDto, IPassivable, IHasCreationTime

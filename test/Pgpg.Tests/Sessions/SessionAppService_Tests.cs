@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Pgpg.Sessions;
+using Pgpg.Application.Sessions;
 using Shouldly;
 using Xunit;
 

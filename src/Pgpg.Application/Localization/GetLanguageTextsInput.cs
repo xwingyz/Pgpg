@@ -4,7 +4,7 @@ using Abp.Extensions;
 using Abp.Localization;
 using Abp.Runtime.Validation;
 
-namespace Pgpg.Localization
+namespace Pgpg.Application.Localization
 {
     public class GetLanguageTextsInput : IPagedResultRequest, ISortedResultRequest, IShouldNormalize
     {

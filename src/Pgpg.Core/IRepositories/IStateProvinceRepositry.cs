@@ -1,9 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Abp.Domain.Repositories;
-using Pgpg.Domain.Address;
+using Pgpg.Core.Domain.Address;
 
-namespace Pgpg.IRepositories
+namespace Pgpg.Core.IRepositories
 {
     public interface IStateProvinceRepositry: IRepository<StateProvince>
     {

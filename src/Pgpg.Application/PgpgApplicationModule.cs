@@ -2,11 +2,13 @@
 using Abp.AutoMapper;
 using Abp.Dependency;
 using Abp.Modules;
-using Pgpg.Authorization;
-using Pgpg.Smsing;
-using Pgpg.Submall;
+using Pgpg.Application.Submall;
+using Pgpg.Core;
+using Pgpg.Core.Authorization;
+using Pgpg.Core.Debugging;
+using Pgpg.Core.Smsing;
 
-namespace Pgpg
+namespace Pgpg.Application
 {
     /// <summary>
     /// Application layer module of the application.
@@ -24,7 +26,7 @@ namespace Pgpg
             //Adding setting providers
             Configuration.Settings.Providers.Add<SubmallSettingProvider>();
 
-            if (Debugging.DebugHelper.IsDebug)
+            if (DebugHelper.IsDebug)
             {
                 IocManager.Register<ISmsSender, NullSmsSender>(DependencyLifeStyle.Transient);
             }

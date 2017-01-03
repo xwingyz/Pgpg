@@ -1,7 +1,7 @@
 ﻿using System;
 using Abp.AutoMapper;
 
-namespace Pgpg.Friendships.Cache
+namespace Pgpg.Core.Friendships.Cache
 {
     [AutoMapFrom(typeof(Friendship))]
     public class FriendCacheItem

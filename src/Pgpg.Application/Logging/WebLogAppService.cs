@@ -4,13 +4,14 @@ using System.Linq;
 using Abp.Authorization;
 using ICSharpCode.SharpZipLib.Core;
 using ICSharpCode.SharpZipLib.Zip;
-using Pgpg.Authorization;
-using Pgpg.Dto;
-using Pgpg.IO;
-using Pgpg.Logging.Dto;
-using Pgpg.Net.MimeTypes;
+using Pgpg.Application.Dto;
+using Pgpg.Application.IO;
+using Pgpg.Application.Logging.Dto;
+using Pgpg.Application.Net.MimeTypes;
+using Pgpg.Core;
+using Pgpg.Core.Authorization;
 
-namespace Pgpg.Logging
+namespace Pgpg.Application.Logging
 {
     [AbpAuthorize(AppPermissions.Pages_Administration_Host_Maintenance)]
     public class WebLogAppService : PgpgAppServiceBase, IWebLogAppService

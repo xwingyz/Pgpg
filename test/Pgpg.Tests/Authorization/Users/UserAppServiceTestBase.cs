@@ -1,4 +1,5 @@
-using Pgpg.Authorization.Users;
+using Pgpg.Application.Authorization.Users;
+using Pgpg.Core.Authorization.Users;
 
 namespace Pgpg.Tests.Authorization.Users
 {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
-using Pgpg.Configuration;
+using Pgpg.Core.Configuration;
 
 namespace Pgpg.Web.Configuration
 {

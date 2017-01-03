@@ -2,7 +2,7 @@
 using Abp.Extensions;
 using Microsoft.Extensions.Configuration;
 
-namespace Pgpg.Configuration
+namespace Pgpg.Core.Configuration
 {
     public static class AppConfigurations
     {

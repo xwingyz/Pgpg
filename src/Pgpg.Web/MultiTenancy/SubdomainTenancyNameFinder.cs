@@ -5,8 +5,9 @@ using Abp.Dependency;
 using Abp.Extensions;
 using Abp.Text;
 using Microsoft.AspNetCore.Http;
-using Pgpg.Configuration;
-using Pgpg.MultiTenancy;
+using Pgpg.Core.Configuration;
+using Pgpg.Core.MultiTenancy;
+using Pgpg.Core.Web;
 
 namespace Pgpg.Web.MultiTenancy
 {

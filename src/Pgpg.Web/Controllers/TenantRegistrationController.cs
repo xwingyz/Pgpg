@@ -6,17 +6,17 @@ using Abp.Configuration.Startup;
 using Abp.Domain.Uow;
 using Abp.UI;
 using Abp.Zero.Configuration;
-using Pgpg.Configuration;
-using Pgpg.Debugging;
 using Pgpg.Web.Models.TenantRegistration;
 using Microsoft.AspNetCore.Mvc;
-using Pgpg.Authorization;
-using Pgpg.Authorization.Users;
-using Pgpg.Editions;
-using Pgpg.MultiTenancy;
-using Pgpg.Notifications;
 using Pgpg.Web.Identity;
 using PaulMiami.AspNetCore.Mvc.Recaptcha;
+using Pgpg.Application.Authorization;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.Configuration;
+using Pgpg.Core.Debugging;
+using Pgpg.Core.Editions;
+using Pgpg.Core.MultiTenancy;
+using Pgpg.Core.Notifications;
 
 namespace Pgpg.Web.Controllers
 {
@@ -108,7 +108,7 @@ namespace Pgpg.Web.Controllers
 
                 CurrentUnitOfWork.SetTenantId(tenant.Id);
 
-                var user = await _userManager.FindByNameAsync(Authorization.Users.User.AdminUserName);
+                var user = await _userManager.FindByNameAsync(Core.Authorization.Users.User.AdminUserName);
 
                 //Directly login if possible
                 if (user.IsActive && (user.IsEmailConfirmed || !isEmailConfirmationRequiredForLogin))
@@ -129,7 +129,7 @@ namespace Pgpg.Web.Controllers
                 {
                     TenancyName = model.TenancyName,
                     Name = model.Name,
-                    UserName = Authorization.Users.User.AdminUserName,
+                    UserName = Core.Authorization.Users.User.AdminUserName,
                     EmailAddress = model.AdminEmailAddress,
                     IsActive = isNewRegisteredTenantActiveByDefault,
                     IsEmailConfirmationRequired = isEmailConfirmationRequiredForLogin

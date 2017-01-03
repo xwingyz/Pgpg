@@ -1,6 +1,6 @@
 using Abp.AutoMapper;
-using Pgpg.MultiTenancy;
-using Pgpg.MultiTenancy.Dto;
+using Pgpg.Application.MultiTenancy.Dto;
+using Pgpg.Core.MultiTenancy;
 using Pgpg.Web.Areas.Admin.Models.Common;
 
 namespace Pgpg.Web.Areas.Admin.Models.Tenants

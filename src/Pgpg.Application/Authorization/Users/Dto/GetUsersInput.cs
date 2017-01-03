@@ -1,7 +1,7 @@
 ﻿using Abp.Runtime.Validation;
-using Pgpg.Dto;
+using Pgpg.Application.Dto;
 
-namespace Pgpg.Authorization.Users.Dto
+namespace Pgpg.Application.Authorization.Users.Dto
 {
     public class GetUsersInput : PagedAndSortedInputDto, IShouldNormalize
     {

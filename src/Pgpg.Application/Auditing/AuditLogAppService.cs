@@ -10,13 +10,13 @@ using Abp.AutoMapper;
 using Abp.Domain.Repositories;
 using Abp.Extensions;
 using Abp.Linq.Extensions;
-using Pgpg.Auditing.Dto;
-using Pgpg.Auditing.Exporting;
-using Pgpg.Authorization;
-using Pgpg.Authorization.Users;
-using Pgpg.Dto;
+using Pgpg.Application.Auditing.Dto;
+using Pgpg.Application.Auditing.Exporting;
+using Pgpg.Application.Dto;
+using Pgpg.Core.Authorization;
+using Pgpg.Core.Authorization.Users;
 
-namespace Pgpg.Auditing
+namespace Pgpg.Application.Auditing
 {
     [DisableAuditing]
     [AbpAuthorize(AppPermissions.Pages_Administration_AuditLogs)]

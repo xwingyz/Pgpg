@@ -1,4 +1,4 @@
-﻿namespace Pgpg.Features
+﻿namespace Pgpg.Core.Features
 {
     public static class AppFeatures
     {

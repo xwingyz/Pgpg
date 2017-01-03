@@ -2,10 +2,10 @@ using System.Threading.Tasks;
 using Abp;
 using Abp.Localization;
 using Abp.Notifications;
-using Pgpg.Authorization.Users;
-using Pgpg.MultiTenancy;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.MultiTenancy;
 
-namespace Pgpg.Notifications
+namespace Pgpg.Core.Notifications
 {
     public class AppNotifier : PgpgDomainServiceBase, IAppNotifier
     {

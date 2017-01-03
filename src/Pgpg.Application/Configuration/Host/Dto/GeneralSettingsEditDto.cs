@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Pgpg.Configuration.Host.Dto
+namespace Pgpg.Application.Configuration.Host.Dto
 {
     public class GeneralSettingsEditDto
     {

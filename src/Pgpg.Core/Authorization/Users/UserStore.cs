@@ -1,9 +1,9 @@
 ﻿using Abp.Authorization.Users;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
-using Pgpg.Authorization.Roles;
+using Pgpg.Core.Authorization.Roles;
 
-namespace Pgpg.Authorization.Users
+namespace Pgpg.Core.Authorization.Users
 {
     /// <summary>
     /// Used to perform database operations for <see cref="UserManager"/>.

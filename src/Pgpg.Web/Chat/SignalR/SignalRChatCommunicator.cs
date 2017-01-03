@@ -5,10 +5,10 @@ using Abp.Dependency;
 using Abp.RealTime;
 using Castle.Core.Logging;
 using Microsoft.AspNet.SignalR;
-using Pgpg.Chat;
-using Pgpg.Chat.Dto;
-using Pgpg.Friendships;
-using Pgpg.Friendships.Dto;
+using Pgpg.Application.Chat.Dto;
+using Pgpg.Application.Friendships.Dto;
+using Pgpg.Core.Chat;
+using Pgpg.Core.Friendships;
 
 namespace Pgpg.Web.Chat.SignalR
 {

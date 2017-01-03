@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-using Pgpg.Security;
+using Pgpg.Core.Security;
 
 namespace Pgpg.Web.Models.Account
 {

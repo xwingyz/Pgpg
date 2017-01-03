@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
-using Pgpg.Localization.Dto;
+using Pgpg.Application.Localization.Dto;
 
-namespace Pgpg.Localization
+namespace Pgpg.Application.Localization
 {
     public interface ILanguageAppService : IApplicationService
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Abp.Application.Services.Dto;
 
-namespace Pgpg.Editions.Dto
+namespace Pgpg.Application.Editions.Dto
 {
     public class GetEditionForEditOutput
     {

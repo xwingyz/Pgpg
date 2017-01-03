@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Abp.Configuration;
 
-namespace Pgpg.Timing
+namespace Pgpg.Core.Timing
 {
     public interface ITimeZoneService
     {

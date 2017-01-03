@@ -5,7 +5,7 @@ using Abp.Authorization.Users;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 
-namespace Pgpg.Authorization.Users
+namespace Pgpg.Core.Authorization.Users
 {
     public class UserLinkManager : PgpgDomainServiceBase, IUserLinkManager
     {

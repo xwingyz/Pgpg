@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Abp.Application.Services;
-using Pgpg.Configuration.Tenants.Dto;
+using Pgpg.Application.Configuration.Tenants.Dto;
 
-namespace Pgpg.Configuration.Tenants
+namespace Pgpg.Application.Configuration.Tenants
 {
     public interface ITenantSettingsAppService : IApplicationService
     {

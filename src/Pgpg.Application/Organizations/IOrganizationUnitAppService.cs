@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
-using Pgpg.Organizations.Dto;
+using Pgpg.Application.Organizations.Dto;
 
-namespace Pgpg.Organizations
+namespace Pgpg.Application.Organizations
 {
     public interface IOrganizationUnitAppService : IApplicationService
     {

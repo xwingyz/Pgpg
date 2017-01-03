@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Pgpg.Logging.Dto
+namespace Pgpg.Application.Logging.Dto
 {
     public class GetLatestWebLogsOutput
     {

@@ -3,7 +3,7 @@ using Abp.Domain.Uow;
 using Abp.MultiTenancy;
 using Abp.Zero.EntityFramework;
 
-namespace Pgpg.EntityFramework
+namespace Pgpg.EntityFramework.EntityFramework
 {
     public class AbpZeroDbMigrator : AbpZeroDbMigrator<PgpgDbContext, Migrations.Configuration>
     {

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Abp.Authorization;
 using Abp.Runtime.Validation;
 
-namespace Pgpg.Authorization.Permissions
+namespace Pgpg.Application.Authorization.Permissions
 {
     public static class PermissionManagerExtensions
     {

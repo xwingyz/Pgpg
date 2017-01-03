@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
-using Pgpg.Address.Country.Dto;
+using Pgpg.Application.Address.Country.Dto;
 
-namespace Pgpg.Address.Country
+namespace Pgpg.Application.Address.Country
 {
     public interface ICountryAppService: IApplicationService
     {
         Task<ListResultDto<CountryListDto>> GetCountries(GetCountriesInput input);
+
+        Task<PagedResultDto<CountryListDto>> GetCountryPagedList(GetCountriesInput input);
 
         Task CreateOrUpdateCountry(CreateOrUpdateCountryInput input);
 

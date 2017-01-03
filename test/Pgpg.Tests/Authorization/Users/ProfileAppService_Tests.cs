@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
-using Pgpg.Authorization.Users.Profile;
-using Pgpg.Authorization.Users.Profile.Dto;
+using Pgpg.Application.Authorization.Users.Profile;
+using Pgpg.Application.Authorization.Users.Profile.Dto;
 using Shouldly;
 using Xunit;
 

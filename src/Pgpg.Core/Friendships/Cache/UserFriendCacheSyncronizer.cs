@@ -3,9 +3,9 @@ using Abp.AutoMapper;
 using Abp.Dependency;
 using Abp.Events.Bus.Entities;
 using Abp.Events.Bus.Handlers;
-using Pgpg.Chat;
+using Pgpg.Core.Chat;
 
-namespace Pgpg.Friendships.Cache
+namespace Pgpg.Core.Friendships.Cache
 {
     public class UserFriendCacheSyncronizer :
         IEventHandler<EntityCreatedEventData<Friendship>>,

@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using Abp.Runtime.Validation;
-using Pgpg.Dto;
+using Pgpg.Application.Dto;
 
-namespace Pgpg.Organizations.Dto
+namespace Pgpg.Application.Organizations.Dto
 {
     public class GetOrganizationUnitUsersInput : PagedAndSortedInputDto, IShouldNormalize
     {

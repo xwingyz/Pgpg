@@ -1,6 +1,6 @@
 ﻿using Abp.Configuration;
 
-namespace Pgpg.Timing.Dto
+namespace Pgpg.Application.Timing.Dto
 {
     public class GetTimezonesInput
     {

@@ -18,7 +18,10 @@
     "Microsoft.AspNetCore.Authentication.JwtBearer": "1.0.0",
     "Microsoft.AspNetCore.Authentication.MicrosoftAccount": "1.0.0",
     "Microsoft.AspNetCore.Authentication.OpenIdConnect": "1.0.0",
+    "Microsoft.AspNetCore.Authentication.QQConnect": "1.0.0-*",
     "Microsoft.AspNetCore.Authentication.Twitter": "1.0.0",
+    "Microsoft.AspNetCore.Authentication.WeChat": "1.0.0-*",
+    "Microsoft.AspNetCore.Authentication.WeiBo": "1.0.0-*",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Mvc": "1.0.1",
     "Microsoft.AspNetCore.Owin": "1.0.0",
@@ -39,6 +42,7 @@
     },
     "PaulMiami.AspNetCore.Mvc.Recaptcha": "1.1.1",
     "Pgpg.Application": "1.0.0.0-*",
+    "Pgpg.Credit": "1.0.0-*",
     "Pgpg.EntityFramework": "1.0.0.0-*",
     "Swashbuckle": "6.0.0-beta902"
   },

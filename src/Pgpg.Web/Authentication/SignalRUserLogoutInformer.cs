@@ -4,7 +4,7 @@ using Abp.RealTime;
 using Abp.Web.SignalR.Hubs;
 using Castle.Core.Logging;
 using Microsoft.AspNet.SignalR;
-using Pgpg.Authorization.Users;
+using Pgpg.Core.Authorization.Users;
 
 namespace Pgpg.Web.Authentication
 {

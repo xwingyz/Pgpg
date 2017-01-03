@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Abp.Extensions;
 using Abp.Runtime.Validation;
-using Pgpg.Configuration.Host.Dto;
+using Pgpg.Application.Configuration.Host.Dto;
 
-namespace Pgpg.Configuration.Tenants.Dto
+namespace Pgpg.Application.Configuration.Tenants.Dto
 {
     public class TenantSettingsEditDto
     {

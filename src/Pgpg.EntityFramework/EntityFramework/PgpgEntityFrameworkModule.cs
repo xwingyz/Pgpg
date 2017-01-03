@@ -2,8 +2,9 @@
 using System.Reflection;
 using Abp.Modules;
 using Abp.Zero.EntityFramework;
+using Pgpg.Core;
 
-namespace Pgpg.EntityFramework
+namespace Pgpg.EntityFramework.EntityFramework
 {
     /// <summary>
     /// Entity framework module of the application.

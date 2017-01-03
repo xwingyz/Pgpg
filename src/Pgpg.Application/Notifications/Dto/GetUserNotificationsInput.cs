@@ -1,7 +1,7 @@
 ﻿using Abp.Notifications;
-using Pgpg.Dto;
+using Pgpg.Application.Dto;
 
-namespace Pgpg.Notifications.Dto
+namespace Pgpg.Application.Notifications.Dto
 {
     public class GetUserNotificationsInput : PagedInputDto
     {

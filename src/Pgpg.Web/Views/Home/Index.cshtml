@@ -1,12 +1,12 @@
 ﻿@using System.Threading.Tasks
-@using Pgpg.Localization
+@using Pgpg.Core.Localization
 @using Pgpg.Web.Startup
 @{
     ViewBag.CurrentPageName = FrontEndPageNames.Home;
 }
 @section Styles
 {
-<link rel="stylesheet" href="~/lib/fancyBox/source/jquery.fancybox.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/lib/fancyBox/source/jquery.fancybox.css" asp-append-version="true">
     <link rel="stylesheet" href="~/lib/OwlCarousel/owl-carousel/owl.carousel.css" asp-append-version="true">
     <link rel="stylesheet" href="~/lib/OwlCarousel/owl-carousel/owl.carousel@(CultureHelper.IsRtl ? "-rtl" : "").css">
 }

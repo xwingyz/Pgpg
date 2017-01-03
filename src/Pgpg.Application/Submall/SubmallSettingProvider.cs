@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Abp.Configuration;
 
-namespace Pgpg.Submall
+namespace Pgpg.Application.Submall
 {
     public class SubmallSettingProvider : SettingProvider
     {

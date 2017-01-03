@@ -1,6 +1,6 @@
 ﻿using Abp.Application.Services.Dto;
 
-namespace Pgpg.Dto
+namespace Pgpg.Application.Dto
 {
     public class PagedAndSortedInputDto : PagedInputDto, ISortedResultRequest
     {

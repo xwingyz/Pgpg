@@ -1,8 +1,7 @@
 using System.Collections.Generic;
-using Abp.Application.Services.Dto;
-using Pgpg.Authorization.Permissions.Dto;
+using Pgpg.Application.Authorization.Permissions.Dto;
 
-namespace Pgpg.Authorization.Roles.Dto
+namespace Pgpg.Application.Authorization.Roles.Dto
 {
     public class GetRoleForEditOutput
     {

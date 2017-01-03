@@ -1,8 +1,8 @@
 ﻿using Abp.Configuration.Startup;
 using Abp.Runtime.Session;
-using Pgpg.MultiTenancy;
+using Pgpg.Core.MultiTenancy;
 
-namespace Pgpg.Runtime.Session
+namespace Pgpg.Core.Runtime.Session
 {
     /// <summary>
     /// Extends <see cref="ClaimsAbpSession"/>  (from Abp library).

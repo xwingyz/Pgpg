@@ -1,9 +1,9 @@
 ﻿using Abp.Authorization;
-using Pgpg.Authorization.Roles;
-using Pgpg.Authorization.Users;
-using Pgpg.MultiTenancy;
+using Pgpg.Core.Authorization.Roles;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.MultiTenancy;
 
-namespace Pgpg.Authorization
+namespace Pgpg.Core.Authorization
 {
     /// <summary>
     /// Implements <see cref="PermissionChecker"/>.

@@ -4,9 +4,10 @@ using System.Threading.Tasks;
 using Abp;
 using Abp.Application.Services.Dto;
 using Abp.Localization;
-using Pgpg.Localization;
-using Pgpg.Localization.Dto;
-using Pgpg.Migrations.Seed.Host;
+using Pgpg.Application.Localization;
+using Pgpg.Application.Localization.Dto;
+using Pgpg.Core;
+using Pgpg.EntityFramework.Migrations.Seed.Host;
 using Shouldly;
 using Xunit;
 

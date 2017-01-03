@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Pgpg.Authorization.Users.Dto;
-using Pgpg.Dto;
+using Pgpg.Application.Authorization.Users.Dto;
+using Pgpg.Application.Dto;
 
-namespace Pgpg.Authorization.Users.Exporting
+namespace Pgpg.Application.Authorization.Users.Exporting
 {
     public interface IUserListExcelExporter
     {

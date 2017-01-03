@@ -9,27 +9,27 @@
 <div class="modal-body">
     <form name="MySettingsModalForm">
         <div class="form-group form-md-line-input form-md-floating-label no-hint">
-            <input class="form-control edited" type="text" name="Name" value="@Model.Name" required maxlength="@Pgpg.Authorization.Users.User.MaxNameLength">
+            <input class="form-control edited" type="text" name="Name" value="@Model.Name" required maxlength="@Pgpg.Core.Authorization.Users.User.MaxNameLength">
             <label>@L("Name")</label>
         </div>
 
         <div class="form-group form-md-line-input form-md-floating-label no-hint">
-            <input type="text" name="Surname" class="form-control edited" value="@Model.Surname" required maxlength="@Pgpg.Authorization.Users.User.MaxSurnameLength">
+            <input type="text" name="Surname" class="form-control edited" value="@Model.Surname" required maxlength="@Pgpg.Core.Authorization.Users.User.MaxSurnameLength">
             <label>@L("Surname")</label>
         </div>
 
         <div class="form-group form-md-line-input form-md-floating-label no-hint">
-            <input type="email" name="EmailAddress" class="form-control edited" value="@Model.EmailAddress" required maxlength="@Pgpg.Authorization.Users.User.MaxEmailAddressLength">
+            <input type="email" name="EmailAddress" class="form-control edited" value="@Model.EmailAddress" required maxlength="@Pgpg.Core.Authorization.Users.User.MaxEmailAddressLength">
             <label>@L("EmailAddress")</label>
         </div>
 
         <div class="form-group form-md-line-input form-md-floating-label no-hint">
-            <input type="text" name="PhoneNumber" class="form-control edited" value="@Model.PhoneNumber" maxlength="@Pgpg.Authorization.Users.User.MaxPhoneNumberLength">
+            <input type="text" name="PhoneNumber" class="form-control edited" value="@Model.PhoneNumber" maxlength="@Pgpg.Core.Authorization.Users.User.MaxPhoneNumberLength">
             <label>@L("PhoneNumber")</label>
         </div>
 
         <div class="form-group form-md-line-input form-md-floating-label">
-            <input type="text" @Html.Raw(!Model.CanChangeUserName ? "disabled=\"disabled\"" : "") class="form-control edited" value="@Model.UserName" name="UserName" required maxlength="@Pgpg.Authorization.Users.User.MaxUserNameLength">
+            <input type="text" @Html.Raw(!Model.CanChangeUserName ? "disabled=\"disabled\"" : "") class="form-control edited" value="@Model.UserName" name="UserName" required maxlength="@Pgpg.Core.Authorization.Users.User.MaxUserNameLength">
             <label>@L("UserName")</label>
             @if (!Model.CanChangeUserName)
             {

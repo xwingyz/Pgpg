@@ -6,7 +6,7 @@ using Abp.Runtime.Session;
 using Abp.UI;
 using Castle.Core.Logging;
 using Microsoft.AspNet.SignalR;
-using Pgpg.Chat;
+using Pgpg.Core.Chat;
 
 namespace Pgpg.Web.Chat.SignalR
 {

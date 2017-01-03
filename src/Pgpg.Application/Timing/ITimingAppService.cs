@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
-using Pgpg.Timing.Dto;
+using Pgpg.Application.Timing.Dto;
 
-namespace Pgpg.Timing
+namespace Pgpg.Application.Timing
 {
     public interface ITimingAppService : IApplicationService
     {

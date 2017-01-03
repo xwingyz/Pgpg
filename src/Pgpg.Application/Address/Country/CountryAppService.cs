@@ -1,19 +1,22 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Diagnostics;
+using System.Linq.Dynamic;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Abp.Domain.Repositories;
+using Abp.Linq.Extensions;
 using Abp.UI;
-using Pgpg.Address.Country.Dto;
+using Pgpg.Application.Address.Country.Dto;
 
-namespace Pgpg.Address.Country
+namespace Pgpg.Application.Address.Country
 {
     public class CountryAppService : PgpgAppServiceBase, ICountryAppService
     {
-        private readonly IRepository<Domain.Address.Country> _countryRepository;
+        private readonly IRepository<Core.Domain.Address.Country> _countryRepository;
 
-        public CountryAppService(IRepository<Domain.Address.Country> countryRepository)
+        public CountryAppService(IRepository<Core.Domain.Address.Country> countryRepository)
         {
             this._countryRepository = countryRepository;
         }
@@ -21,7 +24,20 @@ namespace Pgpg.Address.Country
         public async Task<ListResultDto<CountryListDto>> GetCountries(GetCountriesInput input)
         {
             var countries = await _countryRepository.GetAll().ToListAsync();
-            return new ListResultDto<CountryListDto>(countries.MapTo<Domain.Address.Country, CountryListDto>());
+            return new ListResultDto<CountryListDto>(countries.MapTo<List<CountryListDto>>());
+        }
+
+        public async Task<PagedResultDto<CountryListDto>> GetCountryPagedList(GetCountriesInput input)
+        {
+            var query = _countryRepository.GetAll();
+            var countryCount = await query.CountAsync();
+            var countries = await query
+                .OrderBy(input.Sorting)
+                .PageBy(input)
+                .ToListAsync();
+
+            var countryListDtos = countries.MapTo<List<CountryListDto>>();
+            return new PagedResultDto<CountryListDto>(countryCount, countryListDtos);
         }
 
         public async Task<GetCountryForEditOutput> GetCountryForEdit(NullableIdDto input)
@@ -61,7 +77,7 @@ namespace Pgpg.Address.Country
                 {
                     throw new UserFriendlyException(L("CountryAlreadyExists"));
                 }
-                var country = input.Country.MapTo<Domain.Address.Country>();
+                var country = input.Country.MapTo<Core.Domain.Address.Country>();
                 await _countryRepository.InsertAsync(country);
             }
         }

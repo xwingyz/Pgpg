@@ -1,6 +1,6 @@
 ﻿using Abp;
 
-namespace Pgpg.Friendships.Cache
+namespace Pgpg.Core.Friendships.Cache
 {
     public interface IUserFriendsCache
     {

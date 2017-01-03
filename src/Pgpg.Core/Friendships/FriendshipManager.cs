@@ -4,7 +4,7 @@ using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using Abp.UI;
 
-namespace Pgpg.Friendships
+namespace Pgpg.Core.Friendships
 {
     public class FriendshipManager : PgpgDomainServiceBase, IFriendshipManager
     {

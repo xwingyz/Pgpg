@@ -7,12 +7,12 @@ using Abp.Domain.Uow;
 using Abp.Extensions;
 using Abp.Net.Mail;
 using Abp.Runtime.Security;
-using Pgpg.Chat;
-using Pgpg.Emailing;
-using Pgpg.MultiTenancy;
-using Pgpg.Web;
+using Pgpg.Core.Chat;
+using Pgpg.Core.Emailing;
+using Pgpg.Core.MultiTenancy;
+using Pgpg.Core.Web;
 
-namespace Pgpg.Authorization.Users
+namespace Pgpg.Core.Authorization.Users
 {
     /// <summary>
     /// Used to send email to users.

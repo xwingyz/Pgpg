@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using Pgpg.Authorization.Roles;
-using Pgpg.Authorization.Roles.Dto;
+using Pgpg.Application.Authorization.Roles;
+using Pgpg.Application.Authorization.Roles.Dto;
 using Shouldly;
 using Xunit;
 

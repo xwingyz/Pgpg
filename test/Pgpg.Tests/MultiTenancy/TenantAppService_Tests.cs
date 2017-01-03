@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.MultiTenancy;
 using Abp.Zero.Configuration;
-using Pgpg.Authorization.Users;
-using Pgpg.MultiTenancy;
-using Pgpg.MultiTenancy.Dto;
-using Pgpg.Notifications;
+using Pgpg.Application.MultiTenancy;
+using Pgpg.Application.MultiTenancy.Dto;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.MultiTenancy;
+using Pgpg.Core.Notifications;
 using Shouldly;
 using Xunit;
 

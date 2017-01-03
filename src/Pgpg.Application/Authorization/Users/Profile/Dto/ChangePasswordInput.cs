@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Abp.Auditing;
 
-namespace Pgpg.Authorization.Users.Profile.Dto
+namespace Pgpg.Application.Authorization.Users.Profile.Dto
 {
     public class ChangePasswordInput
     {

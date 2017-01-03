@@ -1,5 +1,5 @@
 ﻿using Abp.AutoMapper;
-using Pgpg.Localization.Dto;
+using Pgpg.Application.Localization.Dto;
 
 namespace Pgpg.Web.Areas.Admin.Models.Languages
 {

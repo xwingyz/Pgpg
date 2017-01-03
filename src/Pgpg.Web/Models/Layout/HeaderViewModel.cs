@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Abp.Application.Navigation;
 using Abp.Localization;
-using Pgpg.Sessions.Dto;
+using Pgpg.Application.Sessions.Dto;
 
 namespace Pgpg.Web.Models.Layout
 {

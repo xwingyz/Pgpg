@@ -17,15 +17,17 @@ using Abp.Notifications;
 using Abp.Runtime.Session;
 using Abp.UI;
 using Microsoft.AspNet.Identity;
-using Pgpg.Authorization.Permissions;
-using Pgpg.Authorization.Permissions.Dto;
-using Pgpg.Authorization.Roles;
-using Pgpg.Authorization.Users.Dto;
-using Pgpg.Authorization.Users.Exporting;
-using Pgpg.Dto;
-using Pgpg.Notifications;
+using Pgpg.Application.Authorization.Permissions;
+using Pgpg.Application.Authorization.Permissions.Dto;
+using Pgpg.Application.Authorization.Users.Dto;
+using Pgpg.Application.Authorization.Users.Exporting;
+using Pgpg.Application.Dto;
+using Pgpg.Core.Authorization;
+using Pgpg.Core.Authorization.Roles;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.Notifications;
 
-namespace Pgpg.Authorization.Users
+namespace Pgpg.Application.Authorization.Users
 {
     [AbpAuthorize(AppPermissions.Pages_Administration_Users)]
     public class UserAppService : PgpgAppServiceBase, IUserAppService

@@ -1,6 +1,6 @@
 ﻿using Abp.Runtime.Caching;
 
-namespace Pgpg.Authorization.Users
+namespace Pgpg.Core.Authorization.Users
 {
     public static class SwitchToLinkedAccountCacheManagerExtensions
     {

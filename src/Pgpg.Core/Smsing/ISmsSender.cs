@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Pgpg.Smsing
+namespace Pgpg.Core.Smsing
 {
     public interface ISmsSender
     {

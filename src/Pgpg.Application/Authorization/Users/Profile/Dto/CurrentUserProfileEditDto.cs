@@ -1,7 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using Abp.AutoMapper;
+using Pgpg.Core.Authorization.Users;
 
-namespace Pgpg.Authorization.Users.Profile.Dto
+namespace Pgpg.Application.Authorization.Users.Profile.Dto
 {
     [AutoMap(typeof(User))]
     public class CurrentUserProfileEditDto

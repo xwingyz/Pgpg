@@ -1,10 +1,8 @@
-namespace Pgpg.Migrations
+using System.Collections.Generic;
+using System.Data.Entity.Migrations;
+
+namespace Pgpg.EntityFramework.Migrations
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Data.Entity.Infrastructure.Annotations;
-    using System.Data.Entity.Migrations;
-    
     public partial class Upgrade_To_Abp_v1_0 : DbMigration
     {
         public override void Up()

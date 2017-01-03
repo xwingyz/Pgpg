@@ -11,10 +11,11 @@ using Abp.Authorization.Users;
 using Abp.Domain.Repositories;
 using Abp.Runtime.Session;
 using Abp.UI;
-using Pgpg.Authorization.Users.Dto;
-using Pgpg.MultiTenancy;
+using Pgpg.Application.Authorization.Users.Dto;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.MultiTenancy;
 
-namespace Pgpg.Authorization.Users
+namespace Pgpg.Application.Authorization.Users
 {
     [AbpAuthorize]
     public class UserLinkAppService : PgpgAppServiceBase, IUserLinkAppService

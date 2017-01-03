@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Data.Entity.Infrastructure.Annotations;
 using System.Data.Entity.Migrations;
 
-namespace Pgpg.Migrations
+namespace Pgpg.EntityFramework.Migrations
 {
     public partial class Tenant_Changed_To_FullAuditedEntity_From_AuditedEntity : DbMigration
     {

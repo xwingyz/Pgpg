@@ -4,10 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Abp;
 using Abp.Domain.Entities;
 using Abp.Domain.Entities.Auditing;
-using Abp.Events.Bus;
 using Abp.Timing;
 
-namespace Pgpg.Chat
+namespace Pgpg.Core.Chat
 {
     [Table("AppChatMessages")]
     public class ChatMessage : Entity<long>, IHasCreationTime, IMayHaveTenant

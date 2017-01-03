@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Abp.Localization;
-using Pgpg.Sessions.Dto;
+using Pgpg.Application.Sessions.Dto;
 
 namespace Pgpg.Web.Areas.Admin.Models.Layout
 {

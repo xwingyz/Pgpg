@@ -4,27 +4,28 @@ using Abp.AutoMapper;
 using Abp.Configuration.Startup;
 using Abp.Dependency;
 using Abp.Modules;
-using Abp.Net.Mail;
 using Abp.Runtime.Session;
 using Abp.Timing;
 using Abp.Zero;
 using Abp.Zero.Configuration;
 using Abp.Zero.Ldap;
-using Pgpg.Authorization.Roles;
-using Pgpg.Authorization.Users;
-using Pgpg.Chat;
-using Pgpg.Configuration;
-using Pgpg.Debugging;
-using Pgpg.Features;
-using Pgpg.Friendships;
-using Pgpg.Friendships.Cache;
-using Pgpg.Localization;
-using Pgpg.MultiTenancy;
-using Pgpg.Notifications;
-using Pgpg.Runtime.Session;
-using Pgpg.Timing;
+using Abp.Zero.Ldap.Configuration;
+using Pgpg.Core.Authorization.Ldap;
+using Pgpg.Core.Authorization.Roles;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.Chat;
+using Pgpg.Core.Configuration;
+using Pgpg.Core.Debugging;
+using Pgpg.Core.Features;
+using Pgpg.Core.Friendships;
+using Pgpg.Core.Friendships.Cache;
+using Pgpg.Core.Localization;
+using Pgpg.Core.MultiTenancy;
+using Pgpg.Core.Notifications;
+using Pgpg.Core.Runtime.Session;
+using Pgpg.Core.Timing;
 
-namespace Pgpg
+namespace Pgpg.Core
 {
     [DependsOn(
         typeof(AbpZeroCoreModule), 
@@ -53,10 +54,10 @@ namespace Pgpg
             Configuration.Notifications.Providers.Add<AppNotificationProvider>();
 
             //Enable this line to create a multi-tenant application.
-            Configuration.MultiTenancy.IsEnabled = true;
+            Configuration.MultiTenancy.IsEnabled = false;
 
             //Enable LDAP authentication (It can be enabled only if MultiTenancy is disabled!)
-            //Configuration.Modules.ZeroLdap().Enable(typeof(AppLdapAuthenticationSource));
+            Configuration.Modules.ZeroLdap().Enable(typeof(AppLdapAuthenticationSource));
 
             //Configure roles
             AppRoleConfig.Configure(Configuration.Modules.Zero().RoleManagement);

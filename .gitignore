@@ -116,3 +116,5 @@ UpgradeLog*.XML
 src/.vs/config/applicationhost.config
 
 /src/MyCompanyName.AbpZeroTemplate.Web/wwwroot/Temp/Downloads
+/src/Pgpg.Web/Properties/PublishProfiles
+/src/Pgpg.Web/Mobile/Behin

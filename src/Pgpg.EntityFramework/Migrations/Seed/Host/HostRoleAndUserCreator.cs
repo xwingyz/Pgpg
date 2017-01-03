@@ -3,12 +3,12 @@ using Abp.Authorization;
 using Abp.Authorization.Roles;
 using Abp.Authorization.Users;
 using Abp.MultiTenancy;
-using Pgpg.Authorization;
-using Pgpg.Authorization.Roles;
-using Pgpg.Authorization.Users;
-using Pgpg.EntityFramework;
+using Pgpg.Core.Authorization;
+using Pgpg.Core.Authorization.Roles;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.EntityFramework.EntityFramework;
 
-namespace Pgpg.Migrations.Seed.Host
+namespace Pgpg.EntityFramework.Migrations.Seed.Host
 {
     public class HostRoleAndUserCreator
     {

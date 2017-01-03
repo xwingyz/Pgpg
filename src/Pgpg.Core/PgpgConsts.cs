@@ -1,4 +1,4 @@
-﻿namespace Pgpg
+﻿namespace Pgpg.Core
 {
     public class PgpgConsts
     {

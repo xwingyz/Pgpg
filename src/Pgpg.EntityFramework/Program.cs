@@ -1,4 +1,4 @@
-﻿namespace Pgpg
+﻿namespace Pgpg.EntityFramework
 {
     /* WORKAROUND
      * This is needed since .NET CLI does not support class library projects!     

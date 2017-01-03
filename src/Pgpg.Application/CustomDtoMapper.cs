@@ -1,8 +1,8 @@
 using AutoMapper;
-using Pgpg.Authorization.Users;
-using Pgpg.Authorization.Users.Dto;
+using Pgpg.Application.Authorization.Users.Dto;
+using Pgpg.Core.Authorization.Users;
 
-namespace Pgpg
+namespace Pgpg.Application
 {
     internal static class CustomDtoMapper
     {

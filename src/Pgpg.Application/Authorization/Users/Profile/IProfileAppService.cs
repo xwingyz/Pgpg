@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Abp.Application.Services;
-using Pgpg.Authorization.Users.Profile.Dto;
+using Pgpg.Application.Authorization.Users.Profile.Dto;
 
-namespace Pgpg.Authorization.Users.Profile
+namespace Pgpg.Application.Authorization.Users.Profile
 {
     public interface IProfileAppService : IApplicationService
     {

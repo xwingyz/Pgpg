@@ -1,4 +1,4 @@
-namespace Pgpg.Friendships
+namespace Pgpg.Core.Friendships
 {
     public enum FriendshipState
     {

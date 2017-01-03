@@ -1,4 +1,4 @@
-namespace Pgpg.Submall.Lib
+namespace Pgpg.Application.Submall.Lib
 {
     public interface IAppConfig
     {

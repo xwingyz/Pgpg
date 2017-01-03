@@ -8,16 +8,17 @@ using Abp.Json;
 using Abp.Net.Mail;
 using Abp.Timing;
 using Abp.Zero.Configuration;
-using Pgpg.Authorization;
-using Pgpg.Configuration.Host.Dto;
-using Pgpg.Editions;
-using Pgpg.Security;
-using Pgpg.Timing;
 using Newtonsoft.Json;
-using Pgpg.Smsing;
-using Pgpg.Submall;
+using Pgpg.Application.Configuration.Host.Dto;
+using Pgpg.Application.Submall;
+using Pgpg.Core.Authorization;
+using Pgpg.Core.Configuration;
+using Pgpg.Core.Editions;
+using Pgpg.Core.Security;
+using Pgpg.Core.Smsing;
+using Pgpg.Core.Timing;
 
-namespace Pgpg.Configuration.Host
+namespace Pgpg.Application.Configuration.Host
 {
     [AbpAuthorize(AppPermissions.Pages_Administration_Host_Settings)]
     public class HostSettingsAppService : PgpgAppServiceBase, IHostSettingsAppService

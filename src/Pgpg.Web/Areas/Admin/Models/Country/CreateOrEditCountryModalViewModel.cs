@@ -1,5 +1,5 @@
 ﻿using Abp.AutoMapper;
-using Pgpg.Address.Country.Dto;
+using Pgpg.Application.Address.Country.Dto;
 
 namespace Pgpg.Web.Areas.Admin.Models.Country
 {

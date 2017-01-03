@@ -1,4 +1,4 @@
-namespace Pgpg.Configuration.Tenants.Dto
+namespace Pgpg.Application.Configuration.Tenants.Dto
 {
     public class LdapSettingsEditDto
     {

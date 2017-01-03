@@ -2,9 +2,9 @@
 using Abp.Auditing;
 using Abp.Authorization;
 using Abp.AutoMapper;
-using Pgpg.Sessions.Dto;
+using Pgpg.Application.Sessions.Dto;
 
-namespace Pgpg.Sessions
+namespace Pgpg.Application.Sessions
 {
     [AbpAuthorize]
     public class SessionAppService : PgpgAppServiceBase, ISessionAppService

@@ -9,9 +9,9 @@ using Abp.Authorization.Users;
 using Abp.AutoMapper;
 using Abp.Domain.Repositories;
 using Abp.Runtime.Session;
-using Pgpg.Authorization.Users.Dto;
+using Pgpg.Application.Authorization.Users.Dto;
 
-namespace Pgpg.Authorization.Users
+namespace Pgpg.Application.Authorization.Users
 {
     [AbpAuthorize]
     public class UserLoginAppService : PgpgAppServiceBase, IUserLoginAppService

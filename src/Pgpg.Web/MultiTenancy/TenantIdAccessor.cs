@@ -4,7 +4,7 @@ using Abp.Dependency;
 using Abp.MultiTenancy;
 using Abp.Runtime.Session;
 using Microsoft.AspNetCore.Http;
-using Pgpg.MultiTenancy;
+using Pgpg.Core.MultiTenancy;
 
 namespace Pgpg.Web.MultiTenancy
 {

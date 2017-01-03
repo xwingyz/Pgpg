@@ -3,11 +3,11 @@ using System.Linq;
 using Abp.Collections.Extensions;
 using Abp.Runtime.Session;
 using Abp.Timing.Timezone;
-using Pgpg.Authorization.Users.Dto;
-using Pgpg.DataExporting.Excel.EpPlus;
-using Pgpg.Dto;
+using Pgpg.Application.Authorization.Users.Dto;
+using Pgpg.Application.DataExporting.Excel.EpPlus;
+using Pgpg.Application.Dto;
 
-namespace Pgpg.Authorization.Users.Exporting
+namespace Pgpg.Application.Authorization.Users.Exporting
 {
     public class UserListExcelExporter : EpPlusExcelExporterBase, IUserListExcelExporter
     {

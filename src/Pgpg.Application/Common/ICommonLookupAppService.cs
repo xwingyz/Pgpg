@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
-using Pgpg.Common.Dto;
+using Pgpg.Application.Common.Dto;
 
-namespace Pgpg.Common
+namespace Pgpg.Application.Common
 {
     public interface ICommonLookupAppService : IApplicationService
     {

@@ -26,21 +26,23 @@ using Abp.Zero.Configuration;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Pgpg.Authorization;
-using Pgpg.Authorization.Impersonation;
-using Pgpg.Authorization.Roles;
-using Pgpg.Authorization.Users;
-using Pgpg.Configuration;
-using Pgpg.Debugging;
-using Pgpg.MultiTenancy;
-using Pgpg.Notifications;
 using Pgpg.Web.Models.Account;
 using Pgpg.Web.MultiTenancy;
 using Newtonsoft.Json;
-using Pgpg.Security;
 using Pgpg.Web.Identity;
 using Pgpg.Web.Startup;
 using PaulMiami.AspNetCore.Mvc.Recaptcha;
+using Pgpg.Application.Authorization;
+using Pgpg.Core.Authorization;
+using Pgpg.Core.Authorization.Impersonation;
+using Pgpg.Core.Authorization.Roles;
+using Pgpg.Core.Authorization.Users;
+using Pgpg.Core.Configuration;
+using Pgpg.Core.Debugging;
+using Pgpg.Core.MultiTenancy;
+using Pgpg.Core.Notifications;
+using Pgpg.Core.Security;
+using Pgpg.Core.Web;
 
 namespace Pgpg.Web.Controllers
 {
@@ -101,8 +103,14 @@ namespace Pgpg.Web.Controllers
 
         #region Login / Logout
 
-        public ActionResult Login(string userNameOrEmailAddress = "", string returnUrl = "", string successMessage = "")
+        public async Task<ActionResult> Login(string userNameOrEmailAddress = "", string returnUrl = "", string successMessage = "")
         {
+            if (this.AbpSession.UserId.HasValue)
+            {
+                await _signInManager.SignOutAllAsync();
+                return RedirectToAction("Login", new { userNameOrEmailAddress , returnUrl, successMessage });
+            }
+
             if (string.IsNullOrWhiteSpace(returnUrl))
             {
                 returnUrl = GetAppHomeUrl();
@@ -123,9 +131,12 @@ namespace Pgpg.Web.Controllers
 
         [HttpPost]
         [UnitOfWork]
-        public virtual async Task<JsonResult> Login(LoginViewModel loginModel, string returnUrl = "", string returnUrlHash = "")
+        public virtual async Task<JsonResult> Login(LoginViewModel loginModel, string returnUrl = "",
+            string returnUrlHash = "")
         {
-            var loginResult = await GetLoginResultAsync(loginModel.UsernameOrEmailAddress, loginModel.Password, loginModel.TenancyName);
+            var loginResult =
+                await
+                    GetLoginResultAsync(loginModel.UsernameOrEmailAddress, loginModel.Password, loginModel.TenancyName);
 
             var tenantId = loginResult.Tenant == null ? (int?)null : loginResult.Tenant.Id;
 
@@ -141,7 +152,8 @@ namespace Pgpg.Web.Controllers
                             "ResetPassword",
                             new ResetPasswordViewModel
                             {
-                                TenantId = SimpleStringCipher.Instance.Encrypt(tenantId == null ? null : tenantId.ToString()),
+                                TenantId =
+                                    SimpleStringCipher.Instance.Encrypt(tenantId == null ? null : tenantId.ToString()),
                                 UserId = SimpleStringCipher.Instance.Encrypt(loginResult.User.Id.ToString()),
                                 ResetCode = loginResult.User.PasswordResetCode
                             })
@@ -197,7 +209,8 @@ namespace Pgpg.Web.Controllers
             await _signInManager.SignOutAllAndSignInAsync(identity, rememberMe);
         }
 
-        private async Task<AbpLoginResult<Tenant, User>> GetLoginResultAsync(string usernameOrEmailAddress, string password, string tenancyName)
+        private async Task<AbpLoginResult<Tenant, User>> GetLoginResultAsync(string usernameOrEmailAddress,
+            string password, string tenancyName)
         {
             var loginResult = await _logInManager.LoginAsync(usernameOrEmailAddress, password, tenancyName);
 
@@ -206,7 +219,8 @@ namespace Pgpg.Web.Controllers
                 case AbpLoginResultType.Success:
                     return loginResult;
                 default:
-                    throw _abpLoginResultTypeHelper.CreateExceptionForFailedLoginAttempt(loginResult.Result, usernameOrEmailAddress, tenancyName);
+                    throw _abpLoginResultTypeHelper.CreateExceptionForFailedLoginAttempt(loginResult.Result,
+                        usernameOrEmailAddress, tenancyName);
             }
         }
 
@@ -279,8 +293,12 @@ namespace Pgpg.Web.Controllers
             var tenantId = await _signInManager.GetVerifiedTenantIdAsync();
 
             var isRememberBrowserEnabled = tenantId == null
-                ? await SettingManager.GetSettingValueForApplicationAsync<bool>(AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsRememberBrowserEnabled)
-                : await SettingManager.GetSettingValueForTenantAsync<bool>(AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsRememberBrowserEnabled, tenantId.Value);
+                ? await
+                    SettingManager.GetSettingValueForApplicationAsync<bool>(
+                        AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsRememberBrowserEnabled)
+                : await
+                    SettingManager.GetSettingValueForTenantAsync<bool>(
+                        AbpZeroSettingNames.UserManagement.TwoFactorLogin.IsRememberBrowserEnabled, tenantId.Value);
 
             return View(
                 new VerifySecurityCodeViewModel
@@ -372,14 +390,23 @@ namespace Pgpg.Web.Controllers
 
                 CurrentUnitOfWork.SetTenantId(tenant.Id);
 
-                if (!await SettingManager.GetSettingValueForTenantAsync<bool>(AppSettings.UserManagement.AllowSelfRegistration, tenant.Id))
+                if (
+                    !await
+                        SettingManager.GetSettingValueForTenantAsync<bool>(
+                            AppSettings.UserManagement.AllowSelfRegistration, tenant.Id))
                 {
                     throw new UserFriendlyException(L("SelfUserRegistrationIsDisabledMessage_Detail"));
                 }
 
                 //Getting tenant-specific settings
-                var isNewRegisteredUserActiveByDefault = await SettingManager.GetSettingValueForTenantAsync<bool>(AppSettings.UserManagement.IsNewRegisteredUserActiveByDefault, tenant.Id);
-                var isEmailConfirmationRequiredForLogin = await SettingManager.GetSettingValueForTenantAsync<bool>(AbpZeroSettingNames.UserManagement.IsEmailConfirmationRequiredForLogin, tenant.Id);
+                var isNewRegisteredUserActiveByDefault =
+                    await
+                        SettingManager.GetSettingValueForTenantAsync<bool>(
+                            AppSettings.UserManagement.IsNewRegisteredUserActiveByDefault, tenant.Id);
+                var isEmailConfirmationRequiredForLogin =
+                    await
+                        SettingManager.GetSettingValueForTenantAsync<bool>(
+                            AbpZeroSettingNames.UserManagement.IsEmailConfirmationRequiredForLogin, tenant.Id);
 
                 var user = new User
                 {
@@ -410,9 +437,10 @@ namespace Pgpg.Web.Controllers
                     };
 
                     model.UserName = model.EmailAddress;
-                    model.Password = Authorization.Users.User.CreateRandomPassword();
+                    model.Password = Core.Authorization.Users.User.CreateRandomPassword();
 
-                    if (string.Equals(externalLoginInfo.EmailAddress, model.EmailAddress, StringComparison.InvariantCultureIgnoreCase))
+                    if (string.Equals(externalLoginInfo.EmailAddress, model.EmailAddress,
+                        StringComparison.InvariantCultureIgnoreCase))
                     {
                         user.IsEmailConfirmed = true;
                     }
@@ -444,7 +472,8 @@ namespace Pgpg.Web.Controllers
                 }
 
                 //Notifications
-                await _notificationSubscriptionManager.SubscribeToAllAvailableNotificationsAsync(user.ToUserIdentifier());
+                await
+                    _notificationSubscriptionManager.SubscribeToAllAvailableNotificationsAsync(user.ToUserIdentifier());
                 await _appNotifier.WelcomeToTheApplicationAsync(user);
                 await _appNotifier.NewUserRegisteredAsync(user);
 
@@ -467,7 +496,8 @@ namespace Pgpg.Web.Controllers
                         return Redirect(GetAppHomeUrl());
                     }
 
-                    Logger.Warn("New registered user could not be login. This should not be normally. login result: " + loginResult.Result);
+                    Logger.Warn("New registered user could not be login. This should not be normally. login result: " +
+                                loginResult.Result);
                 }
 
                 return View("RegisterResult", new RegisterResultViewModel
@@ -504,7 +534,8 @@ namespace Pgpg.Web.Controllers
             }
 
             var tenant = AsyncHelper.RunSync(() => GetActiveTenantAsync(tenancyName));
-            return SettingManager.GetSettingValueForTenant<bool>(AppSettings.UserManagement.UseCaptchaOnRegistration, tenant.Id);
+            return SettingManager.GetSettingValueForTenant<bool>(AppSettings.UserManagement.UseCaptchaOnRegistration,
+                tenant.Id);
         }
 
         private void CheckSelfRegistrationIsEnabled()
@@ -524,7 +555,8 @@ namespace Pgpg.Web.Controllers
             }
 
             var tenant = AsyncHelper.RunSync(() => GetActiveTenantAsync(tenancyName));
-            return SettingManager.GetSettingValueForTenant<bool>(AppSettings.UserManagement.AllowSelfRegistration, tenant.Id);
+            return SettingManager.GetSettingValueForTenant<bool>(AppSettings.UserManagement.AllowSelfRegistration,
+                tenant.Id);
         }
 
         #endregion
@@ -558,7 +590,9 @@ namespace Pgpg.Web.Controllers
         [UnitOfWork]
         public virtual async Task<ActionResult> ResetPassword(ResetPasswordViewModel model)
         {
-            var tenantId = model.TenantId.IsNullOrEmpty() ? (int?)null : SimpleStringCipher.Instance.Decrypt(model.TenantId).To<int>();
+            var tenantId = model.TenantId.IsNullOrEmpty()
+                ? (int?)null
+                : SimpleStringCipher.Instance.Decrypt(model.TenantId).To<int>();
             var userId = SimpleStringCipher.Instance.Decrypt(model.UserId).To<long>();
 
             _unitOfWorkManager.Current.SetTenantId(tenantId);
@@ -569,7 +603,9 @@ namespace Pgpg.Web.Controllers
                 throw new UserFriendlyException(L("InvalidPasswordResetCode"), L("InvalidPasswordResetCode_Detail"));
             }
 
-            var setting = await SettingManager.GetSettingValueForUserAsync(AppSettings.Security.PasswordComplexity, tenantId, userId);
+            var setting =
+                await
+                    SettingManager.GetSettingValueForUserAsync(AppSettings.Security.PasswordComplexity, tenantId, userId);
             model.PasswordComplexitySetting = JsonConvert.DeserializeObject<PasswordComplexitySetting>(setting);
 
             return View(model);
@@ -579,7 +615,9 @@ namespace Pgpg.Web.Controllers
         [UnitOfWork]
         public virtual async Task<ActionResult> ResetPassword(ResetPasswordFormViewModel model)
         {
-            var tenantId = model.TenantId.IsNullOrEmpty() ? (int?)null : SimpleStringCipher.Instance.Decrypt(model.TenantId).To<int>();
+            var tenantId = model.TenantId.IsNullOrEmpty()
+                ? (int?)null
+                : SimpleStringCipher.Instance.Decrypt(model.TenantId).To<int>();
             var userId = Convert.ToInt64(SimpleStringCipher.Instance.Decrypt(model.UserId));
 
             _unitOfWorkManager.Current.SetTenantId(tenantId);
@@ -636,15 +674,19 @@ namespace Pgpg.Web.Controllers
         [UnitOfWork]
         public virtual async Task<ActionResult> EmailConfirmation(EmailConfirmationViewModel model)
         {
-            var tenantId = model.TenantId.IsNullOrEmpty() ? (int?)null : SimpleStringCipher.Instance.Decrypt(model.TenantId).To<int>();
+            var tenantId = model.TenantId.IsNullOrEmpty()
+                ? (int?)null
+                : SimpleStringCipher.Instance.Decrypt(model.TenantId).To<int>();
             var userId = Convert.ToInt64(SimpleStringCipher.Instance.Decrypt(model.UserId));
 
             _unitOfWorkManager.Current.SetTenantId(tenantId);
 
             var user = await _userManager.GetUserByIdAsync(userId);
-            if (user == null || user.EmailConfirmationCode.IsNullOrEmpty() || user.EmailConfirmationCode != model.ConfirmationCode)
+            if (user == null || user.EmailConfirmationCode.IsNullOrEmpty() ||
+                user.EmailConfirmationCode != model.ConfirmationCode)
             {
-                throw new UserFriendlyException(L("InvalidEmailConfirmationCode"), L("InvalidEmailConfirmationCode_Detail"));
+                throw new UserFriendlyException(L("InvalidEmailConfirmationCode"),
+                    L("InvalidEmailConfirmationCode_Detail"));
             }
 
             user.IsEmailConfirmed = true;
@@ -674,7 +716,7 @@ namespace Pgpg.Web.Controllers
         {
             var user = await _userManager.Users.Where(
                 u => u.EmailAddress == emailAddress
-                ).FirstOrDefaultAsync();
+            ).FirstOrDefaultAsync();
 
             if (user == null)
             {
@@ -723,7 +765,6 @@ namespace Pgpg.Web.Controllers
                     tenancyName = _tenancyNameFinder.GetCurrentTenancyNameOrNull() ?? "",
                     authSchema = provider
                 });
-
             return Challenge(
                 new Microsoft.AspNetCore.Http.Authentication.AuthenticationProperties
                 {
